@@ -37,13 +37,7 @@
   </div>
 
   <div>
-    <%= form.label :category_id, style: "display: block" %>
-    <%= form.text_field :category_id %>
-  </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= collection_select(:post, :author_id, Category.all, :id, :name_with_initial, prompt: "Please select a category") %>
   </div>
 
   <div>
