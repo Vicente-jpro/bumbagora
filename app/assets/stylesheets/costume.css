@@ -1,0 +1,131 @@
+
+/*********** Menu *********/
+.navbar-color{
+  /* lime accent-3  */
+  background-color: #c6ff00 !important;
+
+}
+
+.navbar-brand{
+  color: #1b5e20;
+}
+
+.nav{
+  /* lime accent-3  */
+  background-color: #c6ff00 !important;
+  color: black !important;
+}
+
+.navbar-toggler-icon{
+
+  width: 35px;
+  height: 5px;
+  background-color: #2e7d32 !important;
+  margin: 6px 0;
+
+}
+
+.nav-link {
+/****  #004d40 teal darken-4  ****/
+  color: #004d40 ;  
+
+}
+
+.nav-link:hover{
+  color: black;
+}
+.main-description{
+  font-size: 40px;
+}
+
+/******************************/
+
+
+/************** Icon *****************/
+
+
+
+.i-description{
+    /****  #004d40 teal darken-4  ****/
+  color: #004d40 ; 
+  font-size: 25px;
+}
+
+.bi{
+  font-size: 20px;
+}
+
+.bi-youtube{
+  color: red;
+}
+
+.bi-linkedin{
+  color: blue;
+}
+
+.bi-facebook{
+  color: blue;
+}
+/***************************/
+
+h5{
+  /****  #004d40 teal darken-4  ****/
+  color: #004d40 ;
+
+}
+
+
+h4{
+  /****  #004d40 teal darken-4  ****/
+  color: #004d40 ;
+
+}
+strong{
+  color: #004d40 ;
+}
+
+hr{
+  color: #004d40 ;
+}
+
+/********** Card *************/
+
+
+/*****************************/
+.mr-2{
+  margin-right: 20px;
+}
+
+.bi-star{
+  /******  #ffff00 yellow accent-2  ********/
+  color: black;
+}
+
+.i-large{
+  font-size: 100px;
+
+  /****  #004d40 teal darken-4  ****/
+  color: #004d40 !important; 
+}
+
+
+.rounded{
+  width: 100px;
+}
+
+body{
+  /*** #fafafa grey lighten-5 ***/
+  background-color: #fafafa ;
+}
+
+.dropdown-item{
+   /* lime accent-3  */
+  background-color: #c6ff00 !important;
+}
+
+.dropdown-item:hover{
+     /****  #004d40 teal darken-4  ****/
+  background-color: #004d40 !important;
+color: #c6ff00 !important ;
+
+}

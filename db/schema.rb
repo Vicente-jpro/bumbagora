@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_04_211430) do
+ActiveRecord::Schema.define(version: 2022_02_04_213000) do
+
+  create_table "categories", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string "title"
+    t.string "type"
+    t.text "description"
+    t.integer "salary"
+    t.string "expiry_date"
+    t.integer "category_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_jobs_on_category_id"
+    t.index ["user_id"], name: "index_jobs_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,4 +43,6 @@ ActiveRecord::Schema.define(version: 2022_02_04_211430) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "jobs", "categories"
+  add_foreign_key "jobs", "users"
 end
