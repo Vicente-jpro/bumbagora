@@ -16,9 +16,10 @@
     <%= form.text_field :title %>
   </div>
 
+  
   <div>
-    <%= form.label :type, style: "display: block" %>
-    <%= form.text_field :type %>
+  <%= form.label :type_job, style: "display: block" %>
+   <%= form.select :type_job, Job.type_jobs %>
   </div>
 
   <div>
@@ -33,11 +34,11 @@
 
   <div>
     <%= form.label :expiry_date, style: "display: block" %>
-    <%= form.text_field :expiry_date %>
+    <%= form.date_field :expiry_date %>
   </div>
 
   <div>
-    <%= collection_select(:post, :author_id, Category.all, :id, :name_with_initial, prompt: "Please select a category") %>
+    <%= collection_select(:job, :category_id, Category.all, :id, :name_with_initial, prompt: "Please select a category") %>
   </div>
 
   <div>
