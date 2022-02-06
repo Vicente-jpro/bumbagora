@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   before_action :set_job, only: %i[ show edit update destroy ]
-  before_action :set_categories, only: [ :index, :show, :new, :edit, :update, :destroy]
-  #before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  #before_action :set_categories, only: [:new, :index, :show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   # GET /jobs or /jobs.json
   def index
     @jobs = Job.all
@@ -13,7 +13,11 @@ class JobsController < ApplicationController
 
   # GET /jobs/new
   def new
-    @job = Job.new
+    if user_signed_in?
+       @job = Job.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   # GET /jobs/1/edit
@@ -70,7 +74,7 @@ class JobsController < ApplicationController
       params.require(:job).permit(:title, :type_job, :description, :salary, :expiry_date, :category_id)
     end
 
-    def set_categories
-      @categories ||= Category.all
-    end
+   ## def set_categories
+    ##  @categories ||= Category.all
+   ## end
 end

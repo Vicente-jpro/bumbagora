@@ -34,24 +34,26 @@
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Pesquisar Vaga Por 
           </a>
+          <!-- Menu drop down-->
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            
-           <%= render "categories/category", categories: @categories%>
+            <% Category.all.each do |category|%>
+                <%= link_to category.name, categories_path, class: "dropdown-item" %>
+            <% end %>
           </ul>
         </li>
           </ul>
           <ul class="nav justify-content-end ">
             <li class="nav-item">
-              <a href="" class="nav-link ">Login</a>
+            <%= link_to "Profile", edit_user_registration_path, class: "nav-link"%>
             </li>
               <li class="nav-item ">
-              <a href="" class="nav-link ">Logout</a>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
             </li>
-              <li class="nav-item ">
-              <a href="" class="nav-link ">Sign Up</a>
+              <li class="nav-item "> 
+              <%= link_to "Sing Up", new_user_registration_path, class: "nav-link" %>
             </li>
               <li class="nav-item">
-              <a href="" class="nav-link ">Sign In</a>
+              <%= link_to "Sign In", new_user_session_path, class: "nav-link"%>
             </li>
         </ul>
         </div>
