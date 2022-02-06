@@ -1,0 +1,5 @@
+<div id="categories">
+    <% categories.each do |category|%>
+        <%= link_to category.name, categories_path, class: "dropdown-item" %>
+    <% end %>
+</div>
