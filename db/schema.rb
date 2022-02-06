@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 2022_02_05_005613) do
 
   create_table "categories", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -33,6 +33,9 @@ ActiveRecord::Schema.define(version: 2022_02_05_005613) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "name_country"
+    t.string "localization_description"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
