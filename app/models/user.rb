@@ -6,9 +6,4 @@ class User < ApplicationRecord
 
   has_many :jobs
 
-  def countries
-    all = ISO3166::Country.all
-    return all
-  end
-  
 end
