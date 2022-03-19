@@ -1,0 +1,2 @@
+class UsersJobsController < ApplicationController
+end
