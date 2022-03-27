@@ -3,4 +3,6 @@ class UsersJobsController < ApplicationController
         @user = current_user
         @user.jobs
     end
+
+   
 end

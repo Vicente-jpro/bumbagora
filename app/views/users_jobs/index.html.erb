@@ -4,7 +4,7 @@
     <% @user.jobs.each do |job| %>
         <%= render job %>
     <p>
-      <%= link_to "Show this job", job %>
+      <%= link_to "Show this job", job_path(job) %>
     </p>
     <% end %>
 </div>
