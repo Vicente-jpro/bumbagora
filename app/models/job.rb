@@ -1,6 +1,8 @@
 class Job < ApplicationRecord
   belongs_to :category
-  belongs_to :user 
+
+  has_many :users_jobs
+  has_many :users, through: :users_jobs
+
   enum type_job: {Remote: "Remote", Presencial: "Presencial"}
-  has_and_belongs_to_many :users
 end
