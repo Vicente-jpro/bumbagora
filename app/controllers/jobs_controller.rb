@@ -2,7 +2,9 @@ class JobsController < ApplicationController
   before_action :set_job, only: %i[ show edit update destroy ]
   #before_action :set_categories, only: [:new, :index, :show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
-  # GET /jobs or /jobs.json
+  
+  include JobsConcern
+  
   def index
     @jobs = Job.all
   end
@@ -31,8 +33,7 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.save
-        @job = Job.last
-        @job.users << current_user
+        save_job_into_user_creater(@job)
         format.html { redirect_to job_url(@job), notice: "Job was successfully created." }
         format.json { render :show, status: :created, location: @job }
       else
