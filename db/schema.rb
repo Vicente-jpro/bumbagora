@@ -20,13 +20,13 @@ ActiveRecord::Schema.define(version: 2022_03_18_235554) do
 
   create_table "jobs", force: :cascade do |t|
     t.string "title"
+    t.string "type_job", default: "Presencial", null: false
     t.text "description"
     t.integer "salary"
     t.integer "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.date "expiry_date"
-    t.string "type_job", default: "Presencial"
     t.index ["category_id"], name: "index_jobs_on_category_id"
   end
 
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2022_03_18_235554) do
   end
 
   create_table "users_jobs", force: :cascade do |t|
-    t.string "type_subscription", default: "creator"
+    t.string "type_subscription", default: "Creator", null: false
     t.integer "user_id", null: false
     t.integer "job_id", null: false
     t.datetime "created_at", precision: 6, null: false

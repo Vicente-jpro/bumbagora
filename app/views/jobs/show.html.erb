@@ -4,7 +4,7 @@
 
 <div>
   <%= link_to "Edit this job", edit_job_path(@job) %> |
-  <%= link_to "Apply", jobs_path %>
+  <%= link_to "Apply", apply_users_job_path(@job) %>
 
   <%= button_to "Destroy this job", @job, method: :delete %>
 </div>
