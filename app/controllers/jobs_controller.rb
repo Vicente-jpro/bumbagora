@@ -27,10 +27,12 @@ class JobsController < ApplicationController
   # POST /jobs or /jobs.json
   def create
     @job = Job.new(job_params)
-    @job.user_id = current_user.id
+    
 
     respond_to do |format|
       if @job.save
+        @job = Job.last
+        @job.users << current_user
         format.html { redirect_to job_url(@job), notice: "Job was successfully created." }
         format.json { render :show, status: :created, location: @job }
       else
@@ -38,6 +40,7 @@ class JobsController < ApplicationController
         format.json { render json: @job.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /jobs/1 or /jobs/1.json
