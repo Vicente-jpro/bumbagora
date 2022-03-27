@@ -1,0 +1,10 @@
+<h1>I am a user job index template</h1>
+
+<div id="jobs">
+    <% @user.jobs.each do |job| %>
+        <%= render job %>
+    <p>
+      <%= link_to "Show this job", job %>
+    </p>
+    <% end %>
+</div>
