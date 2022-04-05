@@ -1,38 +1,28 @@
 
 /*********** Menu *********/
-.navbar-color{
-  /* lime accent-3  */
-  background-color: #c6ff00 !important;
 
-}
 
-.navbar-brand{
-  color: #1b5e20;
-}
-
-.nav{
-  /* lime accent-3  */
-  background-color: #c6ff00 !important;
-  color: black !important;
-}
 
 .navbar-toggler-icon{
 
   width: 35px;
   height: 5px;
-  background-color: #2e7d32 !important;
+  background-color: white !important;
   margin: 6px 0;
 
 }
 
 .nav-link {
-/****  #004d40 teal darken-4  ****/
-  color: #004d40 ;  
+  /* #4a148c purple darken-4 */
+  color: white ;  
 
 }
 
 .nav-link:hover{
-  color: black;
+  /* #00897b teal darken-1 */
+  background-color: #00897b;
+  color: white;
+  border-radius: 10px;
 }
 .main-description{
   font-size: 40px;
