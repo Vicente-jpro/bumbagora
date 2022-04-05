@@ -30,7 +30,6 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(job_params)
     
-
     respond_to do |format|
       if @job.save
         save_job_into_user_creater(@job)
@@ -41,7 +40,6 @@ class JobsController < ApplicationController
         format.json { render json: @job.errors, status: :unprocessable_entity }
       end
     end
-
   end
 
   # PATCH/PUT /jobs/1 or /jobs/1.json
