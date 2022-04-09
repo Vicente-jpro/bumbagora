@@ -11,9 +11,13 @@ class UsersJobsController < ApplicationController
    # POST /users_jobs/:id/apply
    def apply 
     save_job_into_user_creater(@job)
-    
-  debugger
+    @jobs ||= Job.all
+    flash[:notice] = "Subscrição feita com sucesso para vaga #{@job.title}"
+    render "jobs/index", job: @jobs 
+   
    end
+
+   
 
    private 
     def set_job 
