@@ -1,4 +1,4 @@
-<%= form_with(model: job) do |form| %>
+<%= bootstrap_form_for(job) do |form| %>
   <% if job.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
@@ -11,37 +11,33 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
+<main class="container col-lg-6 my-4">
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+      	<h4 class="text-center">Postar Vaga</h4>
+      </div>
+      <div class="row my-2">
 
-  
-  <div>
-  <%= form.label :type_job, style: "display: block" %>
-   <%= form.select :type_job, Job.type_jobs %>
-  </div>
+      <%= form.text_field :title,  placeholder:"Título", class:"form-control" %>
+      <%= form.collection_select :category_id, Category.order(:name), :id, :name %>
+		  <%= form.select :type_job, Job.type_jobs %>
+		  <%= form.number_field :salary, placeholder:"$ 00" %>
+		  <%= form.date_field :expiry_date %>		
+		  <%= form.text_area :description %>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+		<div class="mb-3 d-grid gap-2">
+      <%= form.submit "Postar Vaga", class:"btn btn-success" %>
+		</div>
+      </div>
   </div>
+</main>
 
-  <div>
-    <%= form.label :salary, style: "display: block" %>
-    <%= form.number_field :salary %>
-  </div>
+ 
 
-  <div>
-    <%= form.label :expiry_date, style: "display: block" %>
-    <%= form.date_field :expiry_date %>
-  </div>
 
-  <div>
-    <%= collection_select(:job, :category_id, Category.all, :id, :name_with_initial, prompt: "Please select a category") %>
-  </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+
+   
+ 
 <% end %>
