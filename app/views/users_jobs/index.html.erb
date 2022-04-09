@@ -1,10 +1,7 @@
 <h1>I am a user job index template</h1>
 
-<div id="jobs">
+<div class="container col-sm-9" id="jobs">
     <% @user.jobs.each do |job| %>
         <%= render job %>
-    <p>
-      <%= link_to "Show this job", job_path(job) %>
-    </p>
     <% end %>
 </div>
