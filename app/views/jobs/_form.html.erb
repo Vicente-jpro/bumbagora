@@ -11,10 +11,46 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+<main class="container col-lg-6 my-4">
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+      	<h4 class="text-center">Postar Vaga</h4>
+      </div>
+      <div class="row my-2">
+
+    <div class="mb-3">
+      <%= form.text_field :title,  placeholder:"Título", class:"form-control" %>
+		</div>
+    <div class="mb-3">
+      <%= form.select :category, category_name_and_key_vaue(@categories), class:"form-select"%>
+    </div>
+	   <div class="mb-3">
+		  <input type="email" class="form-control"  placeholder="name@example.com">
+		</div>
+		  <div class="mb-3">
+		  <input type="number" class="form-control"  placeholder="Salário">
+		</div>
+		  <div class="mb-3">
+		  	<label for="date">Praso da candidatura</label>
+		  <input type="date" class="form-control">
+		</div>
+		<div class="mb-3">
+		  <textarea class="form-control" rows="3" placeholder="Descrição"></textarea>
+		</div>
+		<div class="mb-3 d-grid gap-2">
+			<button class="btn btn-info">Postar Vaga</button>
+		</div>
+      </div>
   </div>
+</main>
+
+
+
+
+
+
+
 
   
   <div>
@@ -37,6 +73,7 @@
     <%= form.date_field :expiry_date %>
   </div>
 
+ 
   <div>
     <%= collection_select(:job, :category_id, Category.all, :id, :name_with_initial, prompt: "Please select a category") %>
   </div>

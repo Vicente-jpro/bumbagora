@@ -17,6 +17,7 @@ class JobsController < ApplicationController
   def new
     if user_signed_in?
        @job = Job.new
+       @categories = Category.all
     else
       redirect_to new_user_session_path
     end
