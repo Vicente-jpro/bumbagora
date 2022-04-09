@@ -13,11 +13,8 @@ class UsersJobsController < ApplicationController
     save_job_into_user_creater(@job)
     @jobs ||= Job.all
     flash[:notice] = "Subscrição feita com sucesso para vaga #{@job.title}"
-    render "jobs/index", job: @jobs 
-   
+    render "jobs/index", job: @jobs    
    end
-
-   
 
    private 
     def set_job 
