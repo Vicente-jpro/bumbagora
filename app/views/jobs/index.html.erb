@@ -2,13 +2,10 @@
 
 <h1>Jobs</h1>
 
-<div id="jobs">
+<div class="container col-sm-9" id="jobs">
   <% @jobs.each do |job| %>
-    <%= render job %>
-    <p>
-      <%= link_to "Show this job", job %>
-    </p>
+  
+      <%= render job %>
+      
   <% end %>
 </div>
-
-<%= link_to "New job", new_job_path %>

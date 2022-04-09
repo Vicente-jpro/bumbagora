@@ -1,37 +1,28 @@
-<div id="<%= dom_id job %>">
-  <p>
-    <strong>Title:</strong>
-    <%= job.title %>
-  </p>
 
-  <p>
-    <strong>Type:</strong>
-    <%= job.type_job %>
-  </p>
+  <div class="card" >
+    <div class="card-body">
+      <h5 class="card-title"><%= job.title %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= job.category.name %>, <%= job.type_job %></h6>
+      <p class="card-text"><%= job.description %></p>
+       <p>
+        <strong>It missing</strong>
+        <%= 27 %> days to expiry
+       </p>
+      
+  
+      <%= link_to "Show this job", job, class:"btn btn-info" %>
+ 
+      <%= link_to "Apply", apply_users_job_path(job), class:"btn btn-success" %>
+  
+      <%= button_to "Destroy this job", job, method: :delete, class:"btn btn-link" %>
+    
 
-  <p>
-    <strong>Description:</strong>
-    <%= job.description %>
-  </p>
+    </div>
+  </div>
+  
+  
 
-  <p>
-    <strong>Salary:</strong>
-    <%= job.salary %>
-  </p>
 
-  <p>
-    <strong>Expiry date:</strong>
-    <%= job.expiry_date %>
-  </p>
-
-  <p>
-    <strong>Category:</strong>
-    <%= job.category.name %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    email da empresa
-  </p>
-
-</div>
+    </div>
+ </div>
+ <br>
