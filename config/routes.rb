@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     end
   end
   resources :jobs
-  resources :categories
+  resources :categories do 
+  end
   devise_for :users
   root "home#index"
   devise_scope :user do
