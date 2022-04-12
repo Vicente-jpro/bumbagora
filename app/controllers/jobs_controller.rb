@@ -5,6 +5,11 @@ class JobsController < ApplicationController
   
   include JobsConcern
   
+
+  def search 
+    @jobs = Job.find_jobs_by_category(params[:category_id])
+  end
+  
   def index
     @jobs = Job.all
   end

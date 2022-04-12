@@ -1,14 +1,14 @@
 <div class="container my-4">
     <div class="row d-flex justify-content-center">
         <div class="col-sm-3">
-         <form action="/people/search">
-            <select class="form-select" aria-label="Default select example">
+         <form action="/jobs/search" method="get" class="form">
+            <select class="form-select" aria-label="Default select example" name="category_id">
               <option selected class="text-center">Pesquisar por categorias</option>
               <% Category.all.each do |category|%>
-                 <option value="<% category.id %>" class="text-center"><%= category.name %></option>
+                 <option type="submit" value="<% category.id %>" class="text-center" onClick="document.this.form.submit();">
+                    <%=category.name%> 
+                 </option>
               <% end %>
-                
-                <option value="1" class="text-center">One</option>
             </select>
          </form>
         </div>
