@@ -6,6 +6,6 @@ class Job < ApplicationRecord
 
   enum type_job: {Remote: "Remote", Presencial: "Presencial"}
   scope :find_jobs_by_category, ->(category_id) { where('category_id = ?', category_id )}
-  scope :find_jobs_by_id_greater_than, ->(job) { where('id > ?',job.id) }
+  scope :find_jobs_by_id_greater_than, ->(job) { where('id <= ? ',job.id).order(id: :desc) }
   
 end
