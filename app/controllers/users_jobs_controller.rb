@@ -12,6 +12,8 @@ class UsersJobsController < ApplicationController
    def apply 
     if is_creator?(@job)
       flash[:alert] = "You can not register to your own job."
+    elsif is_registed?(@job)
+      flash[:alert] = "You have already registered on this job."
     else
       user_job_registration(@job)
       flash[:notice] = "Subscrição feita com sucesso para vaga #{@job.title}" 
