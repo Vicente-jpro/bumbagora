@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :users_jobs
   has_many :jobs, through: :users_jobs
 
+  scope :find_by_id, ->(user) { where(id: user.id)}
   def country
     super.iso_short_name
   end

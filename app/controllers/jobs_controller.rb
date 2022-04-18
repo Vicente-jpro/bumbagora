@@ -11,7 +11,7 @@ class JobsController < ApplicationController
   end
   
   def index
-    @jobs = Job.order(id: :desc)
+    @jobs = Job.find_jobs_ordered_by_id_desc
   end
 
   # GET /jobs/1 or /jobs/1.json
