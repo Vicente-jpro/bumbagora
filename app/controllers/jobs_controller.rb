@@ -11,7 +11,7 @@ class JobsController < ApplicationController
   end
   
   def index
-    @jobs = Job.all
+    @jobs = Job.order(id: :desc)
   end
 
   # GET /jobs/1 or /jobs/1.json
@@ -35,10 +35,9 @@ class JobsController < ApplicationController
   # POST /jobs or /jobs.json
   def create
     @job = Job.new(job_params)
-    
+    @job.user_id = current_user.id
     respond_to do |format|
       if @job.save
-        save_job_into_user_creater(@job)
         format.html { redirect_to job_url(@job), notice: "Job was successfully created." }
         format.json { render :show, status: :created, location: @job }
       else
@@ -79,7 +78,7 @@ class JobsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def job_params
-      params.require(:job).permit(:title, :type_job, :description, :salary, :expiry_date, :category_id)
+      params.require(:job).permit(:title, :type_job, :description, :salary, :expiry_date, :category_id, )
     end
 
    ## def set_categories

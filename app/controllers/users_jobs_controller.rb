@@ -5,15 +5,20 @@ class UsersJobsController < ApplicationController
 
     def index 
       @user = current_user
-      @user.jobs
+      @user.jobs.order(id: :desc)
     end
 
    # POST /users_jobs/:id/apply
    def apply 
-    save_job_into_user_creater(@job)
-    @jobs ||= Job.all
-    flash[:notice] = "Subscrição feita com sucesso para vaga #{@job.title}"
-    render "jobs/index", job: @jobs    
+    if is_creator?(@job)
+      flash[:alert] = "You can not register to your own job."
+    else
+      user_job_registration(@job)
+      flash[:notice] = "Subscrição feita com sucesso para vaga #{@job.title}" 
+    end  
+    @jobs ||= Job.find_jobs_by_id_greater_than(@job)
+    render "jobs/index", job: @jobs 
+
    end
 
    private 

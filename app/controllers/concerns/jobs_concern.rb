@@ -1,7 +1,11 @@
 module JobsConcern 
     extend ActiveSupport::Concern
-    def save_job_into_user_creater(job)
-        @job = Job.last
-        @job.users << current_user
+    def user_job_registration(job)
+      @job = job
+      @job.users << current_user
+    end
+
+    def is_creator?(job)
+        @job.user_id == current_user.id
     end
 end
