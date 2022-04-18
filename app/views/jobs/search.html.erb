@@ -1,0 +1,12 @@
+<h2>Search result</h2>
+
+
+<div class="container col-sm-9" id="jobs">
+    <% if @jobs.any? %>
+        <% @jobs.each do |job| %>
+            <%= render job %>
+        <% end %>
+    <% else %>
+        <h3> Search not found </h3>
+    <% end %>
+</div>
