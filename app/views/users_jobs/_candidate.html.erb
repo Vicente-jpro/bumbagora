@@ -1,0 +1,18 @@
+
+  <div class="card" id="<%= dom_id candidate%>" >
+    <div class="card-body">
+      <h5 class="card-title"><%= candidate.username %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= candidate.name_country %></h6>
+      <p class="card-text">
+        <%= candidate.email %>
+        <%= candidate.localization_description %>
+      </p>
+      
+      <%= link_to "Show this candidate", candidates_users_job_path(candidate), class:"btn btn-info" %>
+ 
+    </div>
+  </div>
+  
+  
+
+ <br>

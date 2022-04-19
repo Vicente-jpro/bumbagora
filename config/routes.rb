@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :users_jobs, only: [:index, :create, :destory] do 
     member do 
       get "apply"
+      get "candidates"
     end
+   
   end
   
   resources :jobs do
