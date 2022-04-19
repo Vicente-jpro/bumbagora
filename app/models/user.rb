@@ -6,6 +6,8 @@ class User < ApplicationRecord
  
   has_many :users_jobs
   has_many :jobs, through: :users_jobs
+  
+  enum type_subscription: {Candidate: "Candidate", Company: "Company"}
 
   scope :find_by_id, ->(user) { where(id: user.id)}
   def country
