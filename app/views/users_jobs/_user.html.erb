@@ -1,5 +1,5 @@
 
-  <div class="card" >
+  <div class="card" id="<%= dom_id users%>" >
     <div class="card-body">
       <h5 class="card-title"><%= job.title %></h5>
       <h6 class="card-subtitle mb-2 text-muted"><%= job.category.name %>, <%= job.type_job %></h6>
@@ -13,8 +13,6 @@
       <%= link_to "Show this job", job, class:"btn btn-info" %>
  
       <%= link_to "Apply", apply_users_job_path(job), class:"btn btn-success" %>
-
-      <%= link_to "Edit this job", edit_job_path(job), class:"btn btn-secondary" %> 
   
       <%= button_to "Destroy this job", job, method: :delete, class:"btn btn-link" %>
     
