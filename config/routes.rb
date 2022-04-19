@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   root "home#index"
   devise_scope :user do
     get '/users/sign_out', to: 'devise/sessions#destroy'
+    put '/users', to: 'devise/sessions#update'
   end
+
 
 end

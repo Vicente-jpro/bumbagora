@@ -9,11 +9,12 @@
         <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
 
-            <%= f.text_field :username,  autofocus: true %>
+            <%= f.text_field :username,  autofocus: true %> 
+            <%= f.select :type_subscription, User.type_subscriptions %>
             <%= f.select :name_country, countries %>
             <%= f.text_field :localization_description%>
             <%= f.email_field :email, autocomplete: "email" %>
-
+           
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -26,7 +27,7 @@
               <br />
               <em><%= @minimum_password_length %> characters minimum</em>
             <% end %>
-          </div>
+      
 
           
             <%= f.password_field :password_confirmation, autocomplete: "new-password" %>

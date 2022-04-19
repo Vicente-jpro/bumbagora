@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
  
   has_many :users_jobs
-  has_many :jobs, through: :users_jobs
+  has_many :jobs, through: :users_jobs, dependent: :destroy
   
   enum type_subscription: {Candidate: "Candidate", Company: "Company"}
 
