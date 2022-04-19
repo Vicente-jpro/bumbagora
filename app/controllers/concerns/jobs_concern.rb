@@ -9,7 +9,7 @@ module JobsConcern
     end
 
     def is_registed?(job)
-      @user_jobs = job.users.where(id: current_user.id)
+      @user_jobs = job.users.find_by_id(current_user)
       if @user_jobs.any?
         return true
       else

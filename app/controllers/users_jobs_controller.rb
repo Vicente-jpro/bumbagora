@@ -5,7 +5,7 @@ class UsersJobsController < ApplicationController
 
     def index 
       @user = current_user
-      @user.jobs.order(id: :desc)
+      @user.jobs.find_jobs_ordered_by_id_desc
     end
 
    # POST /users_jobs/:id/apply
