@@ -1,21 +1,24 @@
 class JobsController < ApplicationController
   before_action :set_job, only: %i[ show edit update destroy ]
-  #before_action :set_categories, only: [:new, :index, :show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   
+
   include JobsConcern
-  
+  include JobsViewsConcern
 
   def search 
     @jobs = Job.find_jobs_by_category(params[:category_id])
+    @page_name_index = page_name("index")
   end
   
   def index
     @jobs = Job.find_jobs_ordered_by_id_desc
+    @page_name_index = page_name("index")
   end
 
   # GET /jobs/1 or /jobs/1.json
   def show
+    @page_name_index = page_name("show")
   end
 
   # GET /jobs/new
@@ -81,7 +84,4 @@ class JobsController < ApplicationController
       params.require(:job).permit(:title, :type_job, :description, :salary, :expiry_date, :category_id, )
     end
 
-   ## def set_categories
-    ##  @categories ||= Category.all
-   ## end
 end
