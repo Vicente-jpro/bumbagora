@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     end
    
   end
-  
+
+
+  delete '/jobs/:id', to: 'jobs#destroy', as: 'job_destroy'
   resources :jobs do
     collection do 
       get "search" 
@@ -20,7 +22,6 @@ Rails.application.routes.draw do
   root "home#index"
   devise_scope :user do
     get '/users/sign_out', to: 'devise/sessions#destroy'
-    put '/users', to: 'devise/sessions#update'
   end
 
 

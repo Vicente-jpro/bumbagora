@@ -4,12 +4,20 @@
       <h5 class="card-title"><%= job.title %></h5>
       <h6 class="card-subtitle mb-2 text-muted"><%= job.category.name %>, <%= job.type_job %></h6>
       <p class="card-text"><%= job.description %></p>
-       <p>
-        <strong>It missing</strong>
-        <%= 27 %> days to expiry
-       </p>
+      
+      <% if time_ago_in_days(job)  %>
+         <p class="text-time-deadline">
+      <% else %>
+         <p class="text-time">
+      <% end %>
+          Created at: <%= time_ago_in_words(job.created_at) %> <br>
+          Deadline: 30 days 
+         </p>
      
-     
+      <% if day_is_thirty(job)%>
+        <% job_destroy_path(job) %>
+      <% end %>
+
       <% if @page_name_index %>
         <%= link_to "Show this job", job, class:"btn btn-info" %>
       <% end %>
