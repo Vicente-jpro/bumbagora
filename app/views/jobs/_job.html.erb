@@ -15,8 +15,11 @@
       <%= link_to "Apply", apply_users_job_path(job), class:"btn btn-success" %>
 
       <%= link_to "Edit this job", edit_job_path(job), class:"btn btn-secondary" %> 
-  
+
+      <%= link_to "Candidates", candidates_users_job_path(job), class:"btn btn-secondary" %> 
+
       <%= button_to "Destroy this job", job, method: :delete, class:"btn btn-link" %>
+      
     
 
     </div>

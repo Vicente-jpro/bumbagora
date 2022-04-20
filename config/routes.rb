@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :users_jobs, only: [:index, :create, :destory] do 
     member do 
       get "apply"
+      get "candidates"
     end
+   
   end
   
   resources :jobs do
@@ -18,6 +20,8 @@ Rails.application.routes.draw do
   root "home#index"
   devise_scope :user do
     get '/users/sign_out', to: 'devise/sessions#destroy'
+    put '/users', to: 'devise/sessions#update'
   end
+
 
 end

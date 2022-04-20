@@ -1,6 +1,6 @@
 class UsersJobsController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_job, only: %i[ apply ]
+    before_action :set_job, only: %i[ apply candidates ]
     include JobsConcern
 
     def index 
@@ -21,6 +21,10 @@ class UsersJobsController < ApplicationController
     @jobs ||= Job.find_jobs_by_id_greater_than(@job)
     render "jobs/index", job: @jobs 
 
+   end
+
+   def candidates
+     @candidates = @job
    end
 
    private 

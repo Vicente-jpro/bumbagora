@@ -1,6 +1,8 @@
 
-<div class="container col-sm-9" id="users">
-  <% @jobs.each do |job| %>
-      <%= render job %>
+<h3>Candidates for job <%= @candidates.title%> </h3>
+
+<div class="container col-sm-9" id="users_jobs">
+  <% @candidates.users.each do |candidate| %>
+      <%= render "users_jobs/candidate", candidate:  candidate%>
   <% end %>
 </div>
