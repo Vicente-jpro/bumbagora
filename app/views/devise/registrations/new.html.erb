@@ -11,6 +11,7 @@
 
         
           <%= f.text_field :username,  autofocus: true %>  
+          <%= f.file_field :image %>
           <%= f.select :type_subscription, User.type_subscriptions %> 
           <%= f.select :name_country, countries %>
           <%= f.text_field :localization_description%>
