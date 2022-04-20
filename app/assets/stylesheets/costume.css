@@ -74,6 +74,12 @@ h4{
   color: #004d40 ;
 
 }
+
+h3{
+  /****  #004d40 teal darken-4  ****/
+  color: #004d40 ;
+
+}
 strong{
   color: #004d40 ;
 }
@@ -112,14 +118,14 @@ body{
   background-color: #fafafa ;
 }
 
-.dropdown-item{
-   /* lime accent-3  */
-  background-color: #c6ff00 !important;
+.text-time{
+  font-size: 14px;
+  /****  #004d40 teal darken-4  ****/
+  color: #004d40 ;
 }
 
-.dropdown-item:hover{
-     /****  #004d40 teal darken-4  ****/
-  background-color: #004d40 !important;
-color: #c6ff00 !important ;
-
+.text-time-deadline{
+  font-size: 14px;
+  /****  #004d40 teal darken-4  ****/
+  color: red ;
 }
