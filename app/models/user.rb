@@ -4,7 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  has_one_attached :image
+  has_one_attached :image do |attachable|
+    attachable.variant :thumb, resize_to_limit: [200, 200]
+  end
+  
+
   has_many :users_jobs
   has_many :jobs, through: :users_jobs, dependent: :destroy
   
