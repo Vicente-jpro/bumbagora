@@ -7,28 +7,58 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 1.times do 
-   user = User.new({
+   vicente = User.new({
         username: "Vicente",
         name_country: "Angola",
         localization_description: "Luanda/Kilamba", 
         email: "vicente@gmail.com",
         password: "vicente",
-        password_confirmation: "vicente"
+        password_confirmation: "vicente",
+        type_subscription: "Company"
         })
-   user.save
+  vicente.save
+
+   galinha = User.new({
+    username: "Galinha",
+    name_country: "Angola",
+    localization_description: "Luanda/Kilamba", 
+    email: "galinha@gmail.com",
+    password: "galinha",
+    password_confirmation: "galinha",
+    type_subscription: "Candidate"
+    })
+    galinha.save
+
 end
 
 Category.create(name: "Programming")
 Category.create(name: "Construction")
 Category.create(name: "Movie")
-Category.create(name: "Authors")
+Category.create(name: "Others")
 
-3.times do |job_number|
+6.times do |job_number|
 
     Job.create(
         title: "Ruby on rails Dev #{job_number}", 
         description: "Developer new feacture", 
         salary: 4500*job_number, 
-        category_id: job_number
+        category_id: job_number,
+        type_job: "Presencial",
+        expiry_date: "2022/#{job_number}/14",
+        user_id: 1
+
+    )
+    Job.create(
+        title: "Phython Dev #{job_number}", 
+        description: "Developer new application", 
+        salary: 4500*job_number, 
+        category_id: job_number,
+        type_job: "Remote",
+        expiry_date: "2022/#{job_number}/14",
+        user_id: 2
+
     )
 end
+
+
+ 
