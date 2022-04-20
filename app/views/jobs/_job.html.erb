@@ -8,10 +8,9 @@
         <strong>It missing</strong>
         <%= 27 %> days to expiry
        </p>
-      
-  
-      <%= link_to "Show this job", job, class:"btn btn-info" %>
-       
+      <% if @page_name_index %>
+        <%= link_to "Show this job", job, class:"btn btn-info" %>
+      <% end %>
       <%= link_to "Apply", apply_users_job_path(job), class:"btn btn-success" %>
         
         <% if user_signed_in? and if is_the_owner_of_the_job?(job) %>
