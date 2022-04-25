@@ -1,10 +1,9 @@
 <h3>Editing job</h3>
-
-<%= render "form", job: @job %>
-
+<%= turbo_frame_tag "job" do %>
+  <%= render "form", job: @job %>
+<% end %>
 <br>
 
 <div>
-  
   <%= link_to "Back to jobs", jobs_path %>
 </div>

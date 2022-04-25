@@ -5,7 +5,7 @@ module JobsHelper
 
      def time_ago_in_days(job)
        if time_array_lenght(job) and (user_signed_in?)
-         time_ago_in_words(job.created_at).split.first > 20
+         time_ago_in_words(job.created_at).split.first.to_i > 20
          return true
        end
        return false
