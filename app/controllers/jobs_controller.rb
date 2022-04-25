@@ -7,7 +7,7 @@ class JobsController < ApplicationController
   include JobsViewsConcern
 
   def search 
-    @jobs = Job.find_jobs_by_category(params[:category_id])
+    @jobs = Job.find_jobs_by_title_or_category_name(params[:job])
     @page_name_index = page_name("index")
   end
   
