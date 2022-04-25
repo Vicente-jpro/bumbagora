@@ -20,7 +20,13 @@
       <% if @page_name_index %>
         <%= link_to "Show this job", job, class:"btn btn-info" %>
       <% end %>
-      <%= link_to "Apply", apply_users_job_path(job), class:"btn btn-success" %>
+      <% if user_have_applied?(job) %>
+        <strong class="text-success">Applied</strong>  
+        
+      <% else %>
+         <%= link_to "Apply", apply_users_job_path(job), class:"btn btn-success" %>  
+      <% end %>
+     
         
         <% if is_the_owner_of_the_job?(job) %>
         
