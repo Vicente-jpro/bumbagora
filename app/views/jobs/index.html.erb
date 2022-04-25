@@ -1,7 +1,9 @@
 <h3>Jobs</h3>
 
 <div class="container col-sm-9" id="jobs">
-  <% @jobs.each do |job| %>
-      <%= render job %>
+  <%= turbo_frame_tag "job" do %>
+    <% @jobs.each do |job| %>
+        <%= render job %>
+    <% end %>
   <% end %>
 </div>

@@ -1,3 +1,5 @@
 <div class="container col-sm-9" id="jobs">
-  <%= render @job %>
+  <%= turbo_frame_tag "job" do %>
+    <%= render @job %>
+  <% end %>
 </div>

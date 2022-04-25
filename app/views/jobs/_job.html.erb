@@ -1,11 +1,10 @@
-
   <div class="card" >
     <div class="card-body">
       <h5 class="card-title"><%= job.title %></h5>
       <h6 class="card-subtitle mb-2 text-muted"><%= job.category.name %>, <%= job.type_job %></h6>
       <p class="card-text"><%= job.description %></p>
       
-      <% if time_ago_in_days(job)  %>
+      <% if time_ago_in_days?(job)  %>
          <p class="text-time-deadline">
       <% else %>
          <p class="text-time">
@@ -36,6 +35,4 @@
     </div>
   </div>
   
-  
-
  <br>

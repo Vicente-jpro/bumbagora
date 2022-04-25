@@ -1,6 +1,12 @@
 
+
+
 /*********** Menu *********/
 
+.navbar{
+  border-top-style: solid;
+  border-color: pink;
+}
 .image-edit-profile{
   border-radius: 50px;
 }

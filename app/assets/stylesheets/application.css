@@ -15,3 +15,7 @@
  *= require rails_bootstrap_forms
  */
  
+ turbo-frame{
+     display: block;
+     border: 1px solid blue;
+ }
