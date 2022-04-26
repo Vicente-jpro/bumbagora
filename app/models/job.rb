@@ -1,4 +1,7 @@
 class Job < ApplicationRecord
+
+  has_rich_text :description
+
   belongs_to :category
 
   has_many :users_jobs
