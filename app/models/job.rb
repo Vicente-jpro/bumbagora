@@ -6,7 +6,8 @@ class Job < ApplicationRecord
 
   enum type_job: {Remote: "Remote", Presencial: "Presencial"}
   scope :find_jobs_by_title_or_category_name, ->(job) {
-    where('LOWER(title) LIKE ?', "%#{job.downcase}%") if job.present?
+    where('LOWER(title) LIKE ?', "%#{job.downcase}%")
+    .order(id: :desc) if job.present?
   }
   scope :find_jobs_by_id_greater_than, ->(job) { where('id <= ? ',job.id).order(id: :desc) }
   scope :find_jobs_ordered_by_id_desc, -> { order(id: :desc) }

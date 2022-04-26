@@ -34,7 +34,7 @@
         
           <%= link_to "Candidates", candidates_users_job_path(job), class:"btn btn-secondary" %> 
 
-          <%= button_to "Destroy this job", job, method: :delete, class:"btn btn-link" %>
+          <%= button_to "Destroy this job", job, method: :delete, class:"btn btn-link", form:{ data: { turbo_confirm: "Are you sure?"} }  %>
         <% end %>
      
 
