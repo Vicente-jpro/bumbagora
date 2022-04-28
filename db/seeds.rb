@@ -130,71 +130,71 @@ end
 "Estonia"
 "Eswatini"
 "Ethiopia"
-Falkland Islands (Malvinas)
-Faroe Islands
-Fiji
-Finland
-France
-French Guiana
-French Polynesia
-French Southern Territories
-Gabon
-Gambia
-Georgia
-Germany
-Ghana
-Gibraltar
-Greece
-Greenland
-Grenada
-Guadeloupe
-Guam
-Guatemala
-Guernsey
-Guinea
-Guinea-Bissau
-Guyana
-Haiti
-Heard Island and McDonald Islands
-Holy See (Vatican City State)
-Honduras
-Hong Kong
-Hungary
-Iceland
-India
-Indonesia
-Iran, Islamic Republic of
-Iraq
-Ireland
-Isle of Man
-Israel
-Italy
-Jamaica
-Japan
-Jersey
-Jordan
-Kazakhstan
-Kenya
-Kiribati
-Kuwait
-Kyrgyzstan
-Lao People's Democratic Republic
-Latvia
-Lebanon
-Lesotho
-Liberia
-Libya
-Liechtenstein
-Lithuania
-Luxembourg
-Macao
-Madagascar
-Malawi
-Malaysia
-Maldives
-Mali
-Malta
-Marshall Islands
+"Falkland Islands (Malvinas)"
+"Faroe Islands"
+"Fiji"
+"Finland"
+"France"
+"French Guiana"
+"French Polynesia"
+"French Southern Territories"
+"Gabon"
+"Gambia"
+"Georgia"
+"Germany"
+"Ghana"
+"Gibraltar"
+"Greece"
+"Greenland"
+"Grenada"
+"Guadeloupe"
+"Guam"
+"Guatemala"
+"Guernsey"
+"Guinea"
+"Guinea-Bissau"
+"Guyana"
+"Haiti"
+"Heard Island and McDonald Islands"
+"Holy See (Vatican City State)"
+"Honduras"
+"Hong Kong"
+"Hungary"
+"Iceland"
+"India"
+"Indonesia"
+"Iran, Islamic Republic of"
+"Iraq"
+"Ireland"
+"Isle of Man"
+"Israel"
+"Italy"
+"Jamaica"
+"Japan"
+"Jersey"
+"Jordan"
+"Kazakhstan"
+"Kenya"
+"Kiribati"
+"Kuwait"
+"Kyrgyzstan"
+"Lao People's Democratic Republic"
+"Latvia"
+"Lebanon"
+"Lesotho"
+"Liberia"
+"Libya"
+"Liechtenstein"
+"Lithuania"
+"Luxembourg"
+"Macao"
+"Madagascar"
+"Malawi"
+"Malaysia"
+"Maldives"
+"Mali"
+"Malta"
+"Marshall Islands"
 Martinique
 Mauritania
 Mauritius
