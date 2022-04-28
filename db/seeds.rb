@@ -232,57 +232,57 @@ Panama
 Papua New Guinea
 Paraguay
 Peru
-Philippines">Philippines
-Pitcairn">Pitcairn
-Poland">Poland
-Portugal">Portugal
-Puerto Rico">Puerto Rico
-Qatar">Qatar
-Romania">Romania
-Russian Federation">Russian Federation
-Rwanda">Rwanda
-Réunion">Réunion
-Saint Barthélemy">Saint Barthélemy
-Saint Helena, Ascension and Tristan da Cunha">Saint Helena, Ascension and Tristan da Cunha
-Saint Kitts and Nevis">Saint Kitts and Nevis
-Saint Lucia">Saint Lucia
-Saint Martin (French part)">Saint Martin (French part)
-Saint Pierre and Miquelon">Saint Pierre and Miquelon
-Saint Vincent and the Grenadines">Saint Vincent and the Grenadines
-Samoa">Samoa
-San Marino">San Marino
-Sao Tome and Principe">Sao Tome and Principe
-Saudi Arabia">Saudi Arabia
-Senegal">Senegal
-Serbia">Serbia
-Seychelles">Seychelles
-Sierra Leone">Sierra Leone
-Singapore">Singapore
-Sint Maarten (Dutch part)">Sint Maarten (Dutch part)
-Slovakia">Slovakia
-Slovenia">Slovenia
-Solomon Islands">Solomon Islands
-Somalia">Somalia
-South Africa">South Africa
-South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands
-South Korea">South Korea
-South Sudan">South Sudan
-Spain">Spain
-Sri Lanka">Sri Lanka
-Sudan">Sudan
-Suriname">Suriname
-Svalbard and Jan Mayen">Svalbard and Jan Mayen
-Sweden">Sweden
-Switzerland">Switzerland
-Syrian Arab Republic">Syrian Arab Republic
-Taiwan">Taiwan
-Tajikistan">Tajikistan
-Tanzania">Tanzania
-Thailand">Thailand
-Timor-Leste">Timor-Leste
-Togo">Togo
-Tokelau">Tokelau
-Tonga">Tonga
+Philippines
+Pitcairn
+Poland
+Portugal
+Puerto Rico
+Qatar
+Romania
+Russian Federation
+Rwanda
+Réunion
+Saint Barthélemy
+Saint Helena, Ascension and Tristan da Cunha
+Saint Kitts and Nevis
+Saint Lucia
+Saint Martin (French part)
+Saint Pierre and Miquelon
+Saint Vincent and the Grenadines
+Samoa
+San Marino
+Sao Tome and Principe
+Saudi Arabia
+Senegal
+Serbia
+Seychelles
+Sierra Leone
+Singapore
+Sint Maarten (Dutch part)
+Slovakia
+Slovenia
+Solomon Islands
+Somalia
+South Africa
+South Georgia and the South Sandwich Islands
+South Korea
+South Sudan
+Spain
+Sri Lanka
+Sudan
+Suriname
+Svalbard and Jan Mayen
+Sweden
+Switzerland
+Syrian Arab Republic
+Taiwan
+Tajikistan
+Tanzania
+Thailand
+Timor-Leste
+Togo
+Tokelau
+Tonga
 Trinidad and Tobago">Trinidad and Tobago
 Tunisia">Tunisia
 Turkey">Turkey
