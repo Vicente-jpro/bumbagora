@@ -19,7 +19,7 @@
             <%= f.file_field :document, value: current_user.document %>
             
             <%= f.select :type_subscription, User.type_subscriptions %>
-            <%= f.select :name_country, countries %>
+            <%= form.collection_select :country_id, Country.order(:name_country), :id, :name_country %>
             <%= f.text_field :localization_description%>
             <%= f.email_field :email, autocomplete: "email" %>
            

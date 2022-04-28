@@ -7,12 +7,12 @@ class ApplicationController < ActionController::Base
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, 
         keys: [
-          :username, :type_subscription, :name_country, :localization_description, :image, :document
+          :username, :type_subscription, :country_id, :localization_description, :image, :document
           ])
           
       devise_parameter_sanitizer.permit(:account_update, 
         keys: [
-          :username, :type_subscription, :name_country, :localization_description, :image, :document
+          :username, :type_subscription, :country_id, :localization_description, :image, :document
           ])
     end
 end
