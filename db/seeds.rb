@@ -283,28 +283,28 @@ Timor-Leste
 Togo
 Tokelau
 Tonga
-Trinidad and Tobago">Trinidad and Tobago
-Tunisia">Tunisia
-Turkey">Turkey
-Turkmenistan">Turkmenistan
-Turks and Caicos Islands">Turks and Caicos Islands
-Tuvalu">Tuvalu
-Uganda">Uganda
-Ukraine">Ukraine
-United Arab Emirates">United Arab Emirates
-United Kingdom">United Kingdom
-United States">United States
-United States Minor Outlying Islands">United States Minor Outlying Islands
-Uruguay">Uruguay
-Uzbekistan">Uzbekistan
-Vanuatu">Vanuatu
-Venezuela">Venezuela
-Vietnam">Vietnam
-Virgin Islands, British">Virgin Islands, British
-Virgin Islands, U.S.">Virgin Islands, U.S.
-Wallis and Futuna">Wallis and Futuna
-Western Sahara">Western Sahara
-Yemen">Yemen
-Zambia">Zambia
-Zimbabwe">Zimbabwe
-Åland Islands">Åland Islands</select></div>
+Trinidad and Tobago
+Tunisia
+Turkey
+Turkmenistan
+Turks and Caicos Islands
+Tuvalu
+Uganda
+Ukraine
+United Arab Emirates
+United Kingdom
+United States
+United States Minor Outlying Islands
+Uruguay
+Uzbekistan
+Vanuatu
+Venezuela
+Vietnam
+Virgin Islands, British
+Virgin Islands, U.S
+Wallis and Futuna
+Western Sahara
+Yemen
+Zambia
+Zimbabwe
+Åland Islands
