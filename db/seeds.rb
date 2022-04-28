@@ -60,76 +60,76 @@ Category.create(name: "Others")
     )
 end
 
-Albania
-Algeria
-American Samoa
-Andorra
-Angola
-Anguilla
-Antarctica
-Antigua and Barbuda
-Argentina
-Armenia
-Aruba
-Australia
-Austria
-Azerbaijan
-Bahamas
-Bahrain
-Bangladesh
-Barbados
-Belarus
-Belgium
-Belize
-Benin
-Bermuda
-Bhutan
-Bolivia
-Bonaire, Sint Eustatius and Saba
-Bosnia and Herzegovina
-Botswana
-Bouvet Island
-Brazil
-British Indian Ocean Territory
-Brunei Darussalam
-Bulgaria
-Burkina Faso
-Burundi
-Cabo Verde
-Cambodia
-Cameroon
-Canada
-Cayman Islands
-Central African Republic
-Chad
-Chile
-China
-Christmas Island
-Cocos (Keeling) Islands
-Colombia
-Comoros
-Congo
-Congo, The Democratic Republic of the
-Cook Islands
-Costa Rica
-Croatia
-Cuba
-Curaçao
-Cyprus
-Czechia
-Côte d'Ivoire
-Denmark
-Djibouti
-Dominica
-Dominican Republic
-Ecuador
-Egypt
-El Salvador
-Equatorial Guinea
-Eritrea
-Estonia
-Eswatini
-Ethiopia
+"Albania"
+"Algeria"
+"American Samoa"
+"Andorra"
+"Angola"
+"Anguilla"
+"Antarctica"
+"Antigua and Barbuda"
+"Argentina"
+"Armenia"
+"Aruba"
+"Australia"
+"Austria"
+"Azerbaijan"
+"Bahamas"
+"Bahrain"
+"Bangladesh"
+"Barbados"
+"Belarus"
+"Belgium"
+"Belize"
+"Benin"
+"Bermuda"
+"Bhutan"
+"Bolivia"
+"Bonaire, Sint Eustatius and Saba"
+"Bosnia and Herzegovina"
+"Botswana"
+"Bouvet Island"
+"Brazil"
+"British Indian Ocean Territory"
+"Brunei Darussalam"
+"Bulgaria"
+"Burkina Faso"
+"Burundi"
+"Cabo Verde"
+"Cambodia"
+"Cameroon"
+"Canada"
+"Cayman Islands"
+"Central African Republic"
+"Chad"
+"Chile"
+"China"
+"Christmas Island"
+"Cocos (Keeling) Islands"
+"Colombia"
+"Comoros"
+"Congo"
+"Congo, The Democratic Republic of the"
+"Cook Islands"
+"Costa Rica"
+"Croatia"
+"Cuba"
+"Curaçao"
+"Cyprus"
+"Czechia"
+"Côte d'Ivoire"
+"Denmark"
+"Djibouti"
+"Dominica"
+"Dominican Republic"
+"Ecuador"
+"Egypt"
+"El Salvador"
+"Equatorial Guinea"
+"Eritrea"
+"Estonia"
+"Eswatini"
+"Ethiopia"
 Falkland Islands (Malvinas)
 Faroe Islands
 Fiji
