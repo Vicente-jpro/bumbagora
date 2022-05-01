@@ -1,46 +1,47 @@
 <main class="container col-lg-6 ">
-  <div class="d-flex justify-content-center my-4">
-    <%= image_tag(current_user.image.variant(:thumb), class:"image-edit-profile") if current_user.image.attached? %>
-  </div>
+
 
   <div class="card">
     <div class="card-body">
       <div class="card-title">
       	<h4 class="text-center"> Edit <%= resource_name.to_s.humanize %></h4>
+        <div class="d-flex justify-content-center my-4">
+          <%= image_tag(current_user.image.variant(:thumb), class:"image-edit-profile") if current_user.image.attached? %>
+        </div>
       </div>
       <div class="row my-2">
 
         <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
 
-            <%= f.text_field :username,  autofocus: true %> 
+            <%= f.text_field :username,  autofocus: true %>
             <%= f.file_field :image, value: current_user.image %>
 
             <%= f.file_field :document, value: current_user.document %>
-            
+
             <%= f.select :type_subscription, User.type_subscriptions %>
-            <%= f.select :name_country, countries %>
+            <%= f.collection_select :country_id, Country.order(:name_country), :id, :name_country %>
             <%= f.text_field :localization_description%>
             <%= f.email_field :email, autocomplete: "email" %>
-           
+
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
           <% end %>
 
-          
+
             <i>(leave blank if you don't want to change it)</i>
             <%= f.password_field :password, autocomplete: "new-password" %>
             <% if @minimum_password_length %>
               <br />
               <em><%= @minimum_password_length %> characters minimum</em>
             <% end %>
-      
 
-          
+
+
             <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
             <%= f.password_field :current_password, autocomplete: "current-password" %>
-          
-          
+
+
           <div class="actions mb-3 d-grid gap-2 text-center">
             <%= f.submit "Update", class:"btn btn-success" %>
           </div>

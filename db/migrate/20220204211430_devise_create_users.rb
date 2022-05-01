@@ -6,7 +6,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
 
       ## User details
       t.string :username
-      t.string  :name_country
       t.string :localization_description
       
       ## Database authenticatable
