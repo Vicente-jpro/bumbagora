@@ -270,22 +270,22 @@ Country.create(name_country:"Åland Islands")
 
 
 
-1.times do 
+1.times do
    vicente = User.new({
         username: "Vicente",
         country_id: 1,
-        localization_description: "Luanda/Kilamba", 
+        localization_description: "Luanda/Kilamba",
         email: "Vicente@gmail.com",
         password: "Vicente",
         password_confirmation: "Vicente",
-        type_subscription: "Company")
+        type_subscription: "Company"
         })
   vicente.save
 
    galinha = User.new({
     username: "Galinha",
     country_id: 9,
-    localization_description: "Luanda/Kilamba", 
+    localization_description: "Luanda/Kilamba",
     email: "galinha@gmail.com",
     password: "galinha",
     password_confirmation: "galinha",
@@ -303,9 +303,9 @@ Category.create(name: "Others")
 6.times do |job_number|
 
     Job.create(
-        title: "Ruby on rails Dev #{job_number}", 
-        description: "Developer new feacture", 
-        salary: 4500*job_number, 
+        title: "Ruby on rails Dev #{job_number}",
+        description: "Developer new feacture",
+        salary: 4500*job_number,
         category_id: job_number,
         type_job: "Presencial",
         expiry_date: "2022/#{job_number}/14",
@@ -313,9 +313,9 @@ Category.create(name: "Others")
 
     )
     Job.create(
-        title: "Phython Dev #{job_number}", 
-        description: "Developer new application", 
-        salary: 4500*job_number, 
+        title: "Phython Dev #{job_number}",
+        description: "Developer new application",
+        salary: 4500*job_number,
         category_id: job_number,
         type_job: "Remote",
         expiry_date: "2022/#{job_number}/14",
