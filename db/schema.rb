@@ -84,6 +84,10 @@ ActiveRecord::Schema.define(version: 2022_05_01_144329) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at", precision: 6
     t.datetime "remember_created_at", precision: 6
+    t.string "confirmation_token"
+    t.datetime "confirmed_at", precision: 6
+    t.datetime "confirmation_sent_at", precision: 6
+    t.string "unconfirmed_email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "type_subscription", default: "Candidate"
