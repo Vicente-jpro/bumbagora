@@ -275,7 +275,7 @@ Country.create(name_country:"Åland Islands")
         username: "Vicente",
         country_id: 1,
         localization_description: "Luanda/Kilamba",
-        email: "Vicente@gmail.com",
+        email: "vicenteviciii@gmail.com",
         password: "Vicente",
         password_confirmation: "Vicente",
         type_subscription: "Company"
@@ -286,7 +286,7 @@ Country.create(name_country:"Åland Islands")
     username: "Galinha",
     country_id: 9,
     localization_description: "Luanda/Kilamba",
-    email: "galinha@gmail.com",
+    email: "vicente.simao.rails@gmail.com",
     password: "galinha",
     password_confirmation: "galinha",
     type_subscription: "Candidate"
