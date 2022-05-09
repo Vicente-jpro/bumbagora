@@ -7,7 +7,7 @@
 #   Character.create(name: Country.create(name_country:"Luke"), movie: movies.first)
 
 
-
+puts "Cadastrando os paises..."
 Country.create(name_country: "Albania")
 Country.create(name_country:"Algeria")
 Country.create(name_country:"American Samoa")
@@ -259,6 +259,7 @@ Country.create(name_country:"Yemen")
 Country.create(name_country:"Zambia")
 Country.create(name_country:"Zimbabwe")
 Country.create(name_country:"Åland Islands")
+puts "Paises cadastrado com sucesso."
 
 
 
@@ -267,8 +268,7 @@ Country.create(name_country:"Åland Islands")
 
 
 
-
-
+puts "Cadastrando usuários..."
 
 1.times do
    vicente = User.new({
@@ -294,12 +294,16 @@ Country.create(name_country:"Åland Islands")
     galinha.save
 
 end
+puts "Usuários cadastrado com sucesso."
 
+puts "Cadastrando categorias..."
 Category.create(name: "Programming")
 Category.create(name: "Construction")
 Category.create(name: "Movie")
 Category.create(name: "Others")
+puts "Categorias cadastradas com sucesso"
 
+puts "Cadastrando oportunidades de emprego."
 6.times do |job_number|
 
     Job.create(
@@ -323,3 +327,4 @@ Category.create(name: "Others")
 
     )
 end
+puts "Oportunidades cadastradas com sucesso."
