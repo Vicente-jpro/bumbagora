@@ -18,7 +18,7 @@
       <% end %>
 
       <% if @page_name_index %>
-        <%= link_to "Mostrar está oportunidade", job, class:"btn btn-info" %>
+        <%= link_to "Mostrar está oportunidade", job, class:"btn btn-primary" %>
       <% end %>
       <% if user_have_applied?(job) %>
         <strong class="text-success">Applied</strong>
@@ -30,7 +30,7 @@
 
         <% if is_the_owner_of_the_job?(job) %>
 
-          <%= link_to "Editar está oportunidade", edit_job_path(job), class:"btn btn-info" %>
+          <%= link_to "Editar está oportunidade", edit_job_path(job), class:"btn btn-warning" %>
 
           <%= link_to "Candidatos", candidates_users_job_path(job), class:"btn btn-secondary" %>
 
