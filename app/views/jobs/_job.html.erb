@@ -21,7 +21,7 @@
         <%= link_to "Mostrar está oportunidade", job, class:"btn btn-primary" %>
       <% end %>
       <% if user_have_applied?(job) %>
-        <strong class="text-success">Applied</strong>
+        <strong class="text-success">Você já se candidatou a está vaga</strong>
 
       <% elsif !is_the_owner_of_the_job?(job) %>
          <%= link_to "Candidatar-me agora", apply_users_job_path(job), class:"btn btn-success" %>  
