@@ -18,23 +18,23 @@
       <% end %>
 
       <% if @page_name_index %>
-        <%= link_to "Show this job", job, class:"btn btn-info" %>
+        <%= link_to "Mostrar está oportunidade", job, class:"btn btn-info" %>
       <% end %>
       <% if user_have_applied?(job) %>
         <strong class="text-success">Applied</strong>
 
       <% elsif !is_the_owner_of_the_job?(job) %>
-         <%= link_to "Apply now", apply_users_job_path(job), class:"btn btn-success" %>  
+         <%= link_to "Candidatar-me agora", apply_users_job_path(job), class:"btn btn-success" %>  
       <% end %>
 
 
         <% if is_the_owner_of_the_job?(job) %>
 
-          <%= link_to "Edit this job", edit_job_path(job), class:"btn btn-info" %>
+          <%= link_to "Editar está oportunidade", edit_job_path(job), class:"btn btn-info" %>
 
-          <%= link_to "Candidates", candidates_users_job_path(job), class:"btn btn-secondary" %>
+          <%= link_to "Candidatos", candidates_users_job_path(job), class:"btn btn-secondary" %>
 
-          <%= button_to "Destroy this job", job, method: :delete, class:"btn btn-link", form:{ data: { turbo_confirm: "Are you sure?"} }  %>
+          <%= button_to "Destroy this job", job, method: :delete, class:"btn btn-link", form:{ data: { turbo_confirm: "Tens certeza?"} }  %>
         <% end %>
 
 
