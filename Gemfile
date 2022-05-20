@@ -49,6 +49,11 @@ gem "image_processing", "~> 1.2"
 gem "bootstrap", "~> 5.0"
 gem "bootstrap_form", "~> 5.0"
 
+
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

@@ -5,7 +5,7 @@ class UsersJobsController < ApplicationController
 
     def index 
       @user = current_user
-      @user.jobs.find_jobs_ordered_by_id_desc
+      @user.jobs.find_jobs_ordered_by_id_desc.page(params[:page]).per(8)
     end
 
    # POST /users_jobs/:id/apply

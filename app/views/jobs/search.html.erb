@@ -7,6 +7,9 @@
             <% @jobs.each do |job| %>
                 <%= render job %>
             <% end %>
+            <div class="d-flex justify-content-center">
+                <%= paginate @jobs, windows:2 %>
+            </div>
         <% else %>
             <h3> Nenhuma oportunidade encontrada </h3>
         <% end %>
