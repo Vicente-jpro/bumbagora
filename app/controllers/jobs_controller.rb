@@ -7,12 +7,12 @@ class JobsController < ApplicationController
   include JobsViewsConcern
 
   def search 
-    @jobs = Job.find_jobs_by_title_or_category_name(params[:job]).page(1).per(9)
+    @jobs = Job.find_jobs_by_title_or_category_name(params[:job]).page(params[:page]).per(8)
     @page_name_index = page_name("index")
   end
   
   def index
-    @jobs = Job.find_jobs_ordered_by_id_desc.page(1).per(2)
+    @jobs = Job.find_jobs_ordered_by_id_desc.page(params[:page]).per(8)
     @page_name_index = page_name("index")
   end
 
