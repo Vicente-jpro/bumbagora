@@ -1,6 +1,7 @@
 <h3>Oportunidades</h3>
 
 <div class="container col-sm-9" id="jobs">
+ <%= paginate @jobs %>
  
     <% @jobs.each do |job| %>
         <%= render job %>

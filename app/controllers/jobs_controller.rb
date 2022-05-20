@@ -12,7 +12,7 @@ class JobsController < ApplicationController
   end
   
   def index
-    @jobs = Job.find_jobs_ordered_by_id_desc.page(1).per(9)
+    @jobs = Job.find_jobs_ordered_by_id_desc.page(1).per(2)
     @page_name_index = page_name("index")
   end
 
