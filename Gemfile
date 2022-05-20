@@ -52,7 +52,12 @@ gem "bootstrap_form", "~> 5.0"
 
 # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
 gem 'kaminari'
-gem 'bootstrap-kaminari-views'
+
+# Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting, Rails related I18n stuff
+gem 'rails-i18n', '~> 7.0.0'
+
+# Translations for the devise gem
+gem 'devise-i18n'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
