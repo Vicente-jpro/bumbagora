@@ -5,13 +5,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :image do |attachable|
-    attachable.variant :thumb, resize_to_limit: [155, 155]
+    attachable.variant :thumb, resize_to_limit: [100, 100]
   end
   has_one_attached :document
 
   has_many :users_jobs
   has_many :jobs, through: :users_jobs, dependent: :destroy
-  has_one :country
+  belongs_to :country
 
   enum type_subscription: {Candidate: "Candidate", Company: "Company"}
 

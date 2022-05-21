@@ -2,9 +2,10 @@
   <div class="card text-center" id="<%= dom_id candidate%>" >
     <div class="card-body">
       <h5 class="card-title"><%= candidate.username %></h5>
-      <h6 class="card-subtitle mb-2 text-muted"><%= candidate.name_country %></h6>
+      <h6 class="card-subtitle mb-2 text-muted"><%= candidate.country.name_country %>, <%= candidate.localization_description %> </h6>
       <p class="card-text">
-        <%= candidate.localization_description %>
+        
+        <%=  display_user_image(candidate)%> 
         <br>
         <%= candidate.email %> 
       </p>
