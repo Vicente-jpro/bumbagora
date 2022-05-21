@@ -11,8 +11,11 @@
           <%= image_tag(user.image) if user.image.attached?%>
         </div>
 
+
         <div class="col">
-          <p class="card-text"><%= job.description %></p>
+          <p class="card-text" id="text"><%= job.description  %></p>
+          
+
           <% if time_ago_in_days?(job)  %>
              <p class="text-time-deadline">
           <% else %>
