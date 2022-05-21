@@ -8,12 +8,12 @@
         
         <div class="col-sm-3">
           <% user = get_user_by_job(job) %>
-          <%= image_tag(user.image) if user.image.attached?%>
+          <%= display_user_image(user)%> 
         </div>
 
 
         <div class="col">
-          <p class="card-text" id="text"><%= job.description  %></p>
+          <p class="card-text" ><%= job.description  %></p>
           
 
           <% if time_ago_in_days?(job)  %>

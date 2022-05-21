@@ -280,18 +280,30 @@ puts "Cadastrando usuários..."
         password_confirmation: "Vicente",
         type_subscription: "Company"
         })
+   vicente.image.attach(
+        io: File.open(Rails.root.join('app', 'assets', 'images', 'pacaça.jpeg')), 
+        filename: 'pacaça.jpeg', 
+        content_type: 'image/jpeg'
+    )
   vicente.save
 
    galinha = User.new({
     username: "Galinha",
     country_id: 9,
     localization_description: "Luanda/Kilamba",
-    email: "vicente.simao.rails@gmail.com",
+    email: "galinha@gmail.com",
     password: "galinha",
     password_confirmation: "galinha",
     type_subscription: "Candidate"
     })
-    galinha.save
+   
+    galinha.image.attach(
+        io: File.open(Rails.root.join('app', 'assets', 'images', 'pacaça.jpeg')), 
+        filename: 'pacaça.jpeg', 
+        content_type: 'image/jpeg'
+    )
+     galinha.save
+
 
 end
 puts "Usuários cadastrado com sucesso."
