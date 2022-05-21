@@ -2,41 +2,52 @@
     <div class="card-body">
       <h5 class="card-title"><%= job.title %></h5>
       <h6 class="card-subtitle mb-2 text-muted"><%= job.category.name %>, <%= job.type_job %></h6>
-      <p class="card-text"><%= job.description %></p>
+      
 
-      <% if time_ago_in_days?(job)  %>
-         <p class="text-time-deadline">
-      <% else %>
-         <p class="text-time">
-      <% end %>
-          Created at: <%= time_ago_in_words(job.created_at) %> <br>
-          Deadline: 30 days
-         </p>
+      <div class="row">
+        
+        <div class="col-sm-3">
+          <% user = get_user_by_job(job) %>
+          <%= image_tag(user.image) if user.image.attached?%>
+        </div>
 
-      <% if day_is_thirty(job)%>
-        <% job_destroy_path(job) %>
-      <% end %>
+        <div class="col">
+          <p class="card-text"><%= job.description %></p>
+          <% if time_ago_in_days?(job)  %>
+             <p class="text-time-deadline">
+          <% else %>
+             <p class="text-time">
+          <% end %>
+              Created at: <%= time_ago_in_words(job.created_at) %> <br>
+              Deadline: 30 days
+             </p>
 
-      <% if @page_name_index %>
-        <%= link_to "Mostrar está oportunidade", job, class:"btn btn-primary" %>
-      <% end %>
-      <% if user_have_applied?(job) %>
-        <strong class="text-success">Você já se candidatou a está vaga</strong>
+          <% if day_is_thirty(job)%>
+            <% job_destroy_path(job) %>
+          <% end %>
 
-      <% elsif !is_the_owner_of_the_job?(job) %>
-         <%= link_to "Candidatar-me agora", apply_users_job_path(job), class:"btn btn-success" %>  
-      <% end %>
+          <% if @page_name_index %>
+            <%= link_to "Mostrar está oportunidade", job, class:"btn btn-primary" %>
+          <% end %>
+          <% if user_have_applied?(job) %>
+            <strong class="text-success">Você já se candidatou a está vaga</strong>
+
+          <% elsif !is_the_owner_of_the_job?(job) %>
+             <%= link_to "Candidatar-me agora", apply_users_job_path(job), class:"btn btn-success" %>  
+          <% end %>
 
 
-        <% if is_the_owner_of_the_job?(job) %>
+          <% if is_the_owner_of_the_job?(job) %>
 
-          <%= link_to "Editar está oportunidade", edit_job_path(job), class:"btn btn-warning" %>
+            <%= link_to "Editar está oportunidade", edit_job_path(job), class:"btn btn-warning" %>
 
-          <%= link_to "Candidatos", candidates_users_job_path(job), class:"btn btn-secondary" %>
+            <%= link_to "Candidatos", candidates_users_job_path(job), class:"btn btn-secondary" %>
 
-          <%= button_to "Eliminar está oportunidade", job, method: :delete, class:"btn btn-link", form:{ data: { turbo_confirm: "Tens a certeza?"} }  %>
-        <% end %>
+            <%= button_to "Eliminar está oportunidade", job, method: :delete, class:"btn btn-link", form:{ data: { turbo_confirm: "Tens a certeza?"} }  %>
+          <% end %>
 
+        </div>  
+      </div>
 
     </div>
   </div>
