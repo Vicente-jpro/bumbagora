@@ -27,4 +27,9 @@ module JobsHelper
      def day_is_thirty(job)
        time_ago_in_words(job.created_at) == "30 days"
      end
+
+
+     def get_user_by_job(job)
+       return User.find(job.user_id)
+     end
 end

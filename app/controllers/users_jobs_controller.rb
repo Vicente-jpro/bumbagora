@@ -18,7 +18,7 @@ class UsersJobsController < ApplicationController
       user_job_registration(@job)
       flash[:notice] = "Subscrição feita com sucesso para vaga #{@job.title}" 
     end  
-    @jobs ||= Job.find_jobs_by_id_greater_than(@job)
+    @jobs ||= Job.find_jobs_by_id_greater_than(@job).page(params[:page]).per(8)
     render "jobs/index", job: @jobs 
 
    end
