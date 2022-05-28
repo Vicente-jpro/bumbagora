@@ -30,6 +30,7 @@ class UsersJobsController < ApplicationController
 
    # GET /users_jobs/:user_id/show
    def show 
+    @candidate = User.find(params[:id])
    end
 
    private 
