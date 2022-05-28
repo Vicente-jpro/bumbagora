@@ -4,8 +4,8 @@ Rails.application.routes.draw do
     member do 
       get "apply"
       get "candidates"
+      get "show"
     end
-   
   end
 
 

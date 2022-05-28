@@ -2,9 +2,9 @@
 <h3>Candidatos para oportunidade "<%= @candidates.title%>" </h3>
 
 <div class="container col-sm-9" id="candidates">
-  <%= turbo_frame_tag "candidates" do %>
+
     <% @candidates.users.each do |candidate| %>
         <%= render "users_jobs/candidate", candidate:  candidate%>
     <% end %>
-  <% end %>
+ 
 </div>

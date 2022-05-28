@@ -23,8 +23,14 @@ class UsersJobsController < ApplicationController
 
    end
 
+   # GET /users_jobs/:id/candidates
    def candidates
      @candidates = @job
+   end
+
+   # GET /users_jobs/:user_id/show
+   def show 
+    @candidate = User.find(params[:id])
    end
 
    private 
