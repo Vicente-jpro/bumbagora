@@ -59,6 +59,9 @@ gem 'rails-i18n', '~> 7.0.0'
 # Translations for the devise gem
 gem 'devise-i18n'
 
+# ActiveStorage blob validator.
+gem 'activestorage-validator'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
