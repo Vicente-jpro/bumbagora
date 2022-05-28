@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_many :jobs, through: :users_jobs, dependent: :destroy
   belongs_to :country
 
+  validates_presence_of :country
+  
   enum type_subscription: {Candidate: "Candidate", Company: "Company"}
 
   scope :find_by_id, ->(user) { where(id: user.id)}
