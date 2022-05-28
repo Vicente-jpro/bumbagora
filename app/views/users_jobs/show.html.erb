@@ -10,6 +10,14 @@
         <br>
         <%= @candidate.email %> 
       </p>
+
+
+  
+      <% if @candidate.document.representable? %>
+        <%= image_tag @candidate.document.representation(resize_to_limit: [10000, 10000]) %>
+      <% else %>
+        <h3>Este usuário não tem um documento.</h3>
+      <% end %>
     </div>
   </div>
   
