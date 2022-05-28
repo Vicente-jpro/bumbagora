@@ -288,12 +288,12 @@ puts "Cadastrando usuários..."
   vicente.save
 
    galinha = User.new({
-    username: "Galinha",
+    username: "Vicente Simão",
     country_id: 9,
     localization_description: "Luanda/Kilamba",
-    email: "galinha@gmail.com",
-    password: "galinha",
-    password_confirmation: "galinha",
+    email: "vicente.simao.rails@gmail.com",
+    password: "Vicente",
+    password_confirmation: "Vicente",
     type_subscription: "Candidate"
     })
    
