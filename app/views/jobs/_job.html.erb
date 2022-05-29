@@ -1,7 +1,20 @@
   <div class="card" >
     <div class="card-body">
-      <h5 class="card-title"><%= job.title %></h5>
-      <h6 class="card-subtitle mb-2 text-muted"><%= job.category.name %>, <%= job.type_job %></h6>
+      <div class="row">
+        <div class="col-sm-3">
+          <h5 class="card-title"><%= job.title %></h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            <%= job.category.name %>, 
+            <%= job.type_job %>
+          </h6>
+        </div>
+        <div class="col">
+          <% if user_have_applied?(job) %>
+          <strong class="text-success">Você já se candidatou a está vaga</strong>
+          <% end %>
+        </div>
+      </div>
+      
       
 
       <div class="row">
@@ -30,27 +43,29 @@
           <% end %>
 
           <% if @page_name_index %>
-            <%= link_to "Mostrar está oportunidade", job, class:"btn btn-primary" %>
+            <%= link_to "Mostrar está oportunidade", job, class:"btn btn-outline-primary my-1" %>
           <% end %>
           <% if user_have_applied?(job) %>
-            <strong class="text-success">Você já se candidatou a está vaga</strong>
+
+            <%= link_to "Retirar a minha candidatura", apply_users_job_path(job), class:"btn btn-outline-danger my-1" %> 
 
           <% elsif !is_the_owner_of_the_job?(job) %>
-             <%= link_to "Candidatar-me agora", apply_users_job_path(job), class:"btn btn-success" %>  
+             <%= link_to "Candidatar-me agora", apply_users_job_path(job), class:"btn btn-outline-success my-1" %>  
           <% end %>
 
 
           <% if is_the_owner_of_the_job?(job) %>
 
-            <%= link_to "Editar está oportunidade", edit_job_path(job), class:"btn btn-warning" %>
+            <%= link_to "Editar está oportunidade", edit_job_path(job), class:"btn btn-warning my-1" %>
 
-            <%= link_to "Candidatos", candidates_users_job_path(job), class:"btn btn-secondary" %>
+            <%= link_to "Candidatos", candidates_users_job_path(job), class:"btn btn-outline-secondary my-1" %>
             
 
-            <%= button_to "Eliminar está oportunidade", job, method: :delete, class:"btn btn-link", form:{ data: { turbo_confirm: "Tens a certeza?"} }  %>
+            <%= button_to "Eliminar está oportunidade", job, method: :delete, class:"btn btn-outline-link my-1", form:{ data: { turbo_confirm: "Tens a certeza?"} }  %>
           <% end %>
 
-        </div>  
+        </div> 
+
       </div>
 
     </div>
