@@ -4,13 +4,11 @@
     <div class="card-body">
       <h5 class="card-title"><%= @candidate.username %></h5>
       <h6 class="card-subtitle mb-2 text-muted"><%= @candidate.country.name_country %>, <%= @candidate.localization_description %> </h6>
-      <p class="card-text">
-		<p>Usuario mostrado</p>        
+      <p class="card-text">       
         <%=  display_user_image(@candidate)%> 
         <br>
         <%= @candidate.email %> 
       </p>
-
 
   
       <% if @candidate.document.representable? %>

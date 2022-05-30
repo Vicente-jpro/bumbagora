@@ -1,6 +1,6 @@
 class UsersJobsController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_job, only: %i[ apply candidates ]
+    before_action :set_job, only: %i[ apply candidates destroy]
     include JobsConcern
 
     def index 
@@ -26,6 +26,14 @@ class UsersJobsController < ApplicationController
    # GET /users_jobs/:id/candidates
    def candidates
      @candidates = @job
+   end
+
+   # GET 
+   def destroy 
+  
+     user_job = UsersJob.find_user_registed_to_a_job(@job, current_user)
+     UsersJob.delete(user_job)
+
    end
 
    # GET /users_jobs/:user_id/show
