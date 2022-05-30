@@ -33,7 +33,13 @@ class UsersJobsController < ApplicationController
   
      user_job = UsersJob.find_user_registed_to_a_job(@job, current_user)
      UsersJob.delete(user_job)
+   
+     respond_to do |format|
+      format.html { redirect_to jobs_url, alert: "Candidatura eliminada com sucesso." }
+      format.json { head :no_content }
+    end
 
+    
    end
 
    # GET /users_jobs/:user_id/show
