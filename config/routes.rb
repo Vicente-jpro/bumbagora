@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
   
-  resources :users_jobs, only: [:index, :create, :destory] do 
+  resources :users_jobs, only: [:index, :create] do 
     member do 
       get "apply"
       get "candidates"
       get "show"
+      post "destroy", as: "destroy"
     end
+
   end
 
 
-  delete '/jobs/:id', to: 'jobs#destroy', as: 'job_destroy'
   resources :jobs do
     collection do 
       get "search" 
