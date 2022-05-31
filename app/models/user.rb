@@ -11,9 +11,11 @@ class User < ApplicationRecord
   has_one_attached :document, dependent: :destroy
 
   has_many :users_jobs, dependent: :destroy
-  has_many :jobs, through: :users_jobs, dependent: :destroy
+  has_many :jobs, through: :users_jobs
   belongs_to :country
 
+  has_many :jobs, dependent: :destroy
+  
   validates_presence_of :country
   validates :image, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg'], size_range: 1..(2.megabytes) }
   #validates :document, blob: { content_type: :pdf, size_range: 1..(2.megabytes) }

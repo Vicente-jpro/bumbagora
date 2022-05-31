@@ -35,7 +35,7 @@ class UsersJobsController < ApplicationController
      UsersJob.delete(user_job)
    
      respond_to do |format|
-      format.html { redirect_to jobs_url, alert: "Candidatura eliminada com sucesso." }
+      format.html { redirect_to jobs_url, notice: "Candidatura eliminada com sucesso." }
       format.json { head :no_content }
     end
 

@@ -299,8 +299,8 @@ puts "Cadastrando usuários..."
     })
    
     galinha.image.attach(
-        io: File.open(Rails.root.join('app', 'assets', 'images', 'pacaça.jpeg')), 
-        filename: 'pacaça.jpeg', 
+        io: File.open(Rails.root.join('app', 'assets', 'images', 'word nature conservation.jpeg')), 
+        filename: 'word nature conservation.jpeg', 
         content_type: 'image/jpeg'
     )
    galinha.save

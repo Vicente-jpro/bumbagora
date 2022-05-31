@@ -3,8 +3,9 @@ class Job < ApplicationRecord
   has_rich_text :description
 
   belongs_to :category
+  belongs_to :user
 
-  has_many :users_jobs
+  has_many :users_jobs, dependent: :destroy
   has_many :users, through: :users_jobs
 
   validates_presence_of :title, :category, :type_job, :description
