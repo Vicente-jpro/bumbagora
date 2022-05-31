@@ -270,9 +270,9 @@ puts "Paises cadastrado com sucesso."
 
 puts "Cadastrando usuários..."
 
-1.times do
+
    vicente = User.new({
-        username: "Vicente",
+        username: Faker::Name.name,
         country_id: 1,
         localization_description: "Luanda/Kilamba",
         email: "vicenteviciii@gmail.com",
@@ -287,8 +287,9 @@ puts "Cadastrando usuários..."
     )
   vicente.save
 
+
    galinha = User.new({
-    username: "Vicente Simão",
+    username: Faker::Company.name,
     country_id: 9,
     localization_description: "Luanda/Kilamba",
     email: "vicente.simao.rails@gmail.com",
@@ -302,10 +303,10 @@ puts "Cadastrando usuários..."
         filename: 'pacaça.jpeg', 
         content_type: 'image/jpeg'
     )
-     galinha.save
+   galinha.save
 
 
-end
+
 puts "Usuários cadastrado com sucesso."
 
 puts "Cadastrando categorias..."
@@ -319,22 +320,22 @@ puts "Cadastrando oportunidades de emprego."
 6.times do |job_number|
 
     Job.create(
-        title: "Ruby on rails Dev #{job_number}",
-        description: "Developer new feacture",
+        title: Faker::Food.dish,
+        description: Faker::Food.description,
         salary: 4500*job_number,
         category_id: job_number,
         type_job: "Presencial",
-        expiry_date: "2022/#{job_number}/14",
+        expiry_date: Faker::Date.between(from: '2022-04-23', to: '2014-09-25'),
         user_id: 1
 
     )
     Job.create(
-        title: "Phython Dev #{job_number}",
-        description: "Developer new application",
+        title: Faker::Food.dish,
+        description: Faker::Food.description,
         salary: 4500*job_number,
         category_id: job_number,
         type_job: "Remote",
-        expiry_date: "2022/#{job_number}/14",
+        expiry_date: Faker::Date.between(from: '2022-04-23', to: '2014-09-25'),
         user_id: 2
 
     )

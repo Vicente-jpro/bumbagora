@@ -62,6 +62,9 @@ gem 'devise-i18n'
 # ActiveStorage blob validator.
 gem 'activestorage-validator'
 
+# A library for generating fake data such as names, addresses, and phone numbers.
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
