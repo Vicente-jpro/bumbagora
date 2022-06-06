@@ -8,12 +8,9 @@ Click on link to test this app
 # Sistema Vaga de Emprego com Ruby on Rails "Bumbagora". 
 
 
-## Um recrutador ou empresa pode postar várias vagas.
+### Um recrutador ou empresa pode postar várias vagas.
  
 ### As vagas podem ser do tipo:
-<ul>
-	<li> </li>
-</ul>
 
 <ul>
 	<li>Remota</li>
@@ -22,28 +19,53 @@ Click on link to test this app
 </ul>
 
 
-Cada vaga possui uma determinada categoria:
+<p>Cada vaga possui uma determinada categoria: <br />
 Ex: Limpeza, Programação, Saúde etc.
-
+</p>
 Um candidato pode concorrer para várias vagas.
 
-Filtros/Pesquisas
+### Filtros/Pesquisas
 Empresa ou Recrutador:
-Pesquisar candidatos 
-Pesquisar candidatos inscritos na sua vaga.
-Candidato:
-Pesquisar vagas por categoria
-Pesquisar vagas por empresa.
-Pesquisa padrão
-As vagas devem ser ordenadas da mais recente para a mais antiga.
+
+<ul>
+	<li> Pesquisar candidatos inscritos na sua vaga. </li>
+	<li> Candidato: </li>
+	<li> Pesquisar vagas por categoria </li>
+	<li> Pesquisar vagas por empresa. </li>
+</ul>
+ 
 
 
-Eliminar vagas
-As vagas com mais de 1 meses são excluídas da aplicação automaticamente.
 
 
-Restrições
-A empresa ou recrutador não pode postar, editar, atualizar ou eliminar uma  vaga sem ser autenticado.
-A empresa ou recrutador não pode editar seu perfil ou eliminar a sua conta sem ser autenticado.
-O candidato não pode concorrer a uma vaga sem ser autenticado.
-O Candidato não pode editar seu perfil ou eliminar a sua conta sem ser autenticado
+### Pesquisa padrão
+<ul>
+	<li> As vagas devem ser ordenadas da mais recente para a mais antiga. </li>
+</ul>
+
+
+### Eliminar vagas
+<ul>
+	<li> As vagas com mais de 1 meses são excluídas da aplicação automaticamente. </li>
+</ul>
+ 
+
+### Restrições
+<ul>
+	<li> 
+		A empresa ou recrutador não pode postar, editar, atualizar ou eliminar uma  vaga sem ser autenticado. 
+	</li>
+	<li> 
+	 	A empresa ou recrutador não pode editar seu perfil ou eliminar a sua conta sem ser autenticado. 
+	</li>
+	<li> 
+		O candidato não pode concorrer a uma vaga sem ser autenticado.
+	</li>
+	<li> 
+		O Candidato não pode editar seu perfil ou eliminar a sua conta sem ser autenticado
+	</li>
+</ul>
+
+
+
+
