@@ -1,19 +1,26 @@
 # README
 
 Click on link to test this app 
-###<a href="[https://unicanada.net/list-of-universities-in-nova-scotia/](https://bumbagora.herokuapp.com/)" target="_blank">[Bumbagora app](https://www.bumbagora.com/)</a> 
+ <a href="[https://unicanada.net/list-of-universities-in-nova-scotia/](https://bumbagora.herokuapp.com/)" target="_blank">[Bumbagora app](https://www.bumbagora.com/)</a> 
 
 
 
-##Desenvolve um Sistema Vaga de Emprego com Ruby on Rails. 
-##O nome do sistema é Bumbagora
+# Sistema Vaga de Emprego com Ruby on Rails "Bumbagora". 
 
 
-##Um recrutador ou empresa pode postar várias vagas.
+## Um recrutador ou empresa pode postar várias vagas.
  
-###As vagas podem ser do tipo:
-Remota
-Presencial
+### As vagas podem ser do tipo:
+<ul>
+	<li> </li>
+</ul>
+
+<ul>
+	<li>Remota</li>
+	<li>Presencial</li>
+	<li>Híbrida</li>
+</ul>
+
 
 Cada vaga possui uma determinada categoria:
 Ex: Limpeza, Programação, Saúde etc.
