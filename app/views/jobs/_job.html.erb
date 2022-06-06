@@ -26,8 +26,16 @@
 
 
         <div class="col">
-          <p class="card-text" ><%= job.description  %></p>
+          <% if @page_name_index %>
+            <p class="card-text" ><%=  truncate_html(job.description.to_s, length: 100 ) %></p>
           
+            
+          <% else %>
+            <p class="card-text" ><%= job.description %></p>
+          <% end %>
+
+
+
 
           <% if time_ago_in_days?(job)  %>
              <p class="text-time-deadline">
