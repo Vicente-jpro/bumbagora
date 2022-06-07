@@ -273,7 +273,7 @@ puts "Cadastrando usuários..."
 
    vicente = User.new({
         username: Faker::Name.name,
-        country_id: 1,
+        country: Country.first,
         localization_description: "Luanda/Kilamba",
         email: "vicenteviciii@gmail.com",
         password: "Vicente",
@@ -285,12 +285,12 @@ puts "Cadastrando usuários..."
         filename: 'pacaça.jpeg', 
         content_type: 'image/jpeg'
     )
-  vicente.save
+  vicente.save!
 
 
    galinha = User.new({
     username: Faker::Company.name,
-    country_id: 9,
+    country: Country.last,
     localization_description: "Luanda/Kilamba",
     email: "vicente.simao.rails@gmail.com",
     password: "Vicente",
@@ -303,7 +303,7 @@ puts "Cadastrando usuários..."
         filename: 'word nature conservation.jpeg', 
         content_type: 'image/jpeg'
     )
-   galinha.save
+   galinha.save!
 
 
 
