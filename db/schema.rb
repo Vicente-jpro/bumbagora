@@ -90,7 +90,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_01_144329) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "type_subscription", default: "Candidate"
-    t.integer "country_id", null: false
+    t.integer "country_id", default: 1, null: false
     t.index ["country_id"], name: "index_users_on_country_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
