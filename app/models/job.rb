@@ -16,6 +16,7 @@ class Job < ApplicationRecord
     .order(id: :desc) if job.present?
   }
   scope :find_jobs_by_id_greater_than, ->(job) { where('id <= ? ',job.id).order(id: :desc) }
+  scope :find_jobs_by_category_id, ->(category_id) { where('category_id = ?', category_id.to_i)}
   scope :find_jobs_ordered_by_id_desc, -> { order(id: :desc) }
   
 end
