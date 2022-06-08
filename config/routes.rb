@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :jobs do
     collection do 
       get "search" 
+      get "search_with_category"
     end 
   end
   

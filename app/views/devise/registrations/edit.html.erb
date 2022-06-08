@@ -14,14 +14,14 @@
         <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
 
-            <%= f.text_field :username,  autofocus: true %>
-            <%= f.file_field :image, value: current_user.image %>
-            <%= f.file_field :document, value: current_user.document %>
+            <%= f.text_field :username, label: "Nome do Usuário/Empresa" autofocus: true %>
+            <%= f.file_field :image, label: "Imagem", value: current_user.image %>
+            <%= f.file_field :document, label:"Documento (pdf)" value: current_user.document %>
 
-            <%= f.select :type_subscription, User.type_subscriptions %>
-            <%= f.collection_select :country_id, Country.order(:name_country), :id, :name_country %>
-            <%= f.text_field :localization_description%>
-            <%= f.email_field :email, autocomplete: "email" %>
+            <%= f.select :type_subscription, User.type_subscriptions, {label: "Tipo da subscrição"} %>
+            <%= f.collection_select :country_id, Country.order(:name_country), :id, :name_country, {label: "Pais"} %>
+            <%= f.text_field :localization_description, label:"Descrição"%>
+            <%= f.email_field :email, autocomplete: "email", label:"Email" %>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
