@@ -1,11 +1,14 @@
 class UsersJobsController < ApplicationController
     before_action :authenticate_user!
     before_action :set_job, only: %i[ apply candidates destroy]
+
     include JobsConcern
+    include JobsViewsConcern
 
     def index 
       @user = current_user
       @user.jobs.find_jobs_ordered_by_id_desc.page(params[:page]).per(8)
+      @page_name_index = page_name("index")
     end
 
    # POST /users_jobs/:id/apply

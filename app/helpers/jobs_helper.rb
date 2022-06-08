@@ -33,14 +33,10 @@ module JobsHelper
        return User.find(job.user_id)
      end
 
-     # def replace_html_content(job)
-     #  text = job.description.to_s
-     #  begin_content = text.gsub(/[<=>"]/, '')
-     #  taking_div = begin_content.sub(/div classtrix-content div/, '#')
-     #  end_content = taking_div
-      
-     #  return end_content
-     # end
+     def truncated_html(text_with_html)
+      truncate_html(text_with_html.to_s, length: 100 )
+    
+     end
 
      # def truncate_text(str) 
      #   return truncate("")

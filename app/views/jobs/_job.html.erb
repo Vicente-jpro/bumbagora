@@ -27,7 +27,7 @@
 
         <div class="col">
           <% if @page_name_index %>
-            <p class="card-text" ><%=  truncate_html(job.description.to_s, length: 100 ) %></p>
+            <p class="card-text" ><%=  truncated_html(job.description) %></p>
           
             
           <% else %>
