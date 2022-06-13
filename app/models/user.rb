@@ -17,10 +17,11 @@ class User < ApplicationRecord
   has_many :jobs, dependent: :destroy
   
   validates_presence_of :country
-  validates :image, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg'], size_range: 1..(2.megabytes) }
-  #validates :document, blob: { content_type: :pdf, size_range: 1..(2.megabytes) }
+  validates :image, content_type: ['image/png', 'image/jpeg'],
+                    dimension: { width: { min: 100, max: 350 },
+                    height: { min: 100, max: 350 }, 
+                    message: 'A imagens deve ter uma altura e um cumprimento de 350x350 ' }
 
-  
   enum type_subscription: {Candidate: "Candidate", Company: "Company"}
 
   scope :find_by_id, ->(user) { where(id: user.id)}

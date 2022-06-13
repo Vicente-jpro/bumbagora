@@ -12,6 +12,8 @@
       <div class="row my-2">
 
         <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+
           <%= render "devise/shared/error_messages", resource: resource %>
 
             <%= f.text_field :username, label: "Nome do Usuário / Empresa", placeholder:"Ex1: Vicente Xavier Simão / Ex2: Bumbagora", autofocus: true %>
