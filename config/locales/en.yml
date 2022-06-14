@@ -26,8 +26,17 @@
 # en:
 #   "true": "foo"
 #
+# u = User.create!(localization_description: "Luanda/Kilamba", email: "vicenteviciii@outlook.com", type_subscription: "Company", country_id: 1)
+
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
   hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              invalid: "Username mast exists."

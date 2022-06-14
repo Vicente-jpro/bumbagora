@@ -15,4 +15,9 @@ class ApplicationController < ActionController::Base
           :username, :type_subscription, :country_id, :localization_description, :image, :document
           ])
     end
+
+    def default_url_options
+      { locale: I18n.locale }
+    end
+
 end

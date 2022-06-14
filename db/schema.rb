@@ -75,6 +75,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_01_144329) do
     t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 
+#localization_description
+#country_id
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "localization_description"

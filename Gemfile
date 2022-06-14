@@ -68,9 +68,12 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 
 gem "aws-sdk-s3", require: false
 
-
+# truncates html so you don't have to
 gem "truncate_html"
 
+# Active storage validations
+gem 'active_storage_validations'
+gem 'mini_magick', '>= 4.9.5' 
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
