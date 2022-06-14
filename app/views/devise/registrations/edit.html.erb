@@ -17,8 +17,8 @@
           <%= render "devise/shared/error_messages", resource: resource %>
 
             <%= f.text_field :username, label: "Nome do Usuário / Empresa", placeholder:"Ex1: Vicente Xavier Simão / Ex2: Bumbagora", autofocus: true %>
-            <%= f.file_field :image, label: "Imagem", value: current_user.image %>
-            <%= f.file_field :document, label:"Documento (.pdf)", value: current_user.document %>
+            <%= f.file_field :image, label: "Imagem, tamanho máx 200kB", value: current_user.image %>
+            <%= f.file_field :document, label:"Documento (.pdf) tamanho máx 400kB", value: current_user.document %>
 
             <%= f.select :type_subscription, User.type_subscriptions, {label: "Tipo da subscrição"} %>
             <%= f.collection_select :country_id, Country.order(:name_country), :id, :name_country, {label: "Pais"} %>
