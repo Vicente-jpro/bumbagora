@@ -2,15 +2,15 @@
     <div class="card-body">
       <div class="row">
         <div class="col-sm-3">
-          <h5 class="card-title"><%= job.title %></h5>
+          <h5 class="card-title"> <i class="bi-briefcase-fill"></i> <%= job.title %></h5>
           <h6 class="card-subtitle mb-2 text-muted">
-            <%= job.category.name %>, 
-            <%= job.type_job %>
+            <i class="bi-tags-fill"></i> <%= job.category.name %>, 
+            <i class="bi-geo-alt-fill"></i> <%= job.type_job %>
           </h6>
         </div>
         <div class="col">
           <% if user_have_applied?(job) %>
-          <strong class="text-success">Você já se candidatou a está vaga</strong>
+          <strong class="text-success"> <i class="bi-check-square-fill"></i>  Você já se candidatou a está vaga</strong>
           <% end %>
         </div>
       </div>

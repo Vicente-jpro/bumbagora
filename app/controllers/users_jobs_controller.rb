@@ -16,7 +16,7 @@ class UsersJobsController < ApplicationController
     if is_creator?(@job)
       flash[:alert] = "Não podes se registar na sua vaga."
     elsif is_registed?(@job)
-      flash[:alert] = "Já se registraste nesta vaga #{@job.title}."
+      flash[:alert] = "Já estás registrado á vaga #{@job.title}."
     else
       user_job_registration(@job)
       flash[:notice] = "Subscrição feita com sucesso para vaga #{@job.title}" 
