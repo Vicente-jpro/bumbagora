@@ -12,6 +12,12 @@
           <% if user_have_applied?(job) %>
           <strong class="text-success"> <i class="bi-check-square-fill"></i>  Você já se candidatou a está vaga</strong>
           <% end %>
+
+          <% if exit_candidates?(job) %>
+           <%= link_to "Ver  todos os candidatos", candidates_users_job_path(job), class:"btn btn-outline-secondary my-1 col-sm-12" %>
+           <% else %>
+             <strong class="text-danger">Ainda não exite nenhum candidato para está vaga.</strong>
+          <% end %>
         </div>
       </div>
       
@@ -63,8 +69,8 @@
           <% if is_the_owner_of_the_job?(job) %>
 
             <%= link_to "Editar está oportunidade", edit_job_path(job), class:"btn btn-warning my-1" %>
-
-            <%= link_to "Candidatos", candidates_users_job_path(job), class:"btn btn-outline-secondary my-1" %>
+            
+            
             
 
             <%= button_to "Eliminar está oportunidade", job, method: :delete, class:"btn btn-outline-link my-1", form:{ data: { turbo_confirm: "Tens a certeza?"} }  %>
