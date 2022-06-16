@@ -14,9 +14,9 @@ class UsersJobsController < ApplicationController
    # POST /users_jobs/:id/apply
    def apply 
     if is_creator?(@job)
-      flash[:alert] = "You can not register to your own job."
+      flash[:alert] = "Não podes se registar na sua vaga."
     elsif is_registed?(@job)
-      flash[:alert] = "You have already registered on this job."
+      flash[:alert] = "Já se registraste nesta vaga #{@job.title}."
     else
       user_job_registration(@job)
       flash[:notice] = "Subscrição feita com sucesso para vaga #{@job.title}" 
