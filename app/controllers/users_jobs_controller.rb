@@ -22,9 +22,7 @@ class UsersJobsController < ApplicationController
       flash[:notice] = "Subscrição feita com sucesso para vaga #{@job.title}" 
   
       @job.applayers += 1
-      debugger
       @job.update!(@job.attributes)
-
   
     end  
     @jobs ||= Job.find_jobs_by_id_greater_than(@job).page(params[:page]).per(8)
