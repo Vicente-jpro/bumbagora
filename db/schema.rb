@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_01_144329) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_17_143232) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -64,13 +64,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_01_144329) do
   create_table "jobs", force: :cascade do |t|
     t.string "title"
     t.string "type_job", default: "Presencial", null: false
-    t.text "description"
+    t.text "description", default: "Jesus também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão."
     t.integer "salary"
     t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "expiry_date"
     t.integer "user_id", default: 1, null: false
+    t.integer "applayers", default: 0
     t.index ["category_id"], name: "index_jobs_on_category_id"
     t.index ["user_id"], name: "index_jobs_on_user_id"
   end
