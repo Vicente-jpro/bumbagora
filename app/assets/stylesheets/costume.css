@@ -61,17 +61,10 @@
   font-size: 20px;
 }
 
-.bi-youtube{
-  color: red;
+.footer-icon{
+  font-size: 30px;
 }
 
-.bi-linkedin{
-  color: blue;
-}
-
-.bi-facebook{
-  color: blue;
-}
 /***************************/
 
 h5{
@@ -141,4 +134,9 @@ body{
   font-size: 14px;
   /****  #004d40 teal darken-4  ****/
   color: red ;
+}
+
+.card{
+  border: none;
+  border-radius: 25px;
 }
