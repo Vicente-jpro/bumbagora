@@ -317,27 +317,26 @@ Category.create(name: "Others")
 puts "Categorias cadastradas com sucesso"
 
 puts "Cadastrando oportunidades de emprego."
-6.times do |job_number|
 
-    Job.create(
-        title: Faker::Food.dish,
-        description: Faker::Food.description,
-        salary: 4500*job_number,
-        category_id: job_number,
-        type_job: "Presencial",
-        expiry_date: Faker::Date.between(from: '2022-04-23', to: '2014-09-25'),
-        user_id: 1
 
-    )
-    Job.create(
-        title: Faker::Food.dish,
-        description: Faker::Food.description,
-        salary: 4500*job_number,
-        category_id: job_number,
-        type_job: "Remote",
-        expiry_date: Faker::Date.between(from: '2022-04-23', to: '2014-09-25'),
-        user_id: 2
+Job.create!(
+    title: Faker::Food.dish,
+    description: "Jesus  também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
+    salary: 4500*105,
+    category: Category.first,
+    type_job: "Presencial",
+    expiry_date: Faker::Date.between(from: '2022-04-23', to: '2014-09-25'),
+    user_id: 1
+)
 
-    )
-end
+Job.create!(
+    title: Faker::Food.dish,
+    description: "Jesus também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
+    salary: 4500*5,
+    category: Category.last,
+    type_job: "Remote",
+    expiry_date: Faker::Date.between(from: '2022-04-23', to: '2014-09-25'),
+    user_id: 2
+)
+
 puts "Oportunidades cadastradas com sucesso."

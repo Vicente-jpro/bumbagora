@@ -1,7 +1,7 @@
   <div class="card" >
     <div class="card-body">
       <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-4">
           <h5 class="card-title"> <i class="bi-briefcase-fill"></i> <%= job.title %></h5>
           <h6 class="card-subtitle mb-2 text-muted">
             <i class="bi-tags-fill"></i> <%= job.category.name %>, 
@@ -10,14 +10,17 @@
         </div>
         <div class="col">
           <% if user_have_applied?(job) %>
-          <strong class="text-success"> <i class="bi-check-square-fill"></i>  Você já se candidatou a está vaga</strong>
+          <strong class="text-success"> Você já se candidatou a está vaga</strong>
           <% end %>
 
-          <% if exit_candidates?(job) %>
-           <%= link_to "Ver  todos os candidatos", candidates_users_job_path(job), class:"btn btn-outline-secondary my-1 col-sm-12" %>
-           <% else %>
-             <strong class="text-danger">Ainda não exite nenhum candidato para está vaga.</strong>
+          <% if !exit_candidates?(job) %>
+            <strong class="text-danger my-1">Ainda não exite nenhum candidato para está vaga.</strong>
           <% end %>
+
+          <% if is_the_owner_of_the_job?(job) %>
+               <%= link_to "Ver  todos os candidatos", candidates_users_job_path(job), class:"btn btn-outline-secondary my-1 col-sm-12" %>
+          <% end %>
+
         </div>
       </div>
       
@@ -27,7 +30,14 @@
         
         <div class="col-sm-3">
           <% user = get_user_by_job(job) %>
-          <%= display_user_image(user)%> 
+          <div class="d-block">
+            <%= display_user_image(user)%> 
+          </div>
+          <div class="d-block">
+            <span class="badge rounded-pill bg-success col-sm-10"> Candidatos <%= job.applayers %></span>
+          </div>
+          
+          
         </div>
 
 
