@@ -321,7 +321,7 @@ puts "Cadastrando oportunidades de emprego."
 
     Job.create(
         title: Faker::Food.dish,
-        description: Faker::Food.description,
+        description: "Jesus (em aramaico: ישוע/ יֵשׁוּעַ; romaniz.: Yeshua; em grego: Ἰησοῦς; romaniz.: Iesous), também chamado Jesus de Nazaré (n. 7–2 a.C.[nota 1] – m. 30–33 d.C.[nota 2]) foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
         salary: 4500*job_number,
         category_id: job_number,
         type_job: "Presencial",
@@ -331,7 +331,7 @@ puts "Cadastrando oportunidades de emprego."
     )
     Job.create(
         title: Faker::Food.dish,
-        description: Faker::Food.description,
+        description: "Jesus (em aramaico: ישוע/ יֵשׁוּעַ; romaniz.: Yeshua; em grego: Ἰησοῦς; romaniz.: Iesous), também chamado Jesus de Nazaré (n. 7–2 a.C.[nota 1] – m. 30–33 d.C.[nota 2]) foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
         salary: 4500*job_number,
         category_id: job_number,
         type_job: "Remote",
