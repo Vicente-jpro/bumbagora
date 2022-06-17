@@ -14,11 +14,10 @@
           <% end %>
 
           <% if !exit_candidates?(job) %>
-            <strong class="text-danger my-1">Ainda não exite nenhum candidato para está vaga.</strong>
-          <% end %>
+            <strong class="text-danger my-1">Não exite nenhum candidato para está vaga.</strong>
+          <% elsif is_the_owner_of_the_job?(job) %>
 
-          <% if is_the_owner_of_the_job?(job) %>
-               <%= link_to "Ver  todos os candidatos", candidates_users_job_path(job), class:"btn btn-outline-secondary my-1 col-sm-12" %>
+            <%= link_to "Ver  todos os candidatos", candidates_users_job_path(job), class:"btn btn-outline-secondary my-1 col-sm-12" %>
           <% end %>
 
         </div>
