@@ -36,10 +36,14 @@ class UsersJobsController < ApplicationController
    end
 
    # GET 
+   # Destroy candidate registration to a job
    def destroy 
   
      user_job = UsersJob.find_user_registed_to_a_job(@job, current_user)
      UsersJob.delete(user_job)
+
+     @job.applayers -= 1
+     @job.update!(@job.attributes)
    
      respond_to do |format|
       format.html { redirect_to jobs_url, notice: "Candidatura eliminada com sucesso." }
@@ -51,11 +55,25 @@ class UsersJobsController < ApplicationController
 
    # GET /users_jobs/:user_id/show
    def show 
-    @candidate = User.find(params[:id])
+    @candidate = set_user
    end
 
+   #Send email envitation to a candidate
+   def send_email
+    # Tell the UserMailer to send a welcome email after save
+    @candidate = set_user
+    @job = params[:job]
+    @company = params[:user_company]
+
+      JobMailer.with(user_candidate: @candidate, job: @job, user_company: @company )
+               .invitation.deliver_later
+   end
    private 
     def set_job 
       @job = Job.find(params[:id])
+    end
+
+    def set_user
+      User.find(params[:id])
     end
 end
