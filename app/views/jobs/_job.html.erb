@@ -33,6 +33,7 @@
           </div>
           <div class="d-block">
             <span class="badge rounded-pill bg-success col-sm-10"> Candidatos <%= job.applayers %></span>
+
           </div>
           
           
@@ -54,10 +55,10 @@
           <% else %>
              <p class="text-time">
           <% end %>
-              Created at: <%= time_ago_in_words(job.created_at) %> <br>
-              Deadline: 30 days
+              Publicado <%= time_ago_in_words(job.created_at) %> <br>
+              Encerra após 30 dias
              </p>
-
+          
           <% if day_is_thirty(job)%>
             <% job_destroy_path(job) %>
           <% end %>
@@ -65,7 +66,7 @@
           <% if @page_name_index %>
             <%= link_to "Mostrar está oportunidade", job, class:"btn btn-outline-primary my-1" %>
           <% end %>
-          
+
           <% if user_have_applied?(job) %>
       
             <%= button_to "Retirar a minha candidatura", destroy_users_job_path(job), class:"btn btn-outline-danger my-1" %> 
