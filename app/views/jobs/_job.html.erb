@@ -23,8 +23,7 @@
         </div>
       </div>
       
-      
-
+    
       <div class="row">
         
         <div class="col-sm-3">
@@ -66,6 +65,7 @@
           <% if @page_name_index %>
             <%= link_to "Mostrar está oportunidade", job, class:"btn btn-outline-primary my-1" %>
           <% end %>
+          
           <% if user_have_applied?(job) %>
       
             <%= button_to "Retirar a minha candidatura", destroy_users_job_path(job), class:"btn btn-outline-danger my-1" %> 
@@ -78,8 +78,6 @@
           <% if is_the_owner_of_the_job?(job) %>
 
             <%= link_to "Editar está oportunidade", edit_job_path(job), class:"btn btn-warning my-1" %>
-            
-            
             
 
             <%= button_to "Eliminar está oportunidade", job, method: :delete, class:"btn btn-outline-link my-1", form:{ data: { turbo_confirm: "Tens a certeza?"} }  %>
