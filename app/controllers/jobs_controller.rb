@@ -31,8 +31,14 @@ class JobsController < ApplicationController
   # GET /jobs/new
   def new
     if user_signed_in?
-       @job = Job.new
-       @categories = Category.all
+      if current_user.type_subscription == "Company"
+        @job = Job.new
+        @categories = Category.all
+      else
+        flash[:alert] = "O teu tipo de usuário não permite criar uma vaga."
+        redirect_to jobs_path
+      end
+       
     else
       redirect_to new_user_session_path
     end

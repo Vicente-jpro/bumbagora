@@ -10,7 +10,7 @@ class Job < ApplicationRecord
 
   validates_presence_of :title, :category, :type_job, :description
 
-  enum type_job: {Remote: "Remote", Presencial: "Presencial"}
+  enum type_job: {Remota: "Remota", Presencial: "Presencial", Hibrida: "Híbrida"}
   scope :find_jobs_by_title_or_category_name, ->(job) {
     where('LOWER(title) LIKE ?', "%#{job.downcase}%")
     .order(id: :desc) if job.present?
