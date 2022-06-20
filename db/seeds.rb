@@ -390,7 +390,7 @@ Category.create!(name: "Engenharia de Pesca")
 Category.create!(name: "Engenharia de Produção")
 Category.create!(name: "Engenharia de Petróleo")
 Category.create!(name: "Engenharia Química")
-Category.create!(name: "Engenharia de Software"
+Category.create!(name: "Engenharia de Software")
 Category.create!(name: "Engenharia de Telecomunicações")
 
 Category.create!(name: "Antropologia")
@@ -420,7 +420,7 @@ Category.create!(name: "Produção Cultural")
 Category.create!(name: "Produção Editorial")
 Category.create!(name: "Produção Multimídia")
 Category.create!(name: "Publicidade e Propaganda")
-Category.create!(name: "Rádio e TV"
+Category.create!(name: "Rádio e TV")
 Category.create!(name: "Relações Internacionais")
 Category.create!(name: "Relações Públicas")
 Category.create!(name: "Secretariado")
@@ -431,14 +431,14 @@ Category.create!(name: "Artes Cênicas")
 Category.create!(name: "Artes Plásticas")
 Category.create!(name: "Cinema")
 Category.create!(name: "Dança")
-Category.create!(name: "Design"
+Category.create!(name: "Design")
 Category.create!(name: "Design de Games")
 Category.create!(name: "Design Gráfico")
 Category.create!(name: "Design de Moda")
 Category.create!(name: "Design de Interiores")
 Category.create!(name: "Design de Produto") 
 Category.create!(name: "Fotografia")
-Category.create!(name: "História da Arte"
+Category.create!(name: "História da Arte")
 Category.create!(name: "Linguística")
 Category.create!(name: "Letras")
 Category.create!(name: "Moda")
@@ -458,7 +458,6 @@ Job.create!(
     salary: 4500*105,
     category: Category.first,
     type_job: "Presencial",
-    expiry_date: Faker::Date.between(from: '2022-04-23', to: '2014-09-25'),
     user_id: 1
 )
 
@@ -467,8 +466,7 @@ Job.create!(
     description: "Jesus também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
     salary: 4500*5,
     category: Category.last,
-    type_job: "Remote",
-    expiry_date: Faker::Date.between(from: '2022-04-23', to: '2014-09-25'),
+    type_job: "Remota",
     user_id: 2
 )
 
