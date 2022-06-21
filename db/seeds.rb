@@ -470,4 +470,43 @@ Job.create!(
     user_id: 2
 )
 
+
+
+Job.create!(
+    title: Faker::Food.dish,
+    description: "Jesus  também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
+    salary: 4500*105,
+    category: Category.first,
+    type_job: "Presencial",
+    user_id: 1
+)
+
+Job.create!(
+    title: Faker::Food.dish,
+    description: "Jesus também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
+    salary: 4500*5,
+    category: Category.last,
+    type_job: "Remota",
+    user_id: 2
+)
+
+
+Job.create!(
+    title: Faker::Food.dish,
+    description: "Jesus  também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
+    salary: 4500*105,
+    category: Category.first,
+    type_job: "Presencial",
+    user_id: 1
+)
+
+Job.create!(
+    title: Faker::Food.dish,
+    description: "Jesus também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
+    salary: 4500*5,
+    category: Category.last,
+    type_job: "Remota",
+    user_id: 2
+)
+
 puts "Oportunidades cadastradas com sucesso."
