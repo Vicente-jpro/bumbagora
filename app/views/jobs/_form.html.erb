@@ -30,7 +30,6 @@
       <%= form.collection_select :category_id, Category.order(:name), :id, :name, { label: "Categória"}  %>
 		  <%= form.select :type_job, Job.type_jobs, { label: "Local"} %>
 		  <%= form.number_field :salary, label:"Salário", placeholder:"$ 00" %>
-		  <%= form.date_field :expiry_date %>		
 		  <%= form.rich_text_area :description, label:"Descrição", size: "100x100", placeholder: "Copy and past your description here." %>
 
 		<div class="mb-3 d-grid gap-2">

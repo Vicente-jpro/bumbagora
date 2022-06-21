@@ -267,7 +267,6 @@ puts "Paises cadastrado com sucesso."
 
 
 
-
 puts "Cadastrando usuários..."
 
 
@@ -309,12 +308,146 @@ puts "Cadastrando usuários..."
 
 puts "Usuários cadastrado com sucesso."
 
+
+
 puts "Cadastrando categorias..."
-Category.create(name: "Programming")
-Category.create(name: "Construction")
-Category.create(name: "Movie")
-Category.create(name: "Others")
+Category.create!(name: "Agronomia") 
+Category.create!(name: "Biotecnologia")
+Category.create!(name: "Ecologia")
+Category.create!(name: "Engenharia Ambiental")
+Category.create!(name: "Engenharia de Pesca")
+Category.create!(name: "Engenharia Hídrica")
+Category.create!(name: "Gestão Ambiental")
+Category.create!(name: "Geologia")
+Category.create!(name: "Oceanografia")
+Category.create!(name: "Engenharia Agrícola")
+Category.create!(name: "Engenharia de Energia")
+Category.create!(name: "Engenharia Florestal") 
+Category.create!(name: "Medicina Veterinária")
+Category.create!(name: "Meteorologia")
+Category.create!(name: "Zootecnia")
+
+Category.create!(name: "Bioquímica")
+Category.create!(name: "Biofísica")
+Category.create!(name: "Biomedicina")
+Category.create!(name: "Ciências Biológicas")
+
+Category.create!(name: "Educação Física")
+Category.create!(name: "Enfermagem")
+Category.create!(name: "Estética")
+Category.create!(name: "Farmácia")
+Category.create!(name: "Fisioterapia")
+Category.create!(name: "Fonoaudiologia")
+Category.create!(name: "Gerontologia")
+Category.create!(name: "Medicina")
+Category.create!(name: "Musicoterapia")
+Category.create!(name: "Nutrição")
+Category.create!(name: "Obstetrícia")
+Category.create!(name: "Odontologia")
+Category.create!(name: "Quiropraxia")
+Category.create!(name: "Radiologia")
+Category.create!(name: "Saúde Coletiva")
+Category.create!(name: "Terapia Ocupacional")
+
+Category.create!(name: "Análise e Desenvolvimento de Sistemas")
+Category.create!(name: "Astronomia")
+Category.create!(name: "Ciência da Computação")
+Category.create!(name: "Estatística")
+Category.create!(name: "Física")
+Category.create!(name: "Geofísica")
+Category.create!(name: "Geologia")
+Category.create!(name: "Informática Biomédica")
+Category.create!(name: "Matemática")
+Category.create!(name: "Meteorologia")
+Category.create!(name: "Nanotecnologia")
+Category.create!(name: "Oceanografia")
+Category.create!(name: "Química")
+Category.create!(name: "Sistemas de Informação")
+
+Category.create!(name: "Engenharia Aeronáutica")
+Category.create!(name: "Engenharia Agrícola")
+Category.create!(name: "Engenharia Agronômica")
+Category.create!(name: "Engenharia de Agrimensura e Cartográfica")
+Category.create!(name: "Engenharia de Alimentos")
+Category.create!(name: "Engenharia Ambiental e Sanitária")
+Category.create!(name: "Engenharia Biomédica")
+Category.create!(name: "Engenharia de Bioprocessos")
+Category.create!(name: "Engenharia Civil")
+Category.create!(name: "Engenharia de Computação")
+Category.create!(name: "Engenharia de Controle e Automação")
+Category.create!(name: "Engenharia Elétrica")
+Category.create!(name: "Engenharia Eletrônica")
+Category.create!(name: "Engenharia de Energia")
+Category.create!(name: "Engenharia Florestal")
+Category.create!(name: "Engenharia de Fortificação e Construção")
+Category.create!(name: "Engenharia Mecânica")
+Category.create!(name: "Engenharia Mecânica e de Armamento")
+Category.create!(name: "Engenharia de Materiais")
+Category.create!(name: "Engenharia de Minas")
+Category.create!(name: "Engenharia Metalúrgica")
+Category.create!(name: "Engenharia Naval")
+Category.create!(name: "Engenharia de Pesca")
+Category.create!(name: "Engenharia de Produção")
+Category.create!(name: "Engenharia de Petróleo")
+Category.create!(name: "Engenharia Química")
+Category.create!(name: "Engenharia de Software")
+Category.create!(name: "Engenharia de Telecomunicações")
+
+Category.create!(name: "Antropologia")
+Category.create!(name: "Arqueologia")
+Category.create!(name: "Ciência Política")
+Category.create!(name: "Filosofia")
+Category.create!(name: "Geografia")
+Category.create!(name: "História")
+Category.create!(name: "Psicologia")
+Category.create!(name: "Sociologia")
+Category.create!(name: "Teologia")
+
+Category.create!(name: "Administração")
+Category.create!(name: "Recursos Humanos")
+Category.create!(name: "Arquivologia")
+Category.create!(name: "Arquitetura e Urbanismo")
+Category.create!(name: "Biblioteconomia")
+Category.create!(name: "Ciências Contábeis")
+Category.create!(name: "Direito")
+Category.create!(name: "Economia")
+Category.create!(name: "Educomunicação")
+Category.create!(name: "Eventos")
+Category.create!(name: "Jornalismo")
+Category.create!(name: "Museologia")
+Category.create!(name: "Pedagogia") 
+Category.create!(name: "Produção Cultural")
+Category.create!(name: "Produção Editorial")
+Category.create!(name: "Produção Multimídia")
+Category.create!(name: "Publicidade e Propaganda")
+Category.create!(name: "Rádio e TV")
+Category.create!(name: "Relações Internacionais")
+Category.create!(name: "Relações Públicas")
+Category.create!(name: "Secretariado")
+Category.create!(name: "Serviço Social")
+Category.create!(name: "Turismo")
+
+Category.create!(name: "Artes Cênicas")
+Category.create!(name: "Artes Plásticas")
+Category.create!(name: "Cinema")
+Category.create!(name: "Dança")
+Category.create!(name: "Design")
+Category.create!(name: "Design de Games")
+Category.create!(name: "Design Gráfico")
+Category.create!(name: "Design de Moda")
+Category.create!(name: "Design de Interiores")
+Category.create!(name: "Design de Produto") 
+Category.create!(name: "Fotografia")
+Category.create!(name: "História da Arte")
+Category.create!(name: "Linguística")
+Category.create!(name: "Letras")
+Category.create!(name: "Moda")
+Category.create!(name: "Música")
+Category.create!(name: "Teatro")
+Category.create!(name: "Tradução e Interpretação")
 puts "Categorias cadastradas com sucesso"
+
+
 
 puts "Cadastrando oportunidades de emprego."
 
@@ -325,7 +458,6 @@ Job.create!(
     salary: 4500*105,
     category: Category.first,
     type_job: "Presencial",
-    expiry_date: Faker::Date.between(from: '2022-04-23', to: '2014-09-25'),
     user_id: 1
 )
 
@@ -334,8 +466,46 @@ Job.create!(
     description: "Jesus também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
     salary: 4500*5,
     category: Category.last,
-    type_job: "Remote",
-    expiry_date: Faker::Date.between(from: '2022-04-23', to: '2014-09-25'),
+    type_job: "Remota",
+    user_id: 2
+)
+
+
+
+Job.create!(
+    title: Faker::Food.dish,
+    description: "Jesus  também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
+    salary: 4500*105,
+    category: Category.first,
+    type_job: "Presencial",
+    user_id: 1
+)
+
+Job.create!(
+    title: Faker::Food.dish,
+    description: "Jesus também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
+    salary: 4500*5,
+    category: Category.last,
+    type_job: "Remota",
+    user_id: 2
+)
+
+
+Job.create!(
+    title: Faker::Food.dish,
+    description: "Jesus  também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
+    salary: 4500*105,
+    category: Category.first,
+    type_job: "Presencial",
+    user_id: 1
+)
+
+Job.create!(
+    title: Faker::Food.dish,
+    description: "Jesus também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
+    salary: 4500*5,
+    category: Category.last,
+    type_job: "Remota",
     user_id: 2
 )
 
