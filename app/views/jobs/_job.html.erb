@@ -22,8 +22,9 @@
 
         </div>
       </div>
-      
-    
+
+      <% delete_job_automatically(job)  %>
+
       <div class="row">
         
         <div class="col-sm-3">
@@ -35,6 +36,16 @@
             <span class="badge rounded-pill bg-success col-sm-10"> Candidatos <%= job.applayers %></span>
 
           </div>
+
+          <% if job.number_days > 10%>
+          <div class="d-block">
+            <span class="badge rounded-pill bg-warning text-black col-sm-10"> <%= job.number_days %> dias para encerrar a vaga</span>
+          </div>
+          <% else %>
+          <div class="d-block">
+            <span class="badge rounded-pill bg-danger col-sm-10"> <%= job.number_days %> dias paraencerrar a vaga</span>
+          </div>
+          <% end %>
           
           
         </div>
@@ -48,20 +59,7 @@
           <% else %>
             <p class="card-text" ><%= job.description %></p>
           <% end %>
-
-
-          <% if time_ago_in_days?(job)  %>
-             <p class="text-time-deadline">
-          <% else %>
-             <p class="text-time">
-          <% end %>
-              Publicado <%= time_ago_in_words(job.created_at) %> <br>
-              Encerra após 30 dias
-             </p>
           
-          <% if day_is_thirty(job)%>
-            <% job_destroy_path(job) %>
-          <% end %>
 
           <% if @page_name_index %>
             <%= link_to "Mostrar está oportunidade", job, class:"btn btn-outline-primary my-1" %>
