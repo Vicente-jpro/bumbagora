@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :job do
     id { 1 }
-    title { "MyString" }
-    type_job { "MyString" }
-    description { "MyText" }
+    title { "Ruby on Rails" }
+    type_job { "Remota" }
+    description { "We are hiring, ruby on rails." }
     salary { 1 }
     category_id { 1 }
     created_at { "2022-06-24 08:21:07" }

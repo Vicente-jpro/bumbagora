@@ -1,20 +1,20 @@
 FactoryBot.define do
   factory :user do
     id { 1 }
-    username { "MyString" }
-    localization_description { "MyString" }
-    email { "MyString" }
-    encrypted_password { "MyString" }
-    reset_password_token { "MyString" }
+    username { "Vicente Simao" }
+    localization_description { "Kilamba, Luanda" }
+    email { "vicentevicii@gmail.com" }
+    encrypted_password { "Vicente" }
+    reset_password_token { "Vicente" }
     reset_password_sent_at { "2022-06-24 08:20:47" }
     remember_created_at { "2022-06-24 08:20:47" }
-    confirmation_token { "MyString" }
+    confirmation_token { "token" }
     confirmed_at { "2022-06-24 08:20:47" }
     confirmation_sent_at { "2022-06-24 08:20:47" }
-    unconfirmed_email { "MyString" }
+    unconfirmed_email { "vicentevicii@gmail.com" }
     created_at { "2022-06-24 08:20:47" }
     updated_at { "2022-06-24 08:20:47" }
-    type_subscription { "MyString" }
+    type_subscription { "Remota" }
     country_id { 1 }
   end
 end
