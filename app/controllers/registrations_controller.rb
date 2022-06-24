@@ -49,8 +49,7 @@ class RegistrationsController < Devise::RegistrationsController
             :document, 
             :email,
             :password,
-            :password_confirmation,
-            :current_password)
+            :password_confirmation)
 	 end
 
 end
