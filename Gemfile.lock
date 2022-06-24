@@ -136,9 +136,15 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (1.10.2)
       devise (>= 4.8.0)
+    diff-lcs (1.5.0)
     digest (3.1.0)
     erubi (1.10.0)
     execjs (2.8.1)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -250,6 +256,23 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rspec-core (3.11.0)
+      rspec-support (~> 3.11.0)
+    rspec-expectations (3.11.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-mocks (3.11.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-rails (5.1.1)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
+      railties (>= 5.2)
+      rspec-core (~> 3.10)
+      rspec-expectations (~> 3.10)
+      rspec-mocks (~> 3.10)
+      rspec-support (~> 3.10)
+    rspec-support (3.11.0)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     rubyzip (2.3.2)
@@ -317,6 +340,7 @@ DEPENDENCIES
   debug
   devise
   devise-i18n
+  factory_bot_rails
   faker!
   hotwire-rails
   image_processing (~> 1.2)
@@ -329,6 +353,7 @@ DEPENDENCIES
   rails (~> 7.0.1)
   rails-i18n (~> 7.0.0)
   redis (~> 4.0)
+  rspec-rails
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)
