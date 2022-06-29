@@ -2,17 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Category, type: :model do
   
-  context "Category" do 
+  describe "Category" do 
     let(:category) { create(:category) }
 
     it "has a name" do 
-      expect(category.name).to eq("Ruby")
+      expect(category.name).to eq("Programming")
     end
-
-    it "has a name" do 
-      expect(1).to eq(1)
-    end
-    
   end
 
 end

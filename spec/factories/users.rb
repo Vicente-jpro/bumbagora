@@ -1,5 +1,10 @@
 FactoryBot.define do
   factory :user do
+
+    ## Associations 
+    country
+
+    ## Own attributes
     id { 1 }
     username { "Vicente Simao" }
     localization_description { "Kilamba, Luanda" }
@@ -14,7 +19,7 @@ FactoryBot.define do
     unconfirmed_email { "vicentevicii@gmail.com" }
     created_at { "2022-06-24 08:20:47" }
     updated_at { "2022-06-24 08:20:47" }
-    type_subscription { "Remota" }
-    country_id { 1 }
+    type_subscription { "Candidato" }
+    password{ "Vicente" }
   end
 end
