@@ -64,6 +64,15 @@ RSpec.describe "Jobs", type: :request do
     end
   end
 
-  describe "NEW /jobs/new"
+  describe "NEW /jobs/new" do 
+     
+
+    it "should success and render the new template." do 
+      create(:job)
+      get "/jobs"
+      expect(response).to have_http_status(200)
+      expect(response).to render_template(:new)
+    end
+  end
 
 end
