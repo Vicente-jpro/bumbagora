@@ -5,6 +5,7 @@ class JobsController < ApplicationController
 
   include JobsConcern
   include JobsViewsConcern
+  include UserConcern
 
   def search 
     puts "*** Pesquisando o Job por #{params[:job]}... ***"
@@ -39,7 +40,7 @@ class JobsController < ApplicationController
   # GET /jobs/new
   def new
     if user_signed_in?
-      if current_user.type_subscription == "Empresa"
+      if user_is_a_company_or_admim?(current_user)
         @job = Job.new
         @categories = Category.all
       else
