@@ -11,4 +11,15 @@ module UserHelper
 	  end
 	  return false
 	end
+
+	def type_registration?(user_type_subscriptions)
+	  types = Array.new
+
+	  user_type_subscriptions.each do |type|
+	  	types << type
+	  end 	  
+	  types.delete_at(2)
+
+	  return types
+	end
 end

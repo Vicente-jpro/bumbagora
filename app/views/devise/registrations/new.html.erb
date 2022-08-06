@@ -14,7 +14,7 @@
 
 
           <%= f.text_field :username, label: "Nome do Usuário / Empresa", placeholder:"Ex1: Seu Nome Completo / Ex2: Bumbagora", autofocus: true %>
-          <%= f.select :type_subscription, User.type_subscriptions, {label: "Tipo da subscrição"} %>
+          <%= f.select :type_subscription, type_registration?(User.type_subscriptions), {label: "Tipo da subscrição"} %>
           <%= f.collection_select :country_id, Country.order(:name_country), :id, :name_country, {label: "Pais"}%>
           <%= f.text_field :localization_description, label:"Descrição", placeholder: "Local onde vives / Localização da tua empresa"%>
           <%= f.email_field :email, placeholder: "exemplo@bumbagora.com", autocomplete: "email" %>
