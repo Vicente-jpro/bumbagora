@@ -7,20 +7,28 @@ class JobsController < ApplicationController
   include JobsViewsConcern
 
   def search 
+    puts "*** Pesquisando o Job por #{params[:job]}... ***"
+
     @jobs ||= Job.find_jobs_by_title_or_category_name(params[:job]).page(params[:page]).per(8)
     @page_name_index = page_name("index")
+    puts "*** Fim da pesquisa. ***"
   end
   
   def search_with_category 
+    puts "*** Pesquisando o Job por Categoria #{params[:category_id]}... ***"
+
     @jobs ||= Job.find_jobs_by_category_id(params[:category_id]).page(params[:page]).per(8)
     @page_name_index = page_name("index")
-    
+    puts "*** Fim da pesquisa. ***"
     render "jobs/search", job: @jobs
   end
 
   def index
+    puts "*** Pesquisando todos Job... ***"
+
     @jobs ||= Job.find_jobs_ordered_by_id_desc.page(params[:page]).per(8)
     @page_name_index = page_name("index")
+    puts "*** Fim da pesquisa. ***"
   end
 
   # GET /jobs/1 or /jobs/1.json
