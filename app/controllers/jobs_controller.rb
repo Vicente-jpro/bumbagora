@@ -61,8 +61,14 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(job_params)
     @job.user_id = current_user.id
+    debugger
     respond_to do |format|
-      if @job.save
+      if @job.save!
+        puts "Sending email..."
+        debugger
+        JobMailer.with(job: @job)
+        puts "Email sent."
+
         format.html { redirect_to job_url(@job), notice: "Oportunidade criada com sucesso." }
         format.json { render :show, status: :created, location: @job }
       else
@@ -75,7 +81,7 @@ class JobsController < ApplicationController
   # PATCH/PUT /jobs/1 or /jobs/1.json
   def update
     respond_to do |format|
-      if @job.update(job_params)
+      if @job.update!(job_params)
         format.html { redirect_to job_url(@job), notice: "Oportunidade actualizada com sucesso." }
         format.json { render :show, status: :ok, location: @job }
       else
@@ -87,7 +93,7 @@ class JobsController < ApplicationController
 
   # DELETE /jobs/1 or /jobs/1.json
   def destroy
-    @job.destroy
+    @job.destroy!
 
     respond_to do |format|
       format.html { redirect_to jobs_url, notice: "Oportunidade eliminada com sucesso." }

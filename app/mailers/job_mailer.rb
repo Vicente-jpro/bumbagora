@@ -1,8 +1,8 @@
 class JobMailer < ApplicationMailer
   default from: 'vicente.simao@bumbagora.com'
 
-  def invitation
-   @candidate = params[:user_candidate]
+  def notification_email
+   @candidate = params[:user]
    @job = params[:job]
    @company = params[:user_company]
    @category_id = params[:category_id]
