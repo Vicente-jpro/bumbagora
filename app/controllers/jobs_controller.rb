@@ -61,14 +61,13 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(job_params)
     @job.user_id = current_user.id
-    debugger
     respond_to do |format|
       if @job.save!
         puts "Sending email..."
-        debugger
-        JobMailer.with(job: @job)
+        
+        JobMailer.with(job: @job, company: current_user).job_email.deliver_later
         puts "Email sent."
-
+        
         format.html { redirect_to job_url(@job), notice: "Oportunidade criada com sucesso." }
         format.json { render :show, status: :created, location: @job }
       else
@@ -82,6 +81,12 @@ class JobsController < ApplicationController
   def update
     respond_to do |format|
       if @job.update!(job_params)
+
+        puts "Sending email..."
+        
+        JobMailer.with(job: @job, company: current_user).job_email.deliver_later
+        puts "Email sent."
+        
         format.html { redirect_to job_url(@job), notice: "Oportunidade actualizada com sucesso." }
         format.json { render :show, status: :ok, location: @job }
       else
