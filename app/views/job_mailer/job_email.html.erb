@@ -4,10 +4,10 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to example.com, <%= @candidate.name %></h1>
+    <h1>Ola <%= @candidate.name %>!</h1>
     <p>
-      You have successfully signed up to example.com,
-      your username is: <%= @candidate.login %>.<br>
+      Boas noticias para você. Foi publicada uma nova vaga relacionada com o teu perfil.
+      your username is: <%= @candidate.login %>.
     </p>
     <p>
       To login to the site, just follow this link: <%= @url %>.
@@ -15,3 +15,22 @@
     <p>Thanks for joining and have a great day!</p>
   </body>
 </html>
+
+
+class JobMailer < ApplicationMailer
+  default from: 'vicente.simao@bumbagora.com'
+
+  def invitation
+   @candidate = params[:user_candidate]
+   @job = params[:job]
+   @company = params[:user_company]
+   @category_id = params[:category_id]
+
+   @url = "http://127.0.0.1:3000/jobs/search_with_category?category_id=#{@category_id}"
+   #@url  = 'www.bumbagora.com'
+   message = "A empresa #{company.username} convidou-te para fazer parte de uma entrevista na vaga de #{@job.title}. Boa sorte. Clica neste link #{@url}"
+   mail(
+    to: @candidate.email, 
+    subject: "Olá #{@candidate.username}! #{message}" )
+  end
+end
