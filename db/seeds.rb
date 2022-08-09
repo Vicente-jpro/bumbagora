@@ -277,7 +277,8 @@ puts "Cadastrando usuários..."
         email: "vicenteviciii@gmail.com",
         password: "Vicente",
         password_confirmation: "Vicente",
-        type_subscription: "Company"
+        type_subscription: "Company",
+        category: Category.first
         })
    vicente.image.attach(
         io: File.open(Rails.root.join('app', 'assets', 'images', 'pacaça.jpeg')), 
@@ -294,7 +295,8 @@ puts "Cadastrando usuários..."
     email: "vicente.simao.rails@gmail.com",
     password: "Vicente",
     password_confirmation: "Vicente",
-    type_subscription: "Candidate"
+    type_subscription: "Candidate",
+    category: Category.last
     })
    
     galinha.image.attach(

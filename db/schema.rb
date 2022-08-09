@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_19_204521) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_08_224347) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -92,6 +92,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_19_204521) do
     t.datetime "updated_at", null: false
     t.string "type_subscription", default: "Candidate"
     t.integer "country_id", default: 1, null: false
+    t.integer "category_id", default: 1, null: false
+    t.index ["category_id"], name: "index_users_on_category_id"
     t.index ["country_id"], name: "index_users_on_country_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -111,6 +113,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_19_204521) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "jobs", "categories"
   add_foreign_key "jobs", "users"
+  add_foreign_key "users", "categories"
   add_foreign_key "users", "countries"
   add_foreign_key "users_jobs", "jobs"
   add_foreign_key "users_jobs", "users"
