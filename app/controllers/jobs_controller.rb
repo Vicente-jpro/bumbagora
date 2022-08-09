@@ -91,7 +91,8 @@ class JobsController < ApplicationController
     respond_to do |format|
       if @job.update!(job_params)
 
-        @candidates = find_users_by_category_id(category_id)
+        @candidates = find_users_by_category_id(@job.category_id)
+        debugger
         if @candidates.any?
           puts "Sending email..."
           
