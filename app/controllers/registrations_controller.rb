@@ -35,7 +35,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   private
    def user_params
-    @user = User.find(params[:id])
+    @user = User.find_by(id: params[:id])
    end
 
 	 def user_params

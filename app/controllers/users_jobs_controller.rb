@@ -70,10 +70,10 @@ class UsersJobsController < ApplicationController
    end
    private 
     def set_job 
-      @job = Job.find(params[:id])
+      @job = Job.find_by(id: params[:id])
     end
 
     def set_user
-      User.find(params[:id])
+      User.find_by(id: params[:id])
     end
 end
