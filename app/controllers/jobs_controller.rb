@@ -67,7 +67,7 @@ class JobsController < ApplicationController
         @candidates = find_users_by_category_id(category_id)
         if @candidates.any?
           puts "Sending email..."
-          
+          debugger
           JobMailer.with(
             job: @job, 
             company: current_user, 
@@ -92,17 +92,9 @@ class JobsController < ApplicationController
       if @job.update!(job_params)
 
         @candidates = find_users_by_category_id(@job.category_id)
-        debugger
+       
         if @candidates.any?
-          puts "Sending email..."
-          
-          JobMailer.with(
-            job: @job, 
-            company: current_user, 
-            candidates: @candidates 
-          ).job_email.deliver_later
-
-          puts "Email sent."
+          JobCleanupJob.perform_later(@job, current_user, @candidates)
         end
         
         format.html { redirect_to job_url(@job), notice: "Oportunidade actualizada com sucesso." }

@@ -1,5 +1,6 @@
 class JobMailer < ApplicationMailer
-  default from: 'vicente.simao@bumbagora.com'
+  default to: -> {User.pluck(:email)}, 
+          from: 'vicente.simao@bumbagora.com'
 
   def job_email
    
@@ -10,13 +11,11 @@ class JobMailer < ApplicationMailer
    @url = "http://127.0.0.1:3000/jobs/search_with_category?category_id=#{@job.category_id}"
    #@url  = 'www.bumbagora.com'
    message = "A empresa #{@company.username} convidou-te para dar uma olhada na vaga de #{@job.title}. Boa sorte. Clica neste link #{@url}"
-
-    @candidates.each do |candidate|
+  
 	   mail(
-	    to: candidate.email, 
-	    subject: "Olá #{candidate.username}! #{message}" 
+	   # subject: "Olá #{candidate.username}! #{message}" 
+     subject: "Olá Vicente #{message}" 
 	   )
-   	end
-
+   	
   end
 end
