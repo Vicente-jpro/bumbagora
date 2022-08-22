@@ -370,7 +370,7 @@ DEPENDENCIES
   redis (~> 4.0)
   rspec-rails
   selenium-webdriver
-  sidekiq (~> 6.5, >= 6.5.4)
+  sidekiq
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
