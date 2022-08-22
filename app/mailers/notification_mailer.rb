@@ -13,5 +13,17 @@ class NotificationMailer < ApplicationMailer
    	
   end
 
+  def notify_company(company_id, job_id)
+
+   @company = User.find_by(id: company_id)
+   @url = "http://127.0.0.1:3000/"
+   #@url  = 'www.bumbagora.com'
+   @job = Job.find_by(id: job_id)
+   
+   message = "Novo candidato para vaga de #{@job.title}."
+  
+   mail( to: @company.email, subject: "Olá Vicente #{message}"  )
+  end
+
 
 end

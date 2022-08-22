@@ -23,6 +23,9 @@ class UsersJobsController < ApplicationController
   
       @job.applayers += 1
       @job.update!(@job.attributes)
+
+
+      NotifyCompanyJob.perform_later(@job.user_id, @job.id)
   
     end  
     @jobs ||= Job.find_jobs_by_id_greater_than(@job).page(params[:page]).per(8)
