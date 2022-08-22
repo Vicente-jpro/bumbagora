@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :jobs, through: :users_jobs
   belongs_to :country
 
+  belongs_to :category
+
   has_many :jobs, dependent: :destroy
   
   validates_presence_of :country, :username
@@ -26,6 +28,8 @@ class User < ApplicationRecord
   enum type_subscription: {Candidato: "Candidato", Empresa: "Empresa", Admin: "Admin"}
 
   scope :find_by_id, ->(user) { where(id: user.id)}
+  scope :find_by_category_id, ->(category_id) { where(category_id: category_id ) }
+  
 
 
 

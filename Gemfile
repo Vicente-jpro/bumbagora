@@ -75,6 +75,8 @@ gem "truncate_html"
 gem 'active_storage_validations'
 gem 'mini_magick', '>= 4.9.5' 
 
+gem 'sidekiq', '~> 6.5', '>= 6.5.4'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
