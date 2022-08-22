@@ -24,7 +24,7 @@ class UsersJobsController < ApplicationController
       @job.applayers += 1
       @job.update!(@job.attributes)
 
-
+      #Send email for a company.
       NotifyCompanyJob.perform_later(@job.user_id, @job.id)
   
     end  
