@@ -64,19 +64,13 @@ class JobsController < ApplicationController
     respond_to do |format|
       if @job.save!
 
-        @candidates = find_users_by_category_id(category_id)
-        if @candidates.any?
-          puts "Sending email..."
-          debugger
-          JobMailer.with(
-            job: @job, 
-            company: current_user, 
-            candidates: @candidates 
-          ).job_email.deliver_later
-
-          puts "Email sent."
-        end
+        @candidates = User.find_by_category_id( @job.category_id )
         
+        if @candidates.any?
+          #Send email notification
+          NotificationJob.perform_later(@job.id)
+        end
+
         format.html { redirect_to job_url(@job), notice: "Oportunidade criada com sucesso." }
         format.json { render :show, status: :created, location: @job }
       else
@@ -91,10 +85,11 @@ class JobsController < ApplicationController
     respond_to do |format|
       if @job.update!(job_params)
 
-        @candidates = find_users_by_category_id(@job.category_id)
-       
+       @candidates = User.find_by_category_id( @job.category_id )
+        
         if @candidates.any?
-          JobCleanupJob.perform_later(@job, current_user, @candidates)
+          #Send email notification
+          NotificationJob.perform_later(@job.id)
         end
         
         format.html { redirect_to job_url(@job), notice: "Oportunidade actualizada com sucesso." }
@@ -125,10 +120,6 @@ class JobsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def job_params
       params.require(:job).permit(:title, :type_job, :description, :salary, :category_id )
-    end
-
-    def find_users_by_category_id(category_id)
-      User.find_by_category_id(category_id)
     end
 
 end
