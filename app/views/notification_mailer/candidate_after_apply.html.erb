@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Olá <%= @candidate.username %>!</h1>
+    <p>
+      Estamos felizes em receber a sua candidatura para vaga de
+      <strong> <%= @job.title %> </strong> postada no site.
+    </p>
+    <p>
+      Para ver os candidatos, apenas clica neste link: <%= link_to "bumbagora.com", @url %>.
+    </p>
+    <p>Desejamos-lhe boa sorte enquanto a sua candidatura está sendo revisada.</p>
+  </body>
+</html>

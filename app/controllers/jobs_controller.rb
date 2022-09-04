@@ -61,6 +61,7 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(job_params)
     @job.user_id = current_user.id
+    debugger
     respond_to do |format|
       if @job.save!
 
