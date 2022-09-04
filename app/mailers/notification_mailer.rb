@@ -7,9 +7,9 @@ class NotificationMailer < ApplicationMailer
    
    @url = "http://127.0.0.1:3000/jobs/search_with_category?category_id=#{@job.category_id}"
    #@url  = 'www.bumbagora.com'
-   message = "Nova vaga de #{@job.title}, foi postada no nosso site. Aproveita a oportunidade. Boa sorte. Clica neste link #{@url}"
+   message = "Nova vaga de #{@job.title}, foi postada no nosso site."
   
-   mail( to: @user.email, subject: "Olá Vicente #{message}"  )
+   mail( to: @user.email, subject: "Olá #{@user.username}! #{message}"  )
    	
   end
 
@@ -22,7 +22,7 @@ class NotificationMailer < ApplicationMailer
    
    message = "Novo candidato para vaga de #{@job.title}."
   
-   mail( to: @company.email, subject: "Olá Vicente #{message}"  )
+   mail( to: @company.email, subject: "Olá #{@candidate.username}! #{message}"  )
   end
 
 
@@ -33,9 +33,9 @@ class NotificationMailer < ApplicationMailer
    #@url  = 'www.bumbagora.com'
    @job = Job.find_by(id: job_id)
    
-   message = "Novo candidato para vaga de #{@job.title}."
+   message = "Candidatura para a Vaga de #{@job.title}."
   
-   mail( to: @candidate.email, subject: "Olá Vicente #{message}"  )
+   mail( to: @candidate.email, subject: "Olá #{@candidate.username}! #{message}"  )
 
   end
 
