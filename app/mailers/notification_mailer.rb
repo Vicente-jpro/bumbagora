@@ -7,7 +7,6 @@ class NotificationMailer < ApplicationMailer
    @user = User.find_by(id: candidate_id)
    
    @url = "http:/#{BASE_URL}/jobs/search_with_category?category_id=#{@job.category_id}"
-   #@url  = 'www.bumbagora.com'
    message = "Nova vaga de #{@job.title}, foi postada no nosso site."
   
    mail( to: @user.email, subject: "Olá #{@user.username}! #{message}"  )
@@ -18,7 +17,6 @@ class NotificationMailer < ApplicationMailer
 
    @company = User.find_by(id: company_id)
    @url = "#{BASE_URL}"
-   #@url  = 'www.bumbagora.com'
    @job = Job.find_by(id: job_id)
    
    message = "Novo candidato para vaga de #{@job.title}."
@@ -31,7 +29,6 @@ class NotificationMailer < ApplicationMailer
 
    @candidate = User.find_by(id: candidate_id)
    @url = "#{BASE_URL}"
-   #@url  = 'www.bumbagora.com'
    @job = Job.find_by(id: job_id)
    
    message = "Candidatura para a Vaga de #{@job.title}."
