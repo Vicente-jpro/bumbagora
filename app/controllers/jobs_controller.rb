@@ -10,7 +10,7 @@ class JobsController < ApplicationController
   def search 
     puts "*** Pesquisando o Job por #{params[:job]}... ***"
 
-    @jobs ||= Job.find_jobs_by_title_or_category_name(params[:job]).page(params[:page]).per(8)
+    @jobs ||= Job.find_jobs_by_title(params[:job]).page(params[:page]).per(8)
     @page_name_index = page_name("index")
     puts "*** Fim da pesquisa. ***"
   end
@@ -27,8 +27,7 @@ class JobsController < ApplicationController
   def index
     puts "*** Pesquisando todos Job... ***"
 
-   #@jobs ||= Job.find_jobs_ordered_by_id_desc.page(params[:page]).per(8)
-    @jobs ||= Job.includes(:users, :category, :users_jobs).page(params[:page]).per(8)
+    @jobs ||= Job.find_jobs_ordered_by_id_desc.page(params[:page]).per(8)
     @page_name_index = page_name("index")
     puts "*** Fim da pesquisa. ***"
   end
