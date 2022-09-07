@@ -17,6 +17,9 @@ class Job < ApplicationRecord
   }
   scope :find_jobs_by_id_greater_than, ->(job) { where('id <= ? ',job.id).order(id: :desc) }
   scope :find_jobs_by_category_id, ->(category_id) { where('category_id = ?', category_id.to_i)}
-  scope :find_jobs_ordered_by_id_desc, -> { order(id: :desc) }
+  scope :find_jobs_ordered_by_id_desc, -> { 
+      includes(:users, :category, :users_jobs)
+      .order(id: :desc) 
+  }
   
 end
