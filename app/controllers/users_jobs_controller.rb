@@ -64,16 +64,18 @@ class UsersJobsController < ApplicationController
     @candidate = set_user
    end
 
-   #Send email envitation to a candidate
-   def send_email
-    # Tell the UserMailer to send a welcome email after save
-    @candidate = set_user
-    @job = params[:job]
-    @company = params[:user_company]
+   # #Send email envitation to a candidate
+   # def send_email
+   #  # Tell the UserMailer to send a welcome email after save
+   #  @candidate = set_user
+   #  @job = params[:job]
+   #  @company = params[:user_company]
 
-      JobMailer.with(user_candidate: @candidate, job: @job, user_company: @company )
-               .invitation.deliver_later
-   end
+   #    JobMailer.with(user_candidate: @candidate, job: @job, user_company: @company )
+   #             .invitation
+   #             .deliver_later
+   # end
+   
    private 
     def set_job 
       @job = Job.find_by(id: params[:id])
