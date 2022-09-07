@@ -75,7 +75,7 @@ class UsersJobsController < ApplicationController
    #             .invitation
    #             .deliver_later
    # end
-   
+
    private 
     def set_job 
       @job = Job.find_by(id: params[:id])
