@@ -17,7 +17,7 @@ class Job < ApplicationRecord
     .where('LOWER(title) LIKE ?', "%#{job.downcase}%")
     .order(id: :desc) if job.present?
   }
-  
+
   scope :find_jobs_by_id_greater_than, ->(job) { where('id <= ? ',job.id).order(id: :desc) }
   
   scope :find_jobs_by_category_id, ->(category_id) { 
@@ -31,5 +31,7 @@ class Job < ApplicationRecord
       includes(:users, :category, :users_jobs)
       .order(id: :desc) 
   }
+
+  scope :find_job_by_id, ->(job_params) { where(id: job_params) }
   
 end
