@@ -10,7 +10,7 @@ class JobsController < ApplicationController
   def search 
     puts "*** Pesquisando o Job por #{params[:job]}... ***"
 
-    @jobs ||= Job.find_jobs_by_title_or_category_name(params[:job]).page(params[:page]).per(8)
+    @jobs ||= Job.find_jobs_by_title(params[:job]).page(params[:page]).per(8)
     @page_name_index = page_name("index")
     puts "*** Fim da pesquisa. ***"
   end
@@ -61,7 +61,7 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(job_params)
     @job.user_id = current_user.id
-    debugger
+    
     respond_to do |format|
       if @job.save!
 
@@ -115,7 +115,7 @@ class JobsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_job
-      @job = Job.find_by(id: params[:id])
+      @job = Job.find_job_by_id(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
