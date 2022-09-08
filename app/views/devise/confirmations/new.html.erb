@@ -9,7 +9,7 @@
       <div class="row my-2">
 
 
-      <%= bootstrap_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+      <%= bootstrap_form_for(resource, as: resource_name, url: confirmation_path(resource_name), data: { turbo: false }, html: { method: :post }) do |f| %>
 
         <%= render "devise/shared/error_messages", resource: resource %>
 
