@@ -24,7 +24,7 @@
 
             <%= f.select :type_subscription, User.type_subscriptions, {label: "Tipo da subscrição"} %>
             <%= f.collection_select :country_id, Country.order(:name_country), :id, :name_country, {label: "Pais"} %>
-
+            <%= f.collection_select :category_id, Category.order(:name), :id, :name, {label: "Profissão/Formação"}%>
            <%= f.text_field :localization_description, label:"Descrição", placeholder: "Local onde vives / Localização da tua empresa"%>
            <%= f.email_field :email, placeholder: "exemplo@bumbagora.com", autocomplete: "email" %>
 

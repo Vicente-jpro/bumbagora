@@ -4,9 +4,10 @@
       <div class="card-title">
       	<h4 class="text-center">Log in</h4>
       </div>
+
       <div class="row my-2">
 
-        <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
         
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
           <%= f.password_field :password, autocomplete: "current-password" %>
