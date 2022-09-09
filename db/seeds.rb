@@ -271,7 +271,7 @@ puts "Cadastrando usuários..."
 
 
    vicente = User.new({
-        username: Faker::Name.name,
+        username: "Vicente on Rails"
         country: Country.first,
         localization_description: "Luanda/Kilamba",
         email: "vicenteviciii@gmail.com",
@@ -289,14 +289,14 @@ puts "Cadastrando usuários..."
 
 
    galinha = User.new({
-    username: Faker::Company.name,
+    username: "Bumbagora"
     country: Country.last,
     localization_description: "Luanda/Kilamba",
     email: "vicente.simao.rails@gmail.com",
     password: "Vicente",
     password_confirmation: "Vicente",
     type_subscription: "Candidate",
-    category: Category.last
+    category: Category.first
     })
    
     galinha.image.attach(
