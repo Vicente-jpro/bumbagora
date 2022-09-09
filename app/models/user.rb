@@ -19,7 +19,7 @@ class User < ApplicationRecord
   has_many :jobs, dependent: :destroy
   
   validates_presence_of :country, :username
-  validates :category, acceptance: { message: 'Selecione uma Profissão/Formação.' }
+  #validates :category, acceptance: { message: 'Selecione uma Profissão/Formação.' }
 
   validates :image, content_type:  ['image/png', 'image/jpeg'],
                     size: { less_than: 4.megabytes } 
