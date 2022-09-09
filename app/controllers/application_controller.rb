@@ -5,14 +5,16 @@ class ApplicationController < ActionController::Base
     
   protected
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, 
+      devise_parameter_sanitizer.permit(:sign_up,
         keys: [
-          :username, :type_subscription, :country_id, :localization_description, :image, :document
+          :username, :type_subscription, :country_id, :category_id, 
+          :localization_description, :image, :document
           ])
           
       devise_parameter_sanitizer.permit(:account_update, 
         keys: [
-          :username, :type_subscription, :country_id, :localization_description, :image, :document
+          :username, :type_subscription, :country_id, :category_id, 
+          :localization_description, :image, :document
           ])
     end
 

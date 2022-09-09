@@ -10,9 +10,11 @@ class RegistrationsController < Devise::RegistrationsController
         if @user.update(user_params)
           format.html { redirect_to jobs_url, notice: "Usuários actualizado com sucesso." }
           format.json { render :show, status: :ok, location: @user }
+          puts @user
         else
           format.html { render :edit, status: :unprocessable_entity }
           format.json { render json: @user.errors, status: :unprocessable_entity }
+          puts @user.errors
         end
       end
      
@@ -22,13 +24,16 @@ class RegistrationsController < Devise::RegistrationsController
   def create
 
     @user = User.new(user_params)
+
     respond_to do |format|
-      if @user.save
+      if @user.save!
         format.html { redirect_to jobs_url, notice: "Você receberá um e-mail com instruções sobre como confirmar seu endereço de e-mail em alguns minutos." }
         format.json { render :show, status: :created, location: @user }
+        puts @user
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @user.errors, status: :unprocessable_entity }
+        puts @user.errors
       end
     end
   end
@@ -43,7 +48,8 @@ class RegistrationsController < Devise::RegistrationsController
           .permit(
             :username, 
             :type_subscription, 
-            :country_id, 
+            :country_id,
+            :category_id, 
             :localization_description, 
             :image, 
             :document, 
