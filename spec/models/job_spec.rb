@@ -8,6 +8,7 @@ RSpec.describe Job, type: :model do
 
     it "has a title." do 
       expect(job.title).to eq("Ruby on Rails")
+      puts "Value of job -> #{job}"
     end
 
     it "has a job type." do 
