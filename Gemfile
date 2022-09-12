@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "~> 3.0.3"
+ruby "~> 3.0.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3"
@@ -76,6 +76,9 @@ gem 'active_storage_validations'
 gem 'mini_magick', '>= 4.9.5' 
 
 gem 'sidekiq'
+
+#gem 'webpacker', '~> 3.0'
+#gem 'psych', '~> 4.0', '>= 4.0.5'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
