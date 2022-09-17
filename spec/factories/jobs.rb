@@ -5,6 +5,7 @@ FactoryBot.define do
     user
     category
 
+
     ## Own attributes
     id { 1 }
     title { "Ruby on Rails" }
