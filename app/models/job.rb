@@ -8,7 +8,7 @@ class Job < ApplicationRecord
   has_many :users_jobs, dependent: :destroy
   has_many :users, through: :users_jobs
 
-  validates_presence_of :title, :category, :type_job, :description
+  validates_presence_of :title, :type_job, :description
 
   enum type_job: {Remota: "Remota", Presencial: "Presencial", Hibrida: "Híbrida"}
  
