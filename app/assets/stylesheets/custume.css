@@ -3,6 +3,11 @@
   background-color: #00695c !important;
 }
 
+
+.teal-lighten-5{
+  background-color: #e0f2f1;
+}
+
 .navbar{
   border-top-style: solid;
   border-color: pink;
