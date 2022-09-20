@@ -29,7 +29,7 @@ class UsersJobsController < ApplicationController
       NotificationMailer.candidate_after_apply(current_user.id, @job.id, company_id).deliver_later
 
       puts "##### Send email for a company."
-      NotifyCompanyJob.perform_later(@job.user_id, @job.id)
+      NotificationMailer.notify_company(@job.user_id, @job.id).deliver_later
   
     end  
     @jobs ||= Job.find_jobs_by_id_greater_than(@job).page(params[:page]).per(8)
