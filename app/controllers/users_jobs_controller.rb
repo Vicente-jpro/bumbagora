@@ -25,7 +25,8 @@ class UsersJobsController < ApplicationController
       @job.update!(@job.attributes)
       
       puts "##### Sanding email to candidate applayed."
-      NotificationMailer.candidate_after_apply(current_user.id, @job.id).deliver_later
+      company_id = @job.user_id
+      NotificationMailer.candidate_after_apply(current_user.id, @job.id, company_id).deliver_later
 
       puts "##### Send email for a company."
       NotifyCompanyJob.perform_later(@job.user_id, @job.id)
@@ -63,18 +64,6 @@ class UsersJobsController < ApplicationController
    def show 
     @candidate = set_user
    end
-
-   # #Send email envitation to a candidate
-   # def send_email
-   #  # Tell the UserMailer to send a welcome email after save
-   #  @candidate = set_user
-   #  @job = params[:job]
-   #  @company = params[:user_company]
-
-   #    JobMailer.with(user_candidate: @candidate, job: @job, user_company: @company )
-   #             .invitation
-   #             .deliver_later
-   # end
 
    private 
     def set_job 
