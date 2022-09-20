@@ -21,7 +21,7 @@ class NotificationMailer < ApplicationMailer
    
    message = "Novo candidato para vaga de #{@job.title}."
 
-   mail( to: @company.email, subject: "Olá #{@candidate.username}! #{message}"  )
+   mail( to: @company.email, subject: "Olá #{@company.username}! #{message}"  )
   end
 
 
