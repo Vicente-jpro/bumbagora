@@ -19,7 +19,10 @@
     <%= render 'layouts/search_bar'%>
     <%= render 'layouts/message' if notice %>
     <%= render 'layouts/alert' if alert %> 
-    <%= render 'layouts/service' %>
+    <% if @page == "home" %>
+      <%= render 'layouts/about' %>
+      <%= render 'layouts/service' %>
+    <% end %>
     <%= yield %>
     <%= render 'layouts/footer'%>
   </body>

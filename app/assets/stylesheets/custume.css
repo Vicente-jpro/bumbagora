@@ -8,6 +8,10 @@
   background-color: #e0f2f1;
 }
 
+.text-success{
+  color: #00695c !important;
+}
+
 .navbar{
   border-top-style: solid;
   border-color: pink;
@@ -79,23 +83,17 @@
 
 /***************************/
 
-h5{
-  /****  #004d40 teal darken-4  ****/
-  color: #004d40 ;
-
-}
-
-
-h4{
-  /****  #004d40 teal darken-4  ****/
-  color: #004d40 ;
-
-}
 
 h3{
   /****  #004d40 teal darken-4  ****/
   color: #004d40 ;
   text-align: center;
+
+}
+
+h1, h4, h5{
+  /****  #004d40 teal darken-4  ****/
+  color: #004d40 ;
 
 }
 strong{
@@ -126,6 +124,12 @@ hr{
   color: #004d40 !important; 
 }
 
+.i-big{
+  font-size: 200px;
+
+  /****  #004d40 teal darken-4  ****/
+  color: #004d40 !important; 
+}
 
 .rounded{
   width: 100px;
