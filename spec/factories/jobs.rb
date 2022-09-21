@@ -3,7 +3,7 @@ FactoryBot.define do
     
     ## Associations 
     user
-    category
+    category {user.category}
 
     ## Own attributes
     id { 1 }
