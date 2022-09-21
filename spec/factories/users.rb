@@ -3,7 +3,8 @@ FactoryBot.define do
 
     ## Associations 
     country
-
+    category
+    
     ## Own attributes
     id { 1 }
     username { "Vicente Simao" }
