@@ -24,17 +24,15 @@ class UsersJobsController < ApplicationController
       @job.applayers += 1
       @job.update!(@job.attributes)
       
-      puts "##### Sanding email to candidate applayed."
+  
       company_id = @job.user_id
       NotificationMailer.candidate_after_apply(current_user.id, @job.id, company_id).deliver_later
 
-      puts "##### Send email for a company."
       NotificationMailer.notify_company(@job.user_id, @job.id).deliver_later
   
     end  
     @jobs ||= Job.find_jobs_by_id_greater_than(@job).page(params[:page]).per(8)
     render "jobs/index", job: @jobs 
-
    end
 
    # GET /users_jobs/:id/candidates
@@ -63,6 +61,7 @@ class UsersJobsController < ApplicationController
    # GET /users_jobs/:user_id/show
    def show 
     @candidate = set_user
+    
    end
 
    private 
