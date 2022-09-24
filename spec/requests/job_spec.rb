@@ -37,7 +37,7 @@ RSpec.describe "Jobs", type: :request do
     it "should when id is" do
       get "/jobs/#{job.id}"
 
-      expect(assigns(:job)).to eq(job)  
+      expect(assigns(:job)).to_not be_empty  
       expect(response).to render_template(:show)
     end
   end
