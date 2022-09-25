@@ -65,11 +65,10 @@ RSpec.describe "Jobs", type: :request do
   end
 
   describe "NEW /jobs/new" do 
-     
+    # params.require(:job).permit(:title, :type_job, :description, :salary, :category_id )
 
     it "should success and render the new template." do 
-      create(:job)
-      get "/jobs"
+      get "/jobs/new"
       expect(response).to have_http_status(200)
       expect(response).to render_template(:new)
     end
