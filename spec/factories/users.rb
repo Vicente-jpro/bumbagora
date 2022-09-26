@@ -15,12 +15,12 @@ FactoryBot.define do
     reset_password_sent_at { "2022-06-24 08:20:47" }
     remember_created_at { "2022-06-24 08:20:47" }
     confirmation_token { "token" }
-    confirmed_at { "2022-06-24 08:20:47" }
+    confirmed_at {  Date.today }
     confirmation_sent_at { "2022-06-24 08:20:47" }
     unconfirmed_email { "vicentevicii@gmail.com" }
     created_at { "2022-06-24 08:20:47" }
     updated_at { "2022-06-24 08:20:47" }
-    type_subscription { "Candidato" }
+    type_subscription { "Empresa" }
     password{ "Vicente" }
   end
 end

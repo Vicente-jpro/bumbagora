@@ -66,9 +66,14 @@ RSpec.describe "Jobs", type: :request do
 
   describe "NEW /jobs/new" do 
     # params.require(:job).permit(:title, :type_job, :description, :salary, :category_id )
+    let(:job) { create(:job) }
+    let(:user) { create(:user)}
 
     it "should success and render the new template." do 
+
       get "/jobs/new"
+
+      
       expect(response).to have_http_status(200)
       expect(response).to render_template(:new)
     end
