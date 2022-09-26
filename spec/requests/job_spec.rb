@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Jobs", type: :request do
-  
   describe "GET /jobs" do
     
     it "should success and render to the index template" do
@@ -34,18 +33,12 @@ RSpec.describe "Jobs", type: :request do
       expect(response).to render_template(:show)
     end
 
-    it "should when id is" do
-      get "/jobs/#{job.id}"
-
-      expect(assigns(:job)).to_not be_empty  
-      expect(response).to render_template(:show)
-    end
   end
 
-
+  
   describe "SEARCH /jobs/search" do 
+    
     let(:job) {create(:job)}
-
     it "should have a title" do   
       get "/jobs/search?job=#{job.title}"
 
@@ -61,21 +54,6 @@ RSpec.describe "Jobs", type: :request do
       get "/jobs/search_with_category?category_id=#{job.id}" 
       expect(response).to have_http_status(200)
       expect(assigns(:jobs)).to render_template(:search)
-    end
-  end
-
-  describe "NEW /jobs/new" do 
-    # params.require(:job).permit(:title, :type_job, :description, :salary, :category_id )
-    let(:job) { create(:job) }
-    let(:user) { create(:user)}
-
-    it "should success and render the new template." do 
-
-      get "/jobs/new"
-
-      
-      expect(response).to have_http_status(200)
-      expect(response).to render_template(:new)
     end
   end
 
