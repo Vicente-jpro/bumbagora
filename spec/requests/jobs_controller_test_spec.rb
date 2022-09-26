@@ -5,7 +5,6 @@ class JobsControllerTest < ActionController::TestCase
 
   describe "SEARCH /jobs/search" do 
     let(:job) {create(:job)}
-    let(:user) {create(:user)}
 
 
     it "should have a title" do   
@@ -15,6 +14,21 @@ class JobsControllerTest < ActionController::TestCase
 
       expect(response).to have_http_status(200)
       expect(assigns(:jobs)).to render_template(:search)
+    end
+  end
+
+
+    describe "NEW /jobs/new" do 
+	let(:job) {create(:job)}
+    
+    it "should success and render the new template." do 
+
+
+      get "/jobs/new"
+      @request.session[:user_id] = job.user_id
+
+      expect(response).to have_http_status(200)
+      expect(response).to render_template(:new)
     end
   end
 
