@@ -3,6 +3,11 @@ body {
   padding-top: 4.5rem;
 }
 
+turbo-frame{
+  display: block;
+  border:  1px solid blue;
+}
+
 /*********** Menu *********/
 .teal-darken-3{
   background-color: #00695c !important;
