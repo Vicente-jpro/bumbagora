@@ -9,7 +9,6 @@ class MessagesController < ApplicationController
    @message = @room.messages.create!(message_params)
    
    respond_to do |format|
-   	 format.turbo_stream
    	 format.html { redirect_to @room }
    end
  end
