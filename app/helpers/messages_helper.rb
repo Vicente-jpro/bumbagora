@@ -4,9 +4,3 @@ module MessagesHelper
   	"indigo-lighten-5"
   end
 end
-
-
-
-
-
-
