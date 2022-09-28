@@ -1,6 +1,5 @@
- 
 <div class="d-flex justify-content-end">
-  <div class="card text-center teal-lighten-5 my-2" id="<%= dom_id(message)%>">
+  <div class="card text-center <%= message_color(message) %> my-2" id="<%= dom_id(message)%>">
     <div class="card-body">
       <p class="card-text">
 		<%= message.content %>
@@ -10,7 +9,3 @@
     </div>
   </div>
 </div>
-
-
-  
-

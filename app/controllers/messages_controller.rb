@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
 
  def create
    @message = @room.messages.create!(message_params)
-   
+
    respond_to do |format|
      format.turbo_stream
    	 format.html { redirect_to @room }
@@ -19,6 +19,6 @@ class MessagesController < ApplicationController
  end
 
  def message_params
-   params.require(:message).permit(:content)
+   params.require(:message).permit(:content, :user_id)
  end
 end
