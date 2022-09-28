@@ -4,6 +4,7 @@
 		data: { controller: "reset_form", action: "turbo:submit-end->reset_form#reset"} ) do |form|%>
 		<div class="field">
 			<%= form.text_field :content%>
+			<%= form.hidden_field :user_id, value: current_user.id if current_user.present?%>
 			<%= form.submit "enviar"%>
 		</div>
 	<% end %>
