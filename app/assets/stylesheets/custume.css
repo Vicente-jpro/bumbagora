@@ -8,15 +8,6 @@ turbo-frame{
   border:  1px solid blue;
 }
 
-
-.overflowTest {
-  padding: 15px;
-  width: 50%;
-  height: 100px;
-  overflow: scroll;
-  border: 1px solid #ccc;
-}
-
 /*********** Menu *********/
 .teal-darken-3{
   background-color: #00695c !important;

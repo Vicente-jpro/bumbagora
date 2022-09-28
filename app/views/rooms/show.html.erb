@@ -1,20 +1,21 @@
-<p style="color: green"><%= notice %></p>
 
-<%= turbo_stream_from @room %>
+<div class="container col-sm-9">
+  <%= turbo_stream_from @room %>
 
-<%= turbo_frame_tag "room" do %>
-  <%= render @room %>
+  <%= turbo_frame_tag "room" do %>
+    <%= render @room %>
 
-  <div>
-    <%= link_to "Edit this room", edit_room_path(@room) %> |
-    <%= link_to "Back to rooms", rooms_path, "data-turbo-frame":"_top" %>
+    <div>
+      <%= link_to "Edit this room", edit_room_path(@room) %> |
+      <%= link_to "Back to rooms", rooms_path, "data-turbo-frame":"_top" %>
 
-    <%= button_to "Destroy this room", @room, method: :delete %>
+      <%= button_to "Destroy this room", @room, method: :delete %>
+    </div>
+  <% end %>
+
+  <div id="messages">
+    <%= render @room.messages %>
   </div>
-<% end %>
 
-<div class="overflowTest">
-  <%= render @room.messages %>
-</div>
-
-<%= turbo_frame_tag "new_message", src: new_room_message_path(@room), target: "_top" %>
+  <%= turbo_frame_tag "new_message", src: new_room_message_path(@room), target: "_top" %>
+<div>

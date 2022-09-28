@@ -3,7 +3,9 @@
   <div class="card text-center teal-lighten-5 my-2" id="<%= dom_id(message)%>">
     <div class="card-body">
       <p class="card-text">
-		<%= message.created_at.to_s(:short) %>: <%= message.content %>
+		<%= message.content %>
+		<br>
+		<small class="text-muted"> <%= message.created_at.to_s(:short) %> </small>
 	  </p>
     </div>
   </div>
