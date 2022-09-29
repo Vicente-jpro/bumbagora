@@ -40,13 +40,17 @@ Empresa ou Recrutador:
 
 ### Pesquisa padrão
 <ul>
-	<li> As vagas devem ser ordenadas da mais recente para a mais antiga. </li>
+	<li> As vagas são ordenadas da mais recente para a mais antiga. </li>
+	<li> As vagas são pesquisadas por categoria, ou pelo título. </li>
 </ul>
 
 
 ### Eliminar vagas
 <ul>
-	<li> As vagas com mais de 1 meses são excluídas da aplicação automaticamente. </li>
+	<li> 
+		As vagas com mais de 1 meses são excluídas da aplicação automaticamente com os seus 
+		usuários cadastrados. 
+	</li>
 </ul>
  
 
@@ -63,6 +67,23 @@ Empresa ou Recrutador:
 	</li>
 	<li> 
 		O Candidato não pode editar seu perfil ou eliminar a sua conta sem ser autenticado
+	</li>
+</ul>
+
+
+### Notificações Via Email de Forma Automática
+<ul>
+	<li> 
+		A empresa ou recrutador recebe uma notificação do usuário que acabou de se inscrever. 
+	</li>
+	<li> 
+	 	A empresa ou recrutador envia uma noticação a cada usuário registrado na vaga de acordo a sua formação (categoria). 
+	</li>
+	<li> 
+		O candidato recebe uma notificação após se candidatar a uma vaga.
+	</li>
+	<li> 
+		Todos os candidatos de determinada formação (categoria) são informados pela vaga postada no site. 
 	</li>
 </ul>
 
