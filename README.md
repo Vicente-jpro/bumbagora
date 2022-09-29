@@ -30,21 +30,6 @@ Company or Recruiter:
 </ul>
  
 
-
-
-
-
-restrictions
-The company or recruiter cannot post, edit, update or delete a opportunity without being authenticated.
-The company or recruiter cannot edit your profile or delete your account without being authenticated.
-Candidates cannot apply for a opportunity without being authenticated.
-Candidate cannot edit their profile or delete their account without being authenticated
-Automatic Email Notifications
-The company or recruiter receives a notification from the user who has just signed up.
-The company or recruiter sends a notification to each user registered in the opportunity according to their training (category).
-The candidate receives a notification after applying for a job.
-All candidates of a certain training (category) are informed by the opportunity posted on the website.
-
 ### Default search
 <ul>
 	<li> Opportunities are sorted from most recent to oldest. </li>
@@ -60,44 +45,36 @@ All candidates of a certain training (category) are informed by the opportunity 
 </ul>
  
 
-### Restrições
+### Restrictions
 <ul>
 	<li> 
-		A empresa ou recrutador não pode postar, editar, atualizar ou eliminar uma  vaga sem ser autenticado. 
+		The company or recruiter cannot post, edit, update or delete a opportunity without being authenticated. 
 	</li>
 	<li> 
-	 	A empresa ou recrutador não pode editar seu perfil ou eliminar a sua conta sem ser autenticado. 
+	 	The company or recruiter cannot edit your profile or delete your account without being authenticated. 
 	</li>
 	<li> 
-		O candidato não pode concorrer a uma vaga sem ser autenticado.
-	</li>
-	<li> 
-		O Candidato não pode editar seu perfil ou eliminar a sua conta sem ser autenticado
+		Candidate cannot edit their profile or delete their account without being authenticated.
 	</li>
 </ul>
 
-
-### Notificações Via Email de Forma Automática
+### Automatic Email Notifications.
 <ul>
 	<li> 
-		A empresa ou recrutador recebe uma notificação do usuário que acabou de se inscrever. 
+		The company or recruiter receives a notification from the user who has just signed up. 
 	</li>
 	<li> 
-	 	A empresa ou recrutador envia uma noticação a cada usuário registrado na vaga de acordo a sua formação (categoria). 
+	 	The company or recruiter sends a notification to each user registered in the opportunity according to their training (category). 
 	</li>
 	<li> 
-		O candidato recebe uma notificação após se candidatar a uma vaga.
+		The candidate receives a notification after applying for a job.
 	</li>
 	<li> 
-		Todos os candidatos de determinada formação (categoria) são informados pela vaga postada no site. 
+		All candidates of a certain training (category) are informed by the opportunity posted on the website. 
 	</li>
 </ul>
 
-
-
-
-
-
+<br/>
 
 ### ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
