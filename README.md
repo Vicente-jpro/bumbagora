@@ -5,28 +5,6 @@ Click on link to test this app
  <a href="[https://unicanada.net/list-of-universities-in-nova-scotia/](https://bumbagora.herokuapp.com/)" target="_blank">[Bumbagora app](https://www.bumbagora.com/)</a> 
 
 
-
-
-opportunities are sorted from most recent to oldest.
-opportunities are searched by category, or by title.
-eliminate opportunities
-opportunities older than 1 month are automatically excluded from the application with their registered users.
-restrictions
-The company or recruiter cannot post, edit, update or delete a opportunity without being authenticated.
-The company or recruiter cannot edit your profile or delete your account without being authenticated.
-Candidates cannot apply for a opportunity without being authenticated.
-Candidate cannot edit their profile or delete their account without being authenticated
-Automatic Email Notifications
-The company or recruiter receives a notification from the user who has just signed up.
-The company or recruiter sends a notification to each user registered in the opportunity according to their training (category).
-The candidate receives a notification after applying for a job.
-All candidates of a certain training (category) are informed by the opportunity posted on the website.
-
-
-
-# Sistema Vaga de Emprego com Ruby on Rails "Bumbagora". 
-
-
 ### Opportunities can be of the type:
 
 <ul>
@@ -52,18 +30,32 @@ Company or Recruiter:
 </ul>
  
 
+
+
+
+
+restrictions
+The company or recruiter cannot post, edit, update or delete a opportunity without being authenticated.
+The company or recruiter cannot edit your profile or delete your account without being authenticated.
+Candidates cannot apply for a opportunity without being authenticated.
+Candidate cannot edit their profile or delete their account without being authenticated
+Automatic Email Notifications
+The company or recruiter receives a notification from the user who has just signed up.
+The company or recruiter sends a notification to each user registered in the opportunity according to their training (category).
+The candidate receives a notification after applying for a job.
+All candidates of a certain training (category) are informed by the opportunity posted on the website.
+
 ### Default search
 <ul>
-	<li> As vagas são ordenadas da mais recente para a mais antiga. </li>
-	<li> As vagas são pesquisadas por categoria, ou pelo título. </li>
+	<li> Opportunities are sorted from most recent to oldest. </li>
+	<li> opportunities are searched by category, or by title. </li>
 </ul>
 
 
-### Eliminar vagas
+### Eliminate opportunities
 <ul>
 	<li> 
-		As vagas com mais de 1 meses são excluídas da aplicação automaticamente com os seus 
-		usuários cadastrados. 
+		Opportunities older than 1 month are automatically excluded from the application with their registered users.
 	</li>
 </ul>
  
