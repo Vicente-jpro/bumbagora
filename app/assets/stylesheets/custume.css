@@ -1,6 +1,8 @@
 body {
   min-height: 75rem;
   padding-top: 4.5rem;
+  /*** #fafafa grey lighten-5 ***/
+  background-color: #fafafa ;
 }
 
 turbo-frame{
@@ -149,10 +151,6 @@ hr{
   width: 100px;
 }
 
-body{
-  /*** #fafafa grey lighten-5 ***/
-  background-color: #fafafa ;
-}
 
 .text-time{
   font-size: 14px;
