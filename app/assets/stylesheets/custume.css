@@ -4,11 +4,12 @@ body {
   /*** #fafafa grey lighten-5 ***/
   background-color: #fafafa ;
 }
-
+/*
 turbo-frame{
   display: block;
   border:  1px solid blue;
 }
+*/
 
 /*********** Menu *********/
 .teal-darken-3{
@@ -167,4 +168,11 @@ hr{
 .card{
   border: none;
   border-radius: 25px;
+}
+
+#overflow-chat {
+  color: black;
+  padding: 15px;
+  height: 400px;
+  overflow: scroll;
 }

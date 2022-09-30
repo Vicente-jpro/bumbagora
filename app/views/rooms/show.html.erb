@@ -1,20 +1,29 @@
-<div class="container col-sm-9">
-  <%= turbo_stream_from @room %>
+<div class="container col-sm-4">
+  
+<div class="card">
+  <h5 class="card-header">Chat com a Empresa <%= @room.user.username if @room.present? %></h5>
+  <div class="card-body" id="overflow-chat">
 
-  <%= turbo_frame_tag "room" do %>
-    <%= render @room %>
 
-    <div>
-      <%= link_to "Edit this room", edit_room_path(@room) %> |
-      <%= link_to "Back to rooms", rooms_path, "data-turbo-frame":"_top" %>
+      <%= turbo_stream_from @room %>
 
-      <%= button_to "Destroy this room", @room, method: :delete %>
+      <%= turbo_frame_tag "room" do %>
+        <%= render @room %>
+
+        <div>
+          <%= link_to "Edit this room", edit_room_path(@room) %> |
+          <%= link_to "Back to rooms", rooms_path, "data-turbo-frame":"_top" %>
+
+          <%= button_to "Destroy this room", @room, method: :delete %>
+        </div>
+      <% end %>
+
+      <div id="messages">
+        <%= render @room.messages %>
+      </div>
+
+      
     </div>
-  <% end %>
-
-  <div id="messages">
-    <%= render @room.messages %>
+    <%= turbo_frame_tag "new_message", src: new_room_message_path(@room), target: "_top" %>
   </div>
-
-  <%= turbo_frame_tag "new_message", src: new_room_message_path(@room), target: "_top" %>
 </div>
