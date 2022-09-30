@@ -1,12 +1,15 @@
 body {
   min-height: 75rem;
   padding-top: 4.5rem;
+  /*** #fafafa grey lighten-5 ***/
+  background-color: #fafafa ;
 }
-
+/*
 turbo-frame{
   display: block;
   border:  1px solid blue;
 }
+*/
 
 /*********** Menu *********/
 .teal-darken-3{
@@ -149,10 +152,6 @@ hr{
   width: 100px;
 }
 
-body{
-  /*** #fafafa grey lighten-5 ***/
-  background-color: #fafafa ;
-}
 
 .text-time{
   font-size: 14px;
@@ -169,4 +168,11 @@ body{
 .card{
   border: none;
   border-radius: 25px;
+}
+
+#overflow-chat {
+  color: black;
+  padding: 15px;
+  height: 400px;
+  overflow: scroll;
 }

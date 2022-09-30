@@ -1,5 +1,5 @@
-<div class="d-flex justify-content-end">
-  <div class="card text-center <%= message_color(message) %> my-2" id="<%= dom_id(message)%>">
+<div class="d-flex <%= text_direction(message) %>">
+  <div class="card text-center <%= message_color(message) %> my-1" id="<%= dom_id(message)%>">
     <div class="card-body">
       <p class="card-text">
 		<%= message.content %>
