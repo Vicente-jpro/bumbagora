@@ -3,9 +3,10 @@
 <%= turbo_frame_tag "new_message", target:"_top" do %>
 	<%= form_with(model: [@message.room, @message], 
 		data: { controller: "reset_form", action: "turbo:submit-end->reset_form#reset"} ) do |form|%>
-		<div class="field">
-			<%= form.text_field :content%>
+		
+			<%= form.text_area :content, class:"form-control"%>
 			<%= form.hidden_field :user_id, value: current_user.id if current_user.present?%>
+		<div class="d-grid gap-2 my-2">
 			<%= form.submit "enviar", class:"btn btn-success" %>
 		</div>
 	<% end %>
@@ -13,4 +14,5 @@
 <%= link_to "voltar", @message.room %>
 
 <% end %>
+
 
