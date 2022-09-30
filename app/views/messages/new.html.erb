@@ -4,7 +4,7 @@
 	<%= form_with(model: [@message.room, @message], 
 		data: { controller: "reset_form", action: "turbo:submit-end->reset_form#reset"} ) do |form|%>
 		
-			<%= form.text_area :content, class:"form-control"%>
+			<%= form.text_area :content, class:"form-control", placeholder:"Escreve a tua mensagem aqui."%>
 			<%= form.hidden_field :user_id, value: current_user.id if current_user.present?%>
 		<div class="d-grid gap-2 my-2">
 			<%= form.submit "enviar", class:"btn btn-success" %>
