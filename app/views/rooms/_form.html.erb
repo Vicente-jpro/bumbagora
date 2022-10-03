@@ -1,22 +1,35 @@
-<%= form_with(model: room) do |form| %>
+<%= bootstrap_form_with(model: room) do |form| %>
   <% if room.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-9">
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          
+         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 
-      <ul>
+       <ul>
         <% room.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
-      </ul>
+       </ul>
+        </div>
+      </div>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
+  <main class="container col-lg-6 my-4">
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h4 class="text-center">Iniciar uma conversa</h4>
+      </div>
+      <div class="row my-2">
+        <%= form.text_field :user_id, value: current_user.id if current_user.present? %>
 
-  <div>
-    <%= form.submit %>
+    <div class="mb-3 d-grid gap-2">
+      <%= form.submit "Iniciar agora", class:"btn btn-success" %>
+    </div>
+      </div>
   </div>
+</main>
+
 <% end %>
