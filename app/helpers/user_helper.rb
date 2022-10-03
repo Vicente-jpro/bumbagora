@@ -13,10 +13,6 @@ module UserHelper
 	  return false
 	end
 
-	def user_is_admin_or_company?(user)
-      (user.Admin? or user.Empresa?)
-    end
-
 	def type_registration?(user_type_subscriptions)
 	  types = Array.new
 
