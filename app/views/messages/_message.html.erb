@@ -1,5 +1,5 @@
-<div class="d-flex <%= text_direction(message) %>">
-  <div class="card text-center <%= message_color(message) %> my-1" id="<%= dom_id(message)%>">
+<div class="d-flex <%= text_direction(message.user) %>">
+  <div class="card text-center <%= message_color(message.user) %> my-1" id="<%= dom_id(message)%>">
     <div class="card-body">
       <p class="card-text">
 		<%= message.content %>
