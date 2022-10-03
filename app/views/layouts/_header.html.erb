@@ -21,8 +21,13 @@
 
             </li>
             <% if user_signed_in? %>
+
               <li class="nav-item">
-              <%= link_to "Candidaturas", users_jobs_path, class: "nav-link", "data-turbo-frame": "_top" %>
+                <% if user_is_admin_or_company?(current_user) %>
+                  <%= link_to "Candidatos", users_jobs_path, class: "nav-link", "data-turbo-frame": "_top" %>
+                  <% else %>
+                  <%= link_to "Candidaturas", users_jobs_path, class: "nav-link", "data-turbo-frame": "_top" %>
+                  <% end %>
               </li>
             <% end %>
           </ul>

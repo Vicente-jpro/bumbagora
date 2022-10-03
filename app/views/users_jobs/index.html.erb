@@ -1,4 +1,13 @@
-<h3>Minhas candidaturas</h3>
+<% if user_signed_in? %>
+    <% if user_is_admin_or_company?(current_user) %>
+      <h3>Meus candidatos</h3>
+      <% else %>
+      <h3>Minhas candidaturas</h3>
+      <% end %>
+
+<% end %>
+
+
 
 <div class="container col-sm-9" id="jobs">
     <% @user.jobs.each do |job| %>
