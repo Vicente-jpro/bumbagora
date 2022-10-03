@@ -102,36 +102,22 @@ turbo-frame{
 
 
 h3{
-  /****  #004d40 teal darken-4  ****/
-  color: #004d40 ;
   text-align: center;
 
 }
 
-h1, h4, h5{
+h1, h3, h4, h5, strong, hr{
   /****  #004d40 teal darken-4  ****/
   color: #004d40 ;
-
-}
-strong{
-  color: #004d40 ;
 }
 
-hr{
-  color: #004d40 ;
+.btn:hover{
+  border-color: none !important;
 }
-
 /********** Card *************/
 
-
-/*****************************/
 .mr-2{
   margin-right: 20px;
-}
-
-.bi-star{
-  /******  #ffff00 yellow accent-2  ********/
-  color: black;
 }
 
 .i-large{
