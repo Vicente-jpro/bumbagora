@@ -38,6 +38,7 @@ class UsersJobsController < ApplicationController
    # GET /users_jobs/:id/candidates
    def candidates
      @candidates = @job
+     @room = Room.new
    end
 
    # GET 

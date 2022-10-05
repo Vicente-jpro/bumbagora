@@ -1,6 +1,8 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: %i[ show edit update destroy ]
 
+  include RoomConcern
+
   # GET /rooms or /rooms.json
   def index
     @rooms = Room.includes(:user, :messages)
@@ -25,6 +27,8 @@ class RoomsController < ApplicationController
 
     respond_to do |format|
       if @room.save
+         create_invite(@room, room_params[:candidate_id])
+       
         format.html { redirect_to room_url(@room), notice: "Room was successfully created." }
         format.json { render :show, status: :created, location: @room }
       else
@@ -65,6 +69,6 @@ class RoomsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def room_params
-      params.require(:room).permit(:user_id)
+      params.require(:room).permit(:user_id, :candidate_id)
     end
 end

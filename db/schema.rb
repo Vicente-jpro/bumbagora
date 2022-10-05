@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_03_174107) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_03_193713) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -59,6 +59,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_03_174107) do
     t.string "name_country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "invites", force: :cascade do |t|
+    t.integer "room_id", null: false
+    t.integer "user_id", null: false
+    t.boolean "open"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_invites_on_room_id"
+    t.index ["user_id"], name: "index_invites_on_user_id"
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -129,6 +139,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_03_174107) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "invites", "rooms"
+  add_foreign_key "invites", "users"
   add_foreign_key "jobs", "categories"
   add_foreign_key "jobs", "users"
   add_foreign_key "messages", "rooms"
