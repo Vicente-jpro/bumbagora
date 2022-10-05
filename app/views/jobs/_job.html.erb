@@ -12,10 +12,14 @@
           <% if user_have_applied?(job) %>
           <strong class="text-success"> Você já se candidatou a está vaga</strong>
           <% end %>
-
           <% if is_the_owner_of_the_job?(job) %>
+              <% if exist_any_candidates?(job) %>
 
-            <%= link_to "Ver todos os candidatos", candidates_users_job_path(job), class:"btn btn-outline-secondary my-1 col-sm-12" %>
+              <%= link_to "Ver todos os candidatos", candidates_users_job_path(job), class:"btn btn-outline-success my-1 col-sm-12" %>
+
+              <% else %>
+                <strong class="text-danger">Não existe nenhum candidato para este vaga</strong>
+              <% end %>
           <% end %>
 
         </div>

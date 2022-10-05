@@ -11,13 +11,13 @@
           
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 
-   <ul>
-    <% @room.errors.each do |error| %>
-      <li><%= error.full_message %></li>
+     <ul>
+      <% @room.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+     </ul>
+    </div>
     <% end %>
-   </ul>
-  </div>
-  <% end %>
 
 
 
