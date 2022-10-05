@@ -3,6 +3,24 @@
     <div class="card-body">
       <h5 class="card-title"><%= candidate.username %></h5>
       <h6 class="card-subtitle mb-2 text-muted"><%= candidate.country.name_country if candidate.country %>, <%= candidate.localization_description %> </h6>
+
+
+<%= bootstrap_form_with(model: @room) do |form| %>
+  <% if @room.errors.any? %>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+   <ul>
+    <% @room.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+    <% end %>
+   </ul>
+  </div>
+  <% end %>
+
+
+
       <p class="card-text">
         
         <%=  display_user_image(candidate)%> 
@@ -11,8 +29,29 @@
       </p>
       
       <%= link_to "Mostrar este candidato", users_job_path(candidate), class:"btn btn-outline-primary" %>
+      
+
+
+      <div class="row my-2">
+        <%= form.text_field :user_id, value: current_user.id if current_user.present? %>
+        <%= form.text_field :candidate_id, value: candidate.id %>
+
+        <div class="mb-3 d-grid gap-2">
+        <%= form.submit "Iniciar uma conversa agora", class:"btn btn-success" %>
+        </div>
+      </div>
+
+
  
     </div>
   </div>
   
   
+
+
+
+
+    
+
+
+<% end %>

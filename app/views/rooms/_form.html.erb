@@ -24,6 +24,7 @@
       </div>
       <div class="row my-2">
         <%= form.text_field :user_id, value: current_user.id if current_user.present? %>
+        <%= form.text_field :candidate_id, value: 2 %>
 
     <div class="mb-3 d-grid gap-2">
       <%= form.submit "Iniciar agora", class:"btn btn-success" %>
