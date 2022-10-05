@@ -1,6 +1,8 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: %i[ show edit update destroy ]
 
+  include RoomConcern
+
   # GET /rooms or /rooms.json
   def index
     @rooms = Room.includes(:user, :messages)
@@ -25,13 +27,8 @@ class RoomsController < ApplicationController
 
     respond_to do |format|
       if @room.save
-        @invite = Invite.new{
-          room: @room,
-          user_id: candidate_id 
-        } 
-        debugger
-        @invite.save!
-
+         create_invite(@room, room_params[:candidate_id])
+       
         format.html { redirect_to room_url(@room), notice: "Room was successfully created." }
         format.json { render :show, status: :created, location: @room }
       else
