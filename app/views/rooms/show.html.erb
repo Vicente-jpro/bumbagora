@@ -9,11 +9,35 @@
 
       <%= turbo_frame_tag "room" do %>
 
-        <div>
-          <%= link_to "Conversas com candidatos", rooms_path, "data-turbo-frame":"_top" %>
 
-          <%= button_to "Eliminar toda as conversas", @room, method: :delete %>
+
+        <div class="d-grid gap-2 d-md-block">
+          
+
+          
+
+          <ul class="nav justify-content-center">
+            <li class="nav-item px-2">
+              <%= link_to rooms_path, class:"btn btn-warning", "data-turbo-frame":"_top" do%>
+               <i class="bi bi-people-fill"></i>
+              <% end %>
+              
+            </li>
+            <li class="nav-item">
+              <%= button_to @room, class:"btn btn-danger", 
+                form:{ data: { turbo_confirm: "Está acção vai eliminar toda a conversa com este candidato(a). Tens a certeza que pretendes eliminar?"} },
+                method: :delete do %>
+
+                <i class="bi bi-trash-fill"></i>
+
+              <% end %>
+            </li>
+          </ul>
+
+
+
         </div>
+        <hr/>
       <% end %>
 
       <div id="messages">
