@@ -8,13 +8,11 @@
       <%= turbo_stream_from @room %>
 
       <%= turbo_frame_tag "room" do %>
-        <%= render @room %>
 
         <div>
-          <%= link_to "Edit this room", edit_room_path(@room) %> |
-          <%= link_to "Back to rooms", rooms_path, "data-turbo-frame":"_top" %>
+          <%= link_to "Conversas com candidatos", rooms_path, "data-turbo-frame":"_top" %>
 
-          <%= button_to "Destroy this room", @room, method: :delete %>
+          <%= button_to "Eliminar toda as conversas", @room, method: :delete %>
         </div>
       <% end %>
 
