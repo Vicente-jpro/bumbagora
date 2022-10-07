@@ -1,7 +1,12 @@
 <div id="<%= dom_id room %>">
   <p>
-    <strong>Company:</strong>
-    <%= room.user.username %>
+    <strong>Candidato:</strong>
+    <% candidate = InvitesHelper::User.new(room) %>
+    <%= candidate.username %>
+  </p>
+  <p>
+    <strong>Email:</strong> 
+    <%= candidate.email %>
   </p>
 
 </div>
