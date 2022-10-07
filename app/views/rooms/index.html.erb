@@ -1,12 +1,19 @@
-<h1>Meus chats</h1>
+<div class="container col-sm-9 my-2">
+  
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title text-center">Meus chats</h5>
+    </div>
 
-<div class="card">
-  <div class="card-body" id="rooms">
-    <% @rooms.each do |room| %>
-      <%= render room %>
-      <p>
-        <%= link_to "Show this room", room %>
-      </p>
-    <% end %>
+    <div class="card-body" id="rooms">
+      <% @rooms.each do |room| %>
+        <%= render room %>
+        <p>
+          <%= link_to "Show this room", room %>
+        </p>
+        <hr/>
+      <% end %>
+    </div>
   </div>
+
 </div>

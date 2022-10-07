@@ -17,7 +17,7 @@ class User < ApplicationRecord
   belongs_to :category
 
   has_many :jobs, dependent: :destroy
-  has_many :messages 
+  has_many :messages, dependent: :destroy
   
   validates_presence_of :country, :username
   #validates :category, acceptance: { message: 'Selecione uma Profissão/Formação.' }
