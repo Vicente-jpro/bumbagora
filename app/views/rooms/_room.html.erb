@@ -1,12 +1,19 @@
 <div id="<%= dom_id room %>">
-  <p>
-    <strong>Candidato:</strong>
-    <% candidate = InvitesHelper::User.new(room) %>
-    <%= candidate.username %>
-  </p>
-  <p>
-    <strong>Email:</strong> 
-    <%= candidate.email %>
-  </p>
+
+  <div class="row">
+    <div class="col-sm-1">
+      <%= image_tag(room.user.image, class: "profile-image") %>
+    </div>
+    <div class="col">
+      <p>
+        
+        <% candidate = InvitesHelper::User.new(room) %>
+        <strong>@<%= candidate.username %></strong> <br>
+        <strong><%= candidate.email %></strong> 
+        
+      </p>
+    </div>
+  </div>
+  
 
 </div>
