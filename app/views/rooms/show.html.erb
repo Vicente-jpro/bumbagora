@@ -1,7 +1,16 @@
 <div class="container col-sm-4">
   
 <div class="card">
-  <h5 class="card-header">Chat com a Empresa <%= @room.user.username if @room.present? %></h5>
+  <% if user_signed_in? %>
+    <% if user_is_admin_or_company?(current_user)%>
+      <h5 class="card-header">
+        <%= chat_image(@invite.user) %>
+        Chat com candidato <%= @invite.user.username if @room.present? %>
+      </h5>
+    <% else %>
+         <h5 class="card-header">Chat com a Empresa <%= @room.user.username if @room.present? %></h5>
+    <% end %>
+  <% end %>
   <div class="card-body" id="overflow-chat">
 
 

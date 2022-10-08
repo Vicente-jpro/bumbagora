@@ -3,6 +3,10 @@ module UserHelper
 	  image_tag(user.image, class:"index-image my-3") if user.image.attached?
 	end
 
+	def display_user_image_profile(user)
+	  image_tag(user.image, class: "profile-image")
+	end
+
 	# Verify this method it's like unuseless
 	def is_admin?(job)
 	  if user_signed_in?
@@ -12,6 +16,13 @@ module UserHelper
 	  end
 	  return false
 	end
+
+	def user_is_admin_or_company?(user)
+	 if user_signed_in?
+    	return (user.Admin? or user.Empresa?)
+     end
+     return false
+  	end
 
 	def type_registration?(user_type_subscriptions)
 	  types = Array.new
