@@ -7,9 +7,11 @@
 
     <div class="card-body" id="rooms">
       <% @rooms.each do |room| %>
-        <%= render room %>
+        
         <p>
-          <%= link_to "Show this room", room %>
+          <%= link_to room, class:"link-light" do %>
+            <%= render room %>
+          <% end %>
         </p>
         <hr/>
       <% end %>

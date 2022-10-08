@@ -162,3 +162,11 @@ h1, h3, h4, h5, strong, hr{
   height: 400px;
   overflow: scroll;
 }
+
+.profile-image {
+  height: 50px;
+  width: 50px;
+  background-color: pink;
+  border-radius: 50%;
+  display: inline-block;
+}
