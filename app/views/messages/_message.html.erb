@@ -2,9 +2,9 @@
   <div class="card text-center <%= message_color(message.user) %> my-1" id="<%= dom_id(message)%>">
     <div class="card-body">
       <p class="card-text">
-		<%= message.content %>
-		<br>
-		<small class="text-muted"> <%= message.created_at.to_s(:short) %> </small>
+   		 	<%= message.content %>
+			<br>
+			<small class="text-muted"> <%= message.created_at.to_s(:short) %> </small>
 	  </p>
     </div>
   </div>
