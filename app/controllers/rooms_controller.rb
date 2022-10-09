@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1 or /rooms/1.json
   def show
-    @invite = Invite.find_by_room(set_room)
+    @invite ||= Invite.find_by_room(set_room)
   end
 
   # GET /rooms/new

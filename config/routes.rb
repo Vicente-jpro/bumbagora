@@ -1,12 +1,13 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+
+  mount Sidekiq::Web => '/sidekiq'
+
   resources :rooms do 
     resources :messages
   end
   
-  mount Sidekiq::Web => '/sidekiq'
-
 
   resources :users_jobs, only: [:index, :create] do 
     member do 
@@ -33,7 +34,5 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out', to: 'devise/sessions#destroy'
   end
-
-
 
 end

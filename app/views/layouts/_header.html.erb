@@ -37,9 +37,20 @@
               <%= link_to rooms_path, class:"nav-link" do %>
               <button type="button" class="btn btn-transparent position-relative">
                 <i class="bi-chat-left-text text-white "></i>
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                  <%= Invite.find_company_messages_with_room(@invite.room).count %>
-                  <span class="visually-hidden">unread messages</span>
+                <% if @invite.present? %>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+
+                    <% if user_is_admin_or_company?(current_user) %>
+                      <%= Invite.find_candidate_messages_with_room(@invite.room).count %>
+                    <% else %>
+                      <%= Invite.find_company_messages_with_room(@invite.room).count %>
+                    <% end %>
+                    <span class="visually-hidden">unread messages</span>
+                 <% elsif Invite.find_by_candidate(current_user).present? %>
+                   <span class="position-absolute top-0 start-100 translate-middle p-2 pink-lighten-4  rounded-circle">
+                      <span class="visually-hidden">New alerts</span>
+                   </span>
+                 <% end %>
                 </span>
               </button>
               <% end %>
