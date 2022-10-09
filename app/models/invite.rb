@@ -23,4 +23,9 @@ class Invite < ApplicationRecord
    messages
   end
 
+  def self.find_by_candidate(user)
+    invite = find_by(user_id: user.id)
+    invite
+  end
+
 end
