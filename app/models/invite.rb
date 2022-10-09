@@ -12,9 +12,15 @@ class Invite < ApplicationRecord
   end
 
   def self.find_company_messages_with_room(room)
-     room = find_company_room(room)
-     messages = Message.find_sent(room.user)
-     messages
+   room = find_company_room(room)
+   messages = Message.find_sent(room.user)
+   messages
+  end
+
+  def self.find_candidate_messages_with_room(room)
+   invite = find_by_room(room)
+   messages = Message.find_sent(invite.user)
+   messages
   end
 
 end
