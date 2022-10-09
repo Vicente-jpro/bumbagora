@@ -18,10 +18,7 @@ module UserHelper
 	end
 
 	def user_is_admin_or_company?(user)
-	 if user_signed_in?
-    	return (user.Admin? or user.Empresa?)
-     end
-     return false
+      return (user.Admin? or user.Empresa?)
   	end
 
 	def type_registration?(user_type_subscriptions)

@@ -38,7 +38,7 @@
               <button type="button" class="btn btn-transparent position-relative">
                 <i class="bi-chat-left-text text-white "></i>
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                  99+
+                  <%= Invite.find_company_messages_with_room(@invite.room).count %>
                   <span class="visually-hidden">unread messages</span>
                 </span>
               </button>
