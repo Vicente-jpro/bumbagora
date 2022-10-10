@@ -1,4 +1,13 @@
 module InvitesHelper
+  def find_candidate_messages_with_room(room)
+    Invite.find_candidate_messages_with_room(room).count
+  end
+
+  def find_company_messages_with_room(room)
+    Invite.find_company_messages_with_room(room).count
+  end
+
+
  class User
    attr_accessor :room
 
@@ -7,11 +16,11 @@ module InvitesHelper
    end
 
    def username
-   	@room.user.username
+   	@room.user.username 
    end
 
    def email
-    @room.user.email
+    @room.user.email 
    end
 
  end 

@@ -4,7 +4,8 @@ module RoomConcern
    def create_invite(room, candidate_id)
    	@invite = Invite.new({
           room: room,
-          user_id: candidate_id 
+          user_id: candidate_id,
+          opened: false
         })
    	@invite.save!
    end

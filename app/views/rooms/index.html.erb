@@ -7,13 +7,15 @@
 
     <div class="card-body" id="rooms">
       <% @rooms.each do |room| %>
-        
-        <p>
-          <%= link_to room, class:"link-light" do %>
-            <%= render room %>
-          <% end %>
-        </p>
-        <hr/>
+
+        <% if room.invite.present? %>
+          <p>
+            <%= link_to room, class:"link-light" do %>
+              <%= render room %>
+            <% end %>
+          </p>
+          <hr/>
+        <% end %>
       <% end %>
     </div>
   </div>

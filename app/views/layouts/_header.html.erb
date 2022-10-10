@@ -41,9 +41,9 @@
                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
 
                     <% if user_is_admin_or_company?(current_user) %>
-                      <%= Invite.find_candidate_messages_with_room(@invite.room).count %>
+                      <%= find_candidate_messages_with_room(@invite.room) %>
                     <% else %>
-                      <%= Invite.find_company_messages_with_room(@invite.room).count %>
+                      <%= find_company_messages_with_room(@invite.room) %>
                     <% end %>
                     <span class="visually-hidden">unread messages</span>
                  <% elsif Invite.find_by_candidate(current_user).present? %>
