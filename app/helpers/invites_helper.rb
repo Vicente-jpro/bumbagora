@@ -16,11 +16,11 @@ module InvitesHelper
    end
 
    def username
-   	@room.user.username
+   	@room.user.username 
    end
 
    def email
-    @room.user.email
+    @room.user.email 
    end
 
  end 
