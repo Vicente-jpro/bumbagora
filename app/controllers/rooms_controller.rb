@@ -11,7 +11,7 @@ class RoomsController < ApplicationController
   # GET /rooms/1 or /rooms/1.json
   def show
     @invite = Invite.find_by_room(set_room)
-  
+
     if current_user.Candidato?
       @invite.update!(opened: true)
     end
