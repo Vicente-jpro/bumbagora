@@ -49,11 +49,16 @@
                     <!-- End show number of messages -->
                     
                     <span class="visually-hidden">unread messages</span>
-                 <% elsif Invite.find_candidate_with_invite_closed?(current_user).present? %>
+                 <% elsif candidate_has_invite?(current_user) %>
                 
                    <span class="position-absolute top-0 start-100 translate-middle p-2 pink-lighten-4  rounded-circle">
                       <span class="visually-hidden">New alerts</span>
                    </span>
+                   <% else %>
+                    <span class="position-absolute top-0 start-100 translate-middle p-2 teal-lighten-5  rounded-circle">
+                      <span class="visually-hidden">New alerts</span>
+                   </span>
+                   
                  <% end %>
                 </span>
               </button>

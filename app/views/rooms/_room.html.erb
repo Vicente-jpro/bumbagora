@@ -9,7 +9,7 @@
       <strong>@<%= candidate.username %></strong> <br>
       <strong><%= candidate.email %></strong> 
     </div>
-    <% if room.invite.opened? %>
+    <% if !room.invite.opened? %>
       <div class="col">
         <span class="badge bg-success">Novo convite</span>
       </div>

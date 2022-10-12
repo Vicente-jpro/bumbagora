@@ -2,7 +2,11 @@
   
   <div class="card">
     <div class="card-header">
-      <h5 class="card-title text-center">Meus chats</h5>
+      <% if user_is_admin_or_company?(current_user) %>
+      <h5 class="card-title text-center">Meus chats com os candidatos</h5>
+      <% else %>
+      <h5 class="card-title text-center">Meus chats com as empresas</h5>
+      <% end %>
     </div>
 
     <div class="card-body" id="rooms">
