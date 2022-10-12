@@ -7,6 +7,10 @@ module InvitesHelper
     Invite.find_company_messages_with_room(room).count
   end
 
+  def candidate_has_invite?(user)
+    invite = Invite.find_by_candidate(current_user).present?
+    
+  end
 
  class User
    attr_accessor :room

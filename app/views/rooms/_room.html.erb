@@ -5,13 +5,15 @@
       <%= display_user_image_profile(room.user) %>
     </div>
     <div class="col">
-    
       <% candidate = InvitesHelper::User.new(room) %>
       <strong>@<%= candidate.username %></strong> <br>
       <strong><%= candidate.email %></strong> 
-      <span class="badge bg-success">Novo convite</span>
     </div>
-
+    <% if room.invite.opened? %>
+      <div class="col">
+        <span class="badge bg-success">Novo convite</span>
+      </div>
+    <% end %>
   </div>
   
 
