@@ -28,7 +28,7 @@ class Invite < ApplicationRecord
     invite
   end
 
-  def self.find_candidate_with_invite_closed?(user)
+  def self.find_candidate_with_invite_closed(user)
     invite = find_by(user_id: user.id, opened: false)
     invite
   end

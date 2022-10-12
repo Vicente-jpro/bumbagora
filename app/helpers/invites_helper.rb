@@ -8,8 +8,7 @@ module InvitesHelper
   end
 
   def candidate_has_invite?(user)
-    invite = Invite.find_by_candidate(current_user).present?
-    
+    Invite.find_candidate_with_invite_closed(current_user).present? 
   end
 
  class User
