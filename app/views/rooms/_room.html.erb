@@ -1,32 +1,33 @@
-<div id="<%= dom_id room %>">
 
-  <div class="row">
-    <div class="col-sm-1">
-      <%= link_to room do %>
-       <%= display_user_image_profile(room.user) %>
-      <% end %>
-    </div>
-    
-      <div class="col">
-        <% candidate = InvitesHelper::User.new(room) %>
-        <%= link_to room, class:"link-success" do %>
-          <strong>@<%= candidate.username %></strong> <br>
-          <strong><%= candidate.email %></strong> 
+  <div id="<%= dom_id room %>">
+
+    <div class="row">
+      <div class="col-sm-1">
+        <%= link_to room do %>
+         <%= display_user_image_profile(room.user) %>
         <% end %>
       </div>
-    
-    <% if !room.invite.opened? %>
-      <div class="col d-flex justify-content-center">
-        <span class="badge bg-success">Novo convite</span>
+      
+        <div class="col">
+          <% candidate = InvitesHelper::User.new(room) %>
+          <%= link_to room, class:"link-success" do %>
+            <strong>@<%= candidate.username %></strong> <br>
+            <strong><%= candidate.email %></strong> 
+          <% end %>
+        </div>
+      
+      <% if !room.invite.opened? %>
+        <div class="col d-flex justify-content-center">
+          <span class="badge bg-success">Novo convite</span>
+        </div>
+      <% end %>
+      <div class="col d-flex justify-content-end">
+       <%= button_to room, method: :delete, class:"btn btn-danger my-1", form:{ data: { turbo_confirm: "Todas as conversas contidas neste chat serão eliminadas. Tens a certeza que pretendes eliminar?"} }  do %>
+        <i class="bi bi-trash-fill"></i>
+       <% end %>
+
       </div>
-    <% end %>
-    <div class="col d-flex justify-content-end">
-     <%= button_to room, method: :delete, class:"btn btn-danger my-1", form:{ data: { turbo_confirm: "Todas as conversas contidas neste chat serão eliminadas. Tens a certeza que pretendes eliminar?"} }  do %>
-      <i class="bi bi-trash-fill"></i>
-     <% end %>
-
     </div>
-  </div>
-  
+    
 
-</div>
+  </div>
