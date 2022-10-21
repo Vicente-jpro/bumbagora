@@ -10,13 +10,16 @@
     </div>
 
     <div class="card-body" id="rooms">
-      <% @rooms.each do |room| %>
-
-        <% if room.invite.present? %>
-          <p>
-            <%= render room %>
-          </p>
-          <hr/>
+      <% if !@rooms.present? %>
+        <h3 class="text-center"> Sem nenhum convite!</h3>
+      <% elsif user_is_admin_or_company?(current_user) %>
+        <% @rooms.each do |room| %>
+          <% if room.invite.present? %>
+              <p>
+                <%= render room %>
+              </p>
+                <hr/>
+          <% end %>
         <% end %>
       <% end %>
     </div>

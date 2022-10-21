@@ -12,12 +12,18 @@ class User < ApplicationRecord
 
   has_many :users_jobs, dependent: :destroy
   has_many :jobs, through: :users_jobs
-  belongs_to :country
+  
+  #has_many :jobs, dependent: :destroy
+  
+  has_many :invites, dependent: :destroy
+  has_many :rooms, dependent: :destroy
+ 
+  has_many :messages, dependent: :destroy
 
+  belongs_to :country
   belongs_to :category
 
-  has_many :jobs, dependent: :destroy
-  has_many :messages, dependent: :destroy
+  
   
   validates_presence_of :country, :username
   #validates :category, acceptance: { message: 'Selecione uma Profissão/Formação.' }

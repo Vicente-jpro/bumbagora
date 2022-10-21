@@ -2,10 +2,18 @@ class RoomsController < ApplicationController
   before_action :set_room, only: %i[ show edit update destroy ]
 
   include RoomConcern
+  include UserConcern
 
   # GET /rooms or /rooms.json
   def index
-    @rooms = Room.includes(:user, :messages)
+
+    if user_is_a_company_or_admim?(current_user) 
+      @rooms = Room.includes(:user, :messages)
+                   .where(user_id: current_user.id)
+    else
+      @invites = Invite.find_invites_candidate(current_user)
+    end
+  
   end
 
   # GET /rooms/1 or /rooms/1.json
