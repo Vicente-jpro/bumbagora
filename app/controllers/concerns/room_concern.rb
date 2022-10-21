@@ -9,5 +9,9 @@ module RoomConcern
         })
    	@invite.save!
    end
+
+   def room_belongs_to_company?(user, room)
+     (user.id == room.user_id)
+   end
 end
 

@@ -1,11 +1,18 @@
 module InvitesHelper
-  def find_candidate_messages_with_room(room)
+  def find_and_count_candidate_messages_with_room(room)
     Invite.find_candidate_messages_with_room(room).count
   end
 
-  def find_company_messages_with_room(room)
-    Invite.find_company_messages_with_room(room).count
+  # def find_company_messages_with_room(room)
+  #   Invite.find_company_messages_with_room(room).count
+  # end
+
+  def find_and_count_company_messages_with_room(invites)
+    invites.to_a.count
   end
+
+  
+
 
   def candidate_has_invite?(user)
     Invite.find_candidate_with_invite_closed(current_user).present? 

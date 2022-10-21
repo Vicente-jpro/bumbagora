@@ -42,9 +42,9 @@
 
                     <!-- Show number of messages -->
                     <% if user_is_admin_or_company?(current_user) %>
-                      <%= find_candidate_messages_with_room(@invite.room) %>
+                      <%= find_and_count_candidate_messages_with_room(@invite.room) %>
                     <% else %>
-                      <%= find_company_messages_with_room(@invite.room) %>
+                      <%= find_and_count_company_messages_with_room(@invites) %>
                     <% end %>
                     <!-- End show number of messages -->
                     
