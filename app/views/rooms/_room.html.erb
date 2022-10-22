@@ -1,6 +1,6 @@
-  <div id="<%= dom_id room %>">
+  <div class="row" id="<%= dom_id room %>">
 
-    <div class="row">
+   
       <div class="col-sm-1">
         <%= link_to room do %>
          <%= display_user_image_profile(room.user) %>
@@ -17,7 +17,7 @@
       
       <% if !room.invite.opened? %>
         <div class="col d-flex justify-content-center">
-          <span class="badge bg-success">Novo convite</span>
+          <strong class="text-danger">Novo convite</strong>
         </div>
       <% end %>
       <div class="col d-flex justify-content-end">
@@ -26,7 +26,7 @@
        <% end %>
 
       </div>
-    </div>
+ 
     
 
   </div>

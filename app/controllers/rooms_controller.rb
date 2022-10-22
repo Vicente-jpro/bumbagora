@@ -11,17 +11,18 @@ class RoomsController < ApplicationController
       @rooms = Room.includes(:user, :messages)
                    .where(user_id: current_user.id)
     else
-      @invites = Invite.find_invites_candidate(current_user)
+      @invites = Invite.find_invites_candidate(current_user).to_a
     end
   
   end
 
   # GET /rooms/1 or /rooms/1.json
   def show
-    @invite = Invite.find_by_room(set_room)
+    # varible @invites should be invite
+    @invites = Invite.find_by_room(set_room)
     
-    if current_user.Candidato? and @invite.present?
-      @invite.update!(opened: true)
+    if current_user.Candidato? and @invites.present?
+      @invites.update!(opened: true)
     end
   end
 

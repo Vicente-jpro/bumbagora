@@ -14,14 +14,20 @@
 
   <body>
     <%= render 'layouts/header'%>
-    <%= render 'layouts/search_select' if @page != "home"%>
-    <%= render 'layouts/search_bar'%>
+
+    <% if !is_rooms_controller? %>
+      <%= render 'layouts/search_select' if @page != "home" %>
+      <%= render 'layouts/search_bar'%>
+    <% end %>
+
     <%= render 'layouts/message' if notice %>
     <%= render 'layouts/alert' if alert %> 
+    
     <% if @page == "home" %>
       <%= render 'layouts/about' %>
       <%= render 'layouts/service' %>
     <% end %>
+    
     <%= yield %>
     <%= render 'layouts/footer'%>
   </body>

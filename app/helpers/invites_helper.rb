@@ -8,11 +8,8 @@ module InvitesHelper
   # end
 
   def find_and_count_company_messages_with_room(invites)
-    invites.to_a.count
+    invites.count
   end
-
-  
-
 
   def candidate_has_invite?(user)
     Invite.find_candidate_with_invite_closed(current_user).present? 

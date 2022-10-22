@@ -10,9 +10,9 @@
     </div>
 
     <div class="card-body" id="rooms">
-      <% if !@rooms.present? %>
+     <!-- #if !@rooms.present? -->
         <h3 class="text-center"> Sem nenhum convite!</h3>
-      <% elsif user_is_admin_or_company?(current_user) %>
+      <% if user_is_admin_or_company?(current_user) %>
         <% @rooms.each do |room| %>
           <% if room.invite.present? %>
               <p>
@@ -21,6 +21,18 @@
                 <hr/>
           <% end %>
         <% end %>
+        <% elsif !user_is_admin_or_company?(current_user) %>
+          <% @invites.each do |invite| %>
+            <% if invite.room.present? %>
+              <p>
+                <%= render invite.room %>
+
+              </p>
+                <hr/>
+
+            <% end %>
+          <% end %>
+
       <% end %>
     </div>
   </div>
