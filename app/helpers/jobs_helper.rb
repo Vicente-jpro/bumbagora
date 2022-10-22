@@ -3,6 +3,10 @@ module JobsHelper
        (user_signed_in?) and (job.user_id == current_user.id)
     end
 
+    def is_jobs_controller?
+      controller.controller_name == "jobs"
+    end
+
 
      def get_user_by_job(job)
        return User.find(job.user_id)

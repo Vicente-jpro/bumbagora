@@ -12,10 +12,10 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="d-flex flex-column h-100">
     <%= render 'layouts/header'%>
     <main>
-      <% if !is_rooms_controller? %>
+      <% if !is_rooms_controller? and !is_device_controller?%>
         <%= render 'layouts/search_select' if @page != "home" %>
         <%= render 'layouts/search_bar'%>
       <% end %>
@@ -30,6 +30,6 @@
       
       <%= yield %>
     </main>
-    <%= render 'layouts/footer'%>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

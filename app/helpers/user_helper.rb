@@ -31,4 +31,12 @@ module UserHelper
 
 	  return types
 	end
+
+	def is_device_controller?
+	  if (controller.controller_name == "confirmations" or controller.controller_name == "passwords")
+	  	return true
+	  end
+	  	
+	  return (controller.controller_name == "registrations" or controller.controller_name == "sessions")
+	end
 end
