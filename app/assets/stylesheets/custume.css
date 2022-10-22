@@ -4,6 +4,11 @@ body {
   /*** #fafafa grey lighten-5 ***/
   background-color: #fafafa ;
 }
+
+
+.link-success{
+  text-decoration: none;
+}
 /*
 turbo-frame{
   display: block;
@@ -79,14 +84,8 @@ turbo-frame{
 /************** Icon *****************/
 
 
-
+.i-description-section, 
 .i-description{
-    /****  #004d40 teal darken-4  ****/
-  color: #004d40 ; 
-  font-size: 25px;
-}
-
-.i-description-section{
     /****  #004d40 teal darken-4  ****/
   color: #004d40 ; 
   font-size: 25px;
@@ -109,9 +108,12 @@ h3{
 
 }
 
-h1, h3, h4, h5, strong, hr{
+h1, h3, h4, h5, strong, hr, 
+.i-large, 
+.i-big,
+.text-time{
   /****  #004d40 teal darken-4  ****/
-  color: #004d40 ;
+  color: #004d40 !important;
 }
 
 .btn:hover{
@@ -125,16 +127,10 @@ h1, h3, h4, h5, strong, hr{
 
 .i-large{
   font-size: 100px;
-
-  /****  #004d40 teal darken-4  ****/
-  color: #004d40 !important; 
 }
 
 .i-big{
   font-size: 200px;
-
-  /****  #004d40 teal darken-4  ****/
-  color: #004d40 !important; 
 }
 
 .rounded{
@@ -144,8 +140,6 @@ h1, h3, h4, h5, strong, hr{
 
 .text-time{
   font-size: 14px;
-  /****  #004d40 teal darken-4  ****/
-  color: #004d40 ;
 }
 
 .text-time-deadline{
