@@ -11,7 +11,7 @@ class RoomsController < ApplicationController
       @rooms = Room.includes(:user, :messages)
                    .where(user_id: current_user.id)
     else
-      @invites = Invite.find_invites_candidate(current_user)
+      @invites = Invite.find_invites_candidate(current_user).to_a
     end
   
   end
