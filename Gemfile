@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "~> 3.0.0"
+ruby "~> 3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3"
@@ -63,7 +63,7 @@ gem 'devise-i18n'
 gem 'activestorage-validator'
 
 # A library for generating fake data such as names, addresses, and phone numbers.
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+#gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 
 gem "aws-sdk-s3", require: false
@@ -75,9 +75,12 @@ gem "truncate_html"
 gem 'active_storage_validations'
 gem 'mini_magick', '>= 4.9.5' 
 
+gem 'psych', '< 4'
+
 gem 'sidekiq'
 
-#gem 'webpacker', '~> 3.0'
+gem 'execjs', '~> 2.7'
+
 #gem 'psych', '~> 4.0', '>= 4.0.5'
 
 group :development, :test do
