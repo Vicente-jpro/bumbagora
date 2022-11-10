@@ -396,111 +396,111 @@ Category.find_or_create_by!(name: "Tradução e Interpretação")
 puts "Categorias cadastradas com sucesso"
 
 
-
-puts "Cadastrando usuários..."
-
-
-   vicente = User.new({
-        username: "Vicente on Rails",
-        country: Country.first,
-        localization_description: "Luanda/Kilamba",
-        email: "vicenteviciii@gmail.com",
-        password: "Vicente",
-        password_confirmation: "Vicente",
-        type_subscription: "Candidato",
-        category: Category.first
-        })
-   vicente.image.attach(
-        io: File.open(Rails.root.join('app', 'assets', 'images', 'pacaça.jpeg')), 
-        filename: 'pacaça.jpeg', 
-        content_type: 'image/jpeg'
-    )
-  vicente.save!
+# /*
+# puts "Cadastrando usuários..."
 
 
-   galinha = User.new({
-    username: "Bumbagora",
-    country: Country.last,
-    localization_description: "Luanda/Kilamba",
-    email: "vicente.simao.rails@gmail.com",
-    password: "Vicente",
-    password_confirmation: "Vicente",
-    type_subscription: "Admin",
-    category: Category.first
-    })
+#    vicente = User.new({
+#         username: "Vicente on Rails",
+#         country: Country.first,
+#         localization_description: "Luanda/Kilamba",
+#         email: "vicenteviciii@gmail.com",
+#         password: "Vicente",
+#         password_confirmation: "Vicente",
+#         type_subscription: "Candidato",
+#         category: Category.first
+#         })
+#    vicente.image.attach(
+#         io: File.open(Rails.root.join('app', 'assets', 'images', 'pacaça.jpeg')), 
+#         filename: 'pacaça.jpeg', 
+#         content_type: 'image/jpeg'
+#     )
+#   vicente.save!
+
+
+#    galinha = User.new({
+#     username: "Bumbagora",
+#     country: Country.last,
+#     localization_description: "Luanda/Kilamba",
+#     email: "vicente.simao.rails@gmail.com",
+#     password: "Vicente",
+#     password_confirmation: "Vicente",
+#     type_subscription: "Admin",
+#     category: Category.first
+#     })
    
-    galinha.image.attach(
-        io: File.open(Rails.root.join('app', 'assets', 'images', 'word nature conservation.jpeg')), 
-        filename: 'word nature conservation.jpeg', 
-        content_type: 'image/jpeg'
-    )
-   galinha.save!
+#     galinha.image.attach(
+#         io: File.open(Rails.root.join('app', 'assets', 'images', 'word nature conservation.jpeg')), 
+#         filename: 'word nature conservation.jpeg', 
+#         content_type: 'image/jpeg'
+#     )
+#    galinha.save!
 
 
 
-puts "Usuários cadastrado com sucesso."
+# puts "Usuários cadastrado com sucesso."
 
 
 
 
-puts "Cadastrando oportunidades de emprego."
+# puts "Cadastrando oportunidades de emprego."
 
 
-Job.find_or_create_by!(
-    title: "Arquiteto",
-    description: "Jesus  também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
-    salary: 4500*105,
-    category: Category.first,
-    type_job: "Presencial",
-    user_id: 1
-)
+# Job.find_or_create_by!(
+#     title: "Arquiteto",
+#     description: "Jesus  também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
+#     salary: 4500*105,
+#     category: Category.first,
+#     type_job: "Presencial",
+#     user_id: 1
+# )
 
-Job.find_or_create_by!(
-    title: "Arqueologo",
-    description: "Jesus também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
-    salary: 4500*5,
-    category: Category.last,
-    type_job: "Remota",
-    user_id: 2
-)
-
-
-
-Job.find_or_create_by!(
-    title: "Pirata",
-    description: "Jesus  também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
-    salary: 4500*105,
-    category: Category.first,
-    type_job: "Presencial",
-    user_id: 1
-)
-
-Job.find_or_create_by!(
-    title: "Marinheiro",
-    description: "Jesus também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
-    salary: 4500*5,
-    category: Category.last,
-    type_job: "Remota",
-    user_id: 2
-)
+# Job.find_or_create_by!(
+#     title: "Arqueologo",
+#     description: "Jesus também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
+#     salary: 4500*5,
+#     category: Category.last,
+#     type_job: "Remota",
+#     user_id: 2
+# )
 
 
-Job.find_or_create_by!(
-    title: "Programador Ruby on Rails",
-    description: "Jesus  também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
-    salary: 4500*105,
-    category: Category.first,
-    type_job: "Presencial",
-    user_id: 1
-)
 
-Job.find_or_create_by!(
-    title: "Javeiro",
-    description: "Jesus também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
-    salary: 4500*5,
-    category: Category.last,
-    type_job: "Remota",
-    user_id: 2
-)
+# Job.find_or_create_by!(
+#     title: "Pirata",
+#     description: "Jesus  também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
+#     salary: 4500*105,
+#     category: Category.first,
+#     type_job: "Presencial",
+#     user_id: 1
+# )
 
-puts "Oportunidades cadastradas com sucesso."
+# Job.find_or_create_by!(
+#     title: "Marinheiro",
+#     description: "Jesus também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
+#     salary: 4500*5,
+#     category: Category.last,
+#     type_job: "Remota",
+#     user_id: 2
+# )
+
+
+# Job.find_or_create_by!(
+#     title: "Programador Ruby on Rails",
+#     description: "Jesus  também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
+#     salary: 4500*105,
+#     category: Category.first,
+#     type_job: "Presencial",
+#     user_id: 1
+# )
+
+# Job.find_or_create_by!(
+#     title: "Javeiro",
+#     description: "Jesus também chamado Jesus de Nazaré foi um pregador e líder religioso judeu do primeiro século.[11] Ele é a figura central do cristianismo e aquele que os ensinamentos de maior parte das denominações cristãs, além dos judeus messiânicos, consideram ser o Filho de Deus. O cristianismo e o judaísmo messiânico consideram Jesus como o Messias aguardado no Antigo Testamento e referem-se a ele como Jesus Cristo, um nome também usado fora do contexto cristão.",
+#     salary: 4500*5,
+#     category: Category.last,
+#     type_job: "Remota",
+#     user_id: 2
+# )
+
+# puts "Oportunidades cadastradas com sucesso."
