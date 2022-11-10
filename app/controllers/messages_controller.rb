@@ -43,10 +43,10 @@ class MessagesController < ApplicationController
               #Company_id
               user_id: user_id, 
               room_id: message.room.id,
-              open: false, 
+              opened: false, 
             )
             .find_each do |m| 
-                m.update!(open: true) 
+                m.update!(opened: true) 
              end
 
    end

@@ -5,14 +5,14 @@ class Message < ApplicationRecord
   after_destroy_commit -> { broadcast_remove_to room }
 
   def self.find_received_candidate(user)
-    where(user_id: user.id, open: false)
+    where(user_id: user.id, opened: false)
   end
 
   def self.find_sent(user)
-    where(user_id: user.id, open: false)
+    where(user_id: user.id, opened: false)
   end
   def self.find_received_company(room)
-    where(user_id: room.user_id, open: false)
+    where(user_id: room.user_id, opened: false)
   end
 
 end

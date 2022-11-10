@@ -353,6 +353,9 @@ DEPENDENCIES
   jbuilder
   kaminari
   mini_magick (>= 4.9.5)
+  net-imap
+  net-pop
+  net-smtp
   pg
   psych (< 4)
   puma (~> 5.0)
