@@ -4,7 +4,7 @@
   <div class="card">
     <div class="card-body">
       <div class="card-title">
-        <h3>Change your password</h3>
+        <h3>Mudar sua senha</h3>
       </div>
       <div class="row my-2">
 
@@ -14,7 +14,7 @@
 
           <div class="field">
             <% if @minimum_password_length %>
-              <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+              <em>(<%= @minimum_password_length %> mínimo de caracteres)</em><br />
             <% end %>
             <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
           </div>
@@ -24,7 +24,7 @@
           </div>
 
           <div class="actions mb-3 d-grid gap-2 text-center">
-            <%= f.submit "Change my password", class:"btn btn-success" %>
+            <%= f.submit "Mudar minha palavra passe", class:"btn btn-success" %>
           </div>
           <% end %>
 
