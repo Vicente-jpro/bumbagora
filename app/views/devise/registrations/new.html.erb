@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-body">
       <div class="card-title">
-      	<h4 class="text-center">Sign up</h4>
+      	<h4 class="text-center">Criar conta</h4>
         <div class="d-flex justify-content-center">
           <i class="bi-person-circle" style="font-size: 70px;"></i>
         </div>
@@ -21,14 +21,14 @@
           <%= f.email_field :email, placeholder: "exemplo@bumbagora.com", autocomplete: "email" %>
 
           <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em>(<%= @minimum_password_length %> mínimo de caracteres)</em>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "new-password" %>
 
           <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
 
         <div class="actions mb-3 d-grid gap-2 text-center">
-          <%= f.submit "Sign up",  class:"btn btn-success" %>
+          <%= f.submit "Salvar",  class:"btn btn-success" %>
         </div>
       <% end %>
       <%= render "devise/shared/links" %>

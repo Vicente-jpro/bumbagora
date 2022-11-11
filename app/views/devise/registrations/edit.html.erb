@@ -3,7 +3,7 @@
   <div class="card">
     <div class="card-body">
       <div class="card-title">
-      	<h4 class="text-center"> Edit <%= resource_name.to_s.humanize %></h4>
+      	<h4 class="text-center"> Editar <%= resource_name.to_s.humanize %></h4>
         <div class="d-flex justify-content-center my-4">
           <%= image_tag(current_user.image.variant(:thumb), class:"image-edit-profile") if current_user.image.attached? %>
         </div>
@@ -29,15 +29,15 @@
            <%= f.email_field :email, placeholder: "exemplo@bumbagora.com", autocomplete: "email" %>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+            <div>Atualmente aguardando confirmação para: <%= resource.unconfirmed_email %></div>
           <% end %>
 
 
-            <i>(leave blank if you don't want to change it)</i>
+            <i>(deixe em branco se não quiser alterar)</i>
             <%= f.password_field :password, autocomplete: "new-password" %>
             <% if @minimum_password_length %>
               <br />
-              <em><%= @minimum_password_length %> characters minimum</em>
+              <em><%= @minimum_password_length %> mínimo de caracteres</em>
             <% end %>
 
 
@@ -47,10 +47,10 @@
 
 
           <div class="actions mb-3 d-grid gap-2 text-center">
-            <%= f.submit "Update", class:"btn btn-success" %>
+            <%= f.submit "Atualizar", class:"btn btn-success" %>
           </div>
         <% end %>
-       <%= button_to "Cancel my account", registration_path(resource_name), form:{ data: { turbo_confirm: "Are you sure?"} }, method: :delete, class:"btn btn-link" %></p>
+       <%= button_to "Cancelar minha conta", registration_path(resource_name), form:{ data: { turbo_confirm: "Are you sure?"} }, method: :delete, class:"btn btn-link" %></p>
 
       </div>
   </div>
