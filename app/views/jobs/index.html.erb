@@ -4,7 +4,6 @@
   
     <% @jobs.each do |job| %>
         <%= render job %>
-        <%= render 'anuncios/jobs_ads' %>
     <% end %>
     <div class="d-flex justify-content-center">
         <%= paginate @jobs, windows:2 %>

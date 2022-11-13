@@ -55,7 +55,7 @@ class JobsController < ApplicationController
     @job.user_id = current_user.id
     
     respond_to do |format|
-      if @job.save!
+      if @job.save
 
         @candidates = User.find_by_category_id( @job.category_id )
         
