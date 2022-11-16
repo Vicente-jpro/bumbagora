@@ -1,6 +1,6 @@
 class Job < ApplicationRecord
 
-  has_rich_text :description
+  has_rich_text :content
 
   belongs_to :category
   belongs_to :user
@@ -8,7 +8,7 @@ class Job < ApplicationRecord
   has_many :users_jobs, dependent: :destroy
   has_many :users, through: :users_jobs
 
-  validates_presence_of :title, :type_job, :description
+  validates_presence_of :title, :type_job, :content
 
   enum type_job: {Remota: "Remota", Presencial: "Presencial", Hibrida: "Híbrida"}
 
