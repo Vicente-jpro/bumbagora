@@ -55,11 +55,11 @@
 
         <div class="col">
           <% if @page_name_index %>
-            <p class="card-text" ><%=  truncated_html(job.description) %></p>
+            <p class="card-text" ><%=  truncated_html(job.content) %></p>
           
             
           <% else %>
-            <p class="card-text" ><%= job.description %></p>
+            <p class="card-text" ><%= job.content %></p>
           <% end %>
           
 
