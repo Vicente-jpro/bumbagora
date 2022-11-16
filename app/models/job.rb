@@ -8,11 +8,7 @@ class Job < ApplicationRecord
   has_many :users_jobs, dependent: :destroy
   has_many :users, through: :users_jobs
 
-  validates_presence_of :type_job, :description
-  validates :title, uniqueness: { 
-    message: "já existe. Coloca um código no
-             título para diferenciar de outras vagas. Ex: Pedreiro profissional 1234" 
-  }
+  validates_presence_of :title, :type_job, :description
 
   enum type_job: {Remota: "Remota", Presencial: "Presencial", Hibrida: "Híbrida"}
 
