@@ -30,7 +30,7 @@ class User < ApplicationRecord
 
   validates :image, content_type:  ['image/png', 'image/jpeg'],
                     size: { less_than: 4.megabytes } 
-  validates :document, content_type: ['application/pdf'], size: { less_than: 400.kilobyte } 
+  validates :document, content_type: ['application/pdf'], size: { less_than: 200.kilobyte } 
                     
 
   enum type_subscription: {Candidato: "Candidato", Empresa: "Empresa", Admin: "Admin"}
