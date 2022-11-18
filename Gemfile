@@ -77,15 +77,15 @@ gem 'mini_magick', '>= 4.9.5'
 
 gem 'psych', '< 4'
 
-gem 'sidekiq'
+gem 'sidekiq', '~> 6.5'
 
 gem 'execjs', '~> 2.7'
 
 #gem 'psych', '~> 4.0', '>= 4.0.5'
 
-gem 'net-smtp', require: false
-gem 'net-pop', require: false
-gem 'net-imap', require: false
+#gem 'net-smtp', require: false
+#gem 'net-pop', require: false
+#gem 'net-imap', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
