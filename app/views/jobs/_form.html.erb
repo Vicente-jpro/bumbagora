@@ -27,7 +27,7 @@
       <div class="row my-2">
 
       <%= form.text_field :title, label: "Titulo", placeholder:"Título", class:"form-control" %>
-      <%= form.collection_select :category_id, Category.all, :id, :name, { label: "Categória"}  %>
+      <%= form.collection_select :category_id, Category.order(:name), :id, :name, { label: "Categória"}  %>
 		  <%= form.select :type_job, Job.type_jobs, { label: "Local"} %>
 		  <%= form.number_field :salary, label:"Salário", placeholder:"$ 00" %>
 		  <%= form.rich_text_area :content, label:"Descrição", size: "100x100", placeholder: "Descreve o detalhe da oportunidade. Ex: A empresa X está a contratar candidatos com habilidade Y para trabalhar como K..." %>
