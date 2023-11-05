@@ -77,7 +77,7 @@ gem 'mini_magick', '>= 4.9.5'
 
 gem 'psych', '< 4'
 
-gem 'sidekiq', '~> 6.5'
+gem 'resque', '~> 2.6'
 
 gem 'execjs', '~> 2.7'
 

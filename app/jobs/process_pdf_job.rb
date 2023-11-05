@@ -2,6 +2,6 @@ class ProcessPdfJob < ApplicationJob
   queue_as :default
 
   def perform(*args)
-    # Do something later
+    puts "#### Resque is working ####"
   end
 end

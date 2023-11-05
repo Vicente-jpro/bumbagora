@@ -1,8 +1,8 @@
-require 'sidekiq/web'
+require 'resque/server'
 
 Rails.application.routes.draw do
 
-  mount Sidekiq::Web => '/sidekiq'
+  mount Resque::Server.new, :at => "/resque"
 
   resources :rooms do 
     resources :messages
