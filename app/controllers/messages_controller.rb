@@ -22,7 +22,7 @@ class MessagesController < ApplicationController
 
     def invalid_messages
       logger.error "Attempt to access invalid message room: #{params[:room_id]}"
-      redirect_to houses_url, info: "Mensagem invalida."
+      redirect_to job_url, info: "Mensagem invalida."
     end
 
    def set_room 

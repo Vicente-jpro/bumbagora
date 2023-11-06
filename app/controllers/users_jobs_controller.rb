@@ -69,14 +69,14 @@ class UsersJobsController < ApplicationController
    private 
     def invalid_user_job
       logger.error "Attempt to access invalid house #{params[:id]}"
-      redirect_to houses_url, info: "Este registro de emprego está em valido."
+      redirect_to job_url, info: "Este registro de emprego está em valido."
     end
 
     def set_job 
-      @job = Job.find_by(id: params[:id])
+      @job = Job.find(params[:id])
     end
 
     def set_user
-      User.find_by(id: params[:id])
+      User.find(params[:id])
     end
 end
