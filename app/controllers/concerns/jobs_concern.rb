@@ -5,7 +5,6 @@ module JobsConcern
     end
 
     def is_creator?(job)
-      debugger
       job.user_id == current_user.id
     end
 
