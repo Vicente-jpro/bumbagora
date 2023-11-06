@@ -61,7 +61,7 @@ class JobsController < ApplicationController
         
         if @candidates.any?
           #Send email notification
-         # NotificationJob.perform_later(@job.id)
+          NotificationJob.perform_later(@job.id)
         end
 
         format.html { redirect_to job_url(@job), notice: "Oportunidade criada com sucesso." }
@@ -82,7 +82,7 @@ class JobsController < ApplicationController
         
         if @candidates.any?
           #Send email notification
-        #  NotificationJob.perform_later(@job.id)
+          NotificationJob.perform_later(@job.id)
         end
         
         format.html { redirect_to job_url(@job), notice: "Oportunidade actualizada com sucesso." }

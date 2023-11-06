@@ -26,9 +26,9 @@ class UsersJobsController < ApplicationController
       
   
       company_id = @job.user_id
-     # NotificationMailer.candidate_after_apply(current_user.id, @job.id, company_id).deliver_later
+      NotificationMailer.candidate_after_apply(current_user.id, @job.id, company_id).deliver_later
 
-     # NotificationMailer.notify_company(@job.user_id, @job.id).deliver_later
+      NotificationMailer.notify_company(@job.user_id, @job.id).deliver_later
   
     end  
     @jobs ||= Job.find_jobs_by_id_greater_than(@job).page(params[:page]).per(8)
