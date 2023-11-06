@@ -1,5 +1,6 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: %i[ show edit update destroy ]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_rooms
 
   include RoomConcern
   include UserConcern
@@ -76,6 +77,11 @@ class RoomsController < ApplicationController
   end
 
   private
+  def invalid_rooms
+    logger.error "Attempt to access invalid user: #{params[:id]}"
+    redirect_to jobs_url, info: "Usuário ou sala de conversa não encontrada."
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_room
       @room = Room.find_by(params[:id])

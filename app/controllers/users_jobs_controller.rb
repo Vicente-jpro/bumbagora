@@ -1,6 +1,7 @@
 class UsersJobsController < ApplicationController
     before_action :authenticate_user!
     before_action :set_job, only: %i[ apply candidates destroy]
+    rescue_from ActiveRecord::RecordNotFound, with: :invalid_user_job
 
     include JobsConcern
     include JobsViewsConcern
@@ -66,11 +67,16 @@ class UsersJobsController < ApplicationController
    end
 
    private 
+    def invalid_user_job
+      logger.error "Attempt to access invalid house #{params[:id]}"
+      redirect_to jobs_url, info: "Este registro de emprego está em valido."
+    end
+
     def set_job 
-      @job = Job.find_by(id: params[:id])
+      @job = Job.find(params[:id])
     end
 
     def set_user
-      User.find_by(id: params[:id])
+      User.find(params[:id])
     end
 end
