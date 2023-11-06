@@ -1,4 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_registration
+
   def new
   	super
   end
@@ -35,6 +37,11 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   private
+    def invalid_registration
+      logger.error "Attempt to access invalid user: #{params[:id]}"
+      redirect_to houses_url, info: "Usuário não encontrado."
+    end
+
    def user_params
     @user = User.find_by(id: params[:id])
    end

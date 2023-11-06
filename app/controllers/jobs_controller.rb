@@ -1,7 +1,8 @@
 class JobsController < ApplicationController
   before_action :set_job, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
-  
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_job
+
 
   include JobsConcern
   include JobsViewsConcern
@@ -109,6 +110,11 @@ class JobsController < ApplicationController
     def set_job
       @job = Job.find(params[:id])
       #debugger
+    end
+
+    def invalid_job
+      logger.error "Attempt to access invalid job #{params[:id]}"
+      redirect_to houses_url, info: "Vaga de emprego invalida."
     end
 
     # Only allow a list of trusted parameters through.

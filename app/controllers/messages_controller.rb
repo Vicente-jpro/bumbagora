@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
  before_action :set_room, only: %i[ new create destroy]
+ rescue_from ActiveRecord::RecordNotFound, with: :invalid_messages
 
 
  def new
@@ -18,6 +19,12 @@ class MessagesController < ApplicationController
  end
 
  private
+
+    def invalid_messages
+      logger.error "Attempt to access invalid message room: #{params[:room_id]}"
+      redirect_to houses_url, info: "Mensagem invalida."
+    end
+
    def set_room 
      @room = Room.find(params[:room_id])
    end
