@@ -4,7 +4,7 @@ module UserHelper
 	end
 
 	def display_user_image_profile(user)
-	  image_tag(user.image, class: "profile-image")
+	  image_tag(user.image, class: "profile-image") if user.image.attached?
 	end
 
 	# Verify this method it's like unuseless
