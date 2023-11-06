@@ -79,7 +79,7 @@ class RoomsController < ApplicationController
   private
   def invalid_rooms
     logger.error "Attempt to access invalid user: #{params[:id]}"
-    redirect_to job_url, info: "Usuário ou sala de conversa não encontrada."
+    redirect_to jobs_url, info: "Usuário ou sala de conversa não encontrada."
   end
 
     # Use callbacks to share common setup or constraints between actions.

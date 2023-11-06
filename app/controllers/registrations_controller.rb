@@ -39,7 +39,7 @@ class RegistrationsController < Devise::RegistrationsController
   private
     def invalid_registration
       logger.error "Attempt to access invalid user: #{params[:id]}"
-      redirect_to job_url, info: "Usuário não encontrado."
+      redirect_to jobs_url, info: "Usuário não encontrado."
     end
 
    def user_params

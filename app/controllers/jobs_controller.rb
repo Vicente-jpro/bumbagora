@@ -114,7 +114,7 @@ class JobsController < ApplicationController
 
     def invalid_job
       logger.error "Attempt to access invalid job #{params[:id]}"
-      redirect_to job_url, info: "Vaga de emprego invalida."
+      redirect_to jobs_url, info: "Vaga de emprego invalida."
     end
 
     # Only allow a list of trusted parameters through.
