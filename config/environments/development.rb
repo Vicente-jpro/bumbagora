@@ -6,15 +6,16 @@ Rails.application.configure do
 config.action_mailer.default_url_options = {host: "localhost:3000"}
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.perform_deliveries = true
-config.action_mailer.smtp_settings = {
-  :user_name => "vicente.simao@bumbagora.com",
-  :password => "c65e2b48dd6a2043e2c33f333a2f031a",
-  :domain => "localhost:3000",
-  :address => 'smtp.ionos.com',
-  :port => 587,
-  :authentication => :plain,
-  :enable_starttls_auto => true
-}
+config.action_mailer.smtp_settings = { address: 'localhost', port: 1025 }
+#config.action_mailer.smtp_settings = {
+ # :user_name => "vicente.simao@bumbagora.com",
+ # :password => "c65e2b48dd6a2043e2c33f333a2f031a",
+ # :domain => "localhost:3000",
+ # :address => 'smtp.ionos.com',
+ # :port => 587,
+ # :authentication => :plain,
+ # :enable_starttls_auto => true
+#}
 
 
 

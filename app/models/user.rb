@@ -27,8 +27,9 @@ class User < ApplicationRecord
   
   validates_presence_of :country, :username
   #validates :category, acceptance: { message: 'Selecione uma Profissão/Formação.' }
-
-  validates :image, content_type:  ['image/png', 'image/jpeg'],
+  
+    
+  validates :image, content_type:  ['image/png', 'image/jpeg', 'image/jpg'],
                     size: { less_than: 4.megabytes } 
   validates :document, content_type: ['application/pdf'], size: { less_than: 200.kilobyte } 
                     

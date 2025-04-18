@@ -1,16 +1,16 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "~> 3.1.2"
+ruby "~> 3.2.1"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.3"
+gem "rails", "~> 7.2.2"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 5.0"
+gem "puma", "~> 6.0"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
@@ -54,8 +54,7 @@ gem "bootstrap_form", "~> 5.1"
 gem 'kaminari'
 
 # Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting, Rails related I18n stuff
-gem 'rails-i18n', '~> 7.0.0'
-
+gem 'rails-i18n', '~> 7.0'
 # Translations for the devise gem
 gem 'devise-i18n'
 
@@ -86,6 +85,11 @@ gem 'execjs', '~> 2.7'
 #gem 'net-smtp', require: false
 #gem 'net-pop', require: false
 #gem 'net-imap', require: false
+gem "ostruct"
+gem 'dartsass-sprockets'
+#gem 'sassc-rails'
+#gem 'dartsass-rails'
+#gem 'cssbundling-rails'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -108,9 +112,9 @@ group :development do
   # gem "spring"
 end
 
-group :production do
-  gem "pg"
-end
+#group :production do
+#  gem "pg"
+#end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]

@@ -7,6 +7,13 @@ module UserHelper
 	  image_tag(user.image, class: "profile-image") if user.image.attached?
 	end
 
+	def validate_uploaded_image_and_return_image_tag(image_blob, user)
+		if image_blob[:filename] =~ /\.(png|jpg)\z/i
+			return image_tag(current_user.image.variant(:thumb), class:"image-edit-profile")
+		end
+	end
+	
+
 	# Verify this method it's like unuseless
 	def is_admin?(job)
 	  if user_signed_in?

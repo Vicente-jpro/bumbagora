@@ -5,7 +5,10 @@
       <div class="card-title">
       	<h4 class="text-center"> Editar <%= resource_name.to_s.humanize %></h4>
         <div class="d-flex justify-content-center my-4">
-          <%= image_tag(current_user.image.variant(:thumb), class:"image-edit-profile") if current_user.image.attached? %>
+           <% if current_user.image.attached? %>
+            <%=  validate_uploaded_image_and_return_image_tag(current_user.image_blob, current_user) %>
+          <% end %>
+          
         </div>
       </div>
       <div class="row my-2">

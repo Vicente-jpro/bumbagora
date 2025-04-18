@@ -4,7 +4,7 @@
       <p class="card-text">
    		 	<%= message.content %>
 			<br>
-			<small class="text-muted"> <%= message.created_at.to_s(:short) %> </small>
+			<small class="text-success "> <%=  time_ago_in_words(message.created_at) %> </small>
 	  </p>
     </div>
   </div>
