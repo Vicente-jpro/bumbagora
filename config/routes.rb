@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     collection do 
       get "search" 
       get "search_with_category"
+      get "my_opportunities"
     end 
   end
   

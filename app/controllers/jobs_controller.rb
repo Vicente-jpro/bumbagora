@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_action :set_job, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :my_opportunities]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_job
 
 
@@ -23,6 +23,10 @@ class JobsController < ApplicationController
   def index
     @jobs ||= Job.find_jobs_ordered_by_id_desc.page(params[:page]).per(8)
     @page_name_index = page_name("index")
+  end
+
+  def my_opportunities
+    @jobs ||= Job.find_jobs_by_user_owner(current_user).page(params[:page]).per(8)
   end
 
   # GET /jobs/1 or /jobs/1.json
@@ -109,7 +113,6 @@ class JobsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_job
       @job = Job.find(params[:id])
-      #debugger
     end
 
     def invalid_job

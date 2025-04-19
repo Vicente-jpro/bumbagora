@@ -24,7 +24,7 @@
 
               <li class="nav-item">
                 <% if user_is_admin_or_company?(current_user) %>
-                  <%= link_to "Candidatos", users_jobs_path, class: "nav-link", "data-turbo-frame": "_top" %>
+                  <%= link_to "Minhas oportunidades", my_opportunities_jobs_path, class: "nav-link", "data-turbo-frame": "_top" %>
                   <% else %>
                   <%= link_to "Candidaturas", users_jobs_path, class: "nav-link", "data-turbo-frame": "_top" %>
                   <% end %>

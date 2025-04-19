@@ -13,8 +13,7 @@ module JobsHelper
      end
 
      def truncated_html(text_with_html)
-      truncate_html(text_with_html.to_s, length: 100 )
-    
+      truncate_html(text_with_html.to_s, length: 400 )
      end
 
 

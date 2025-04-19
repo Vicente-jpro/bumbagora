@@ -23,7 +23,8 @@ class UsersJobsController < ApplicationController
       flash[:notice] = "Subscrição feita com sucesso para vaga #{@job.title}" 
   
       @job.applayers += 1
-      @job.update!(@job.attributes)
+      debugger
+      @job.update(@job.attributes)
       
   
       company_id = @job.user_id
@@ -80,3 +81,6 @@ class UsersJobsController < ApplicationController
       User.find(params[:id])
     end
 end
+
+#Seleciona todos os candidatos que se inscreveram em uma determinada vaga que pertence a uma determinada 
+#empresa

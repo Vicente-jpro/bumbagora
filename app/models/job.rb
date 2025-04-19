@@ -20,6 +20,13 @@ class Job < ApplicationRecord
     .order(id: :desc) if job.present?
   }
 
+  
+  scope :find_jobs_by_user_owner, ->(user) {
+    includes(:users, :category, :users_jobs)
+    where(user_id: user.id)
+    .order(id: :desc)
+  }
+
   scope :find_jobs_by_id_greater_than, ->(job) { where('id <= ? ',job.id).order(id: :desc) }
   
   scope :find_jobs_by_category_id, ->(category_id) { 
