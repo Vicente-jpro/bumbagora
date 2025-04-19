@@ -21,6 +21,8 @@
             <%= f.text_field :username, label: "Nome do Usuário / Empresa", placeholder:"Ex1: Vicente Xavier Simão / Ex2: Bumbagora", autofocus: true %>
             <%= f.file_field :image, label: "Imagem, tamanho máx 200kB", value: current_user.image %>
             <% if current_user.type_subscription == "Candidato" %>
+               
+               <%= link_to "baixar o curriculo: #{current_user.document.filename}", current_user.document if current_user.document.attached? %>
                <%= f.file_field :document, label:"Documento (.pdf) tamanho máx 400kB", value: current_user.document %>
                <%= f.collection_select :category_id, Category.order(:name), :id, :name, {label: "Profissão/Formação"}%>
             <% end %>

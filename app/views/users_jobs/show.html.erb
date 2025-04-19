@@ -11,10 +11,10 @@
       </p>
 
   
-      <% if @candidate.document.representable? %>
-        <%= image_tag @candidate.document.representation(resize_to_limit: [10000, 10000]) %>
+      <% if @candidate.document.attached? %>
+         <%= link_to "Baixar o CV deste candidato: #{@candidate.document.filename}", @candidate.document %>
       <% else %>
-        <h3>Este usuário não tem um documento.</h3>
+        <h3>Este usuário não tem um CV.</h3>
       <% end %>
     </div>
   </div>
