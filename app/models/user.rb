@@ -17,6 +17,8 @@ class User < ApplicationRecord
   
   has_many :invites, dependent: :destroy
   has_many :rooms, dependent: :destroy
+
+  has_many :experiences, dependent: :destroy
  
   has_many :messages, dependent: :destroy
 

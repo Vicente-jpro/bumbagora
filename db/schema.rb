@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2022_11_16_174357) do
+ActiveRecord::Schema[7.2].define(version: 2025_04_18_222221) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -59,6 +59,16 @@ ActiveRecord::Schema[7.2].define(version: 2022_11_16_174357) do
     t.string "name_country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.string "company_name"
+    t.string "profission"
+    t.date "start_date"
+    t.date "end_date"
+    t.text "description"
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_experiences_on_user_id"
   end
 
   create_table "invites", force: :cascade do |t|
@@ -139,6 +149,7 @@ ActiveRecord::Schema[7.2].define(version: 2022_11_16_174357) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "experiences", "users"
   add_foreign_key "invites", "rooms"
   add_foreign_key "invites", "users"
   add_foreign_key "jobs", "categories"

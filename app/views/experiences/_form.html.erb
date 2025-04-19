@@ -1,0 +1,40 @@
+<%= bootstrap_form_for(experience) do |form| %>
+  <% if experience.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
+
+      <ul>
+        <% experience.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <main class="container col-lg-6 my-4">
+    <div class="card">
+      <div class="card-body">
+
+        <div class="row my-2">
+
+          <%= form.text_field :company_name %>
+          <%= form.text_field :profission %>
+
+          <%= form.date_field :start_date %>
+          <%= form.date_field :end_date %>
+          
+          <%= form.hidden_field :user_id, value: current_user.id if current_user.present? %>
+          
+          <%= form.rich_text_area :description, label:"Descrição", size: "100x100", placeholder: "Descreve o detalhe da oportunidade. Ex: A empresa X está a contratar candidatos com habilidade Y para trabalhar como K..." %>
+          
+          <div class="mb-3 d-grid gap-2">
+            <%= form.submit "Salvar", class:"btn btn-success" %>
+          </div>
+        </div>
+    </div>
+  </main>
+
+<% end %>
+
+  

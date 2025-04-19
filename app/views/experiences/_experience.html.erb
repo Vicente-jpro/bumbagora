@@ -1,0 +1,49 @@
+<div id="<%= dom_id experience %>">
+  
+
+<main class="container col-lg-6 my-4">
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+      	<h4 class="text-center"><%= experience.company_name %></h4>
+      </div>
+      <div class="row my-2">
+          <p>
+            <strong>Profission:</strong>
+            <%= experience.profission %>
+          </p>
+
+          <p>
+            <strong>Start date:</strong>
+            <%= experience.start_date %>
+          </p>
+
+          <p>
+            <strong>End date:</strong>
+            <%= experience.end_date %>
+          </p>
+
+          <p>
+            <strong>Description:</strong>
+            <%= experience.description %>
+          </p>
+
+
+      </div>
+          <div class="mb-3 d-grid gap-2">
+            <%= link_to "Edit", edit_experience_path(experience), class: "btn btn-info" %>
+            
+            <%= link_to "Ver todas as experiences", experiences_path, class: "btn btn-warning" %>
+                        
+            <%= link_to "Cadastar uma nova experiência", new_experience_path, class: "text-center text-info" %>
+            
+            <%= button_to "Eliminar", experience, 
+            method: :delete, class:"btn btn-outline-link my-1", 
+            form:{ data: { turbo_confirm: "Tens a certeza?"} }  %>
+      
+          </div>
+
+
+      </div>
+  </div>
+</main>

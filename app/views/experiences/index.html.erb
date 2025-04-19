@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Experiences" %>
+
+<p class="text-center fs-4 text-success"> Experiências </p> 
+
+<div id="experiences">
+  <% if @experiences.empty? %>
+    <div class="container text-center">
+      <%= link_to "Cadastar uma nova experiência", new_experience_path, class: "text-info" %>
+    </div>
+  <% else %>
+  
+    <% @experiences.each do |experience| %>
+      <%= render experience %>
+    <% end %>
+  
+  <% end %>
+</div>
