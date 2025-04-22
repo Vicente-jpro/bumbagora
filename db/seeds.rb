@@ -425,7 +425,7 @@ puts "Cadastrando usuários..."
     email: "vicente.simao.rails@gmail.com",
     password: "Vicente",
     password_confirmation: "Vicente",
-    type_subscription: "Admin",
+    type_subscription: "Admin19793",
     category: Category.first
     })
    

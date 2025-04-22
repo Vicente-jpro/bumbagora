@@ -13,6 +13,8 @@
       </div>
       <div class="row my-2">
 
+        
+        <%= link_to "Ver/Adicionar experiências", experiences_path, class: "btn btn-warning mb-3" %>
         <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false }, html: { method: :put }) do |f| %>
 
 
@@ -27,7 +29,7 @@
                <%= f.collection_select :category_id, Category.order(:name), :id, :name, {label: "Profissão/Formação"}%>
             <% end %>
 
-            <%= f.select :type_subscription, User.type_subscriptions, {label: "Tipo da subscrição"} %>
+            <%= f.select :type_subscription, type_registration?(User.type_subscriptions), {label: "Tipo da subscrição"} %>
             <%= f.collection_select :country_id, Country.order(:name_country), :id, :name_country, {label: "Pais"} %>
             
            <%= f.text_field :localization_description, label:"Descrição", placeholder: "Local onde vives / Localização da tua empresa"%>

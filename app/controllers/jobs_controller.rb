@@ -3,7 +3,6 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :my_opportunities]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_job
 
-
   include JobsConcern
   include JobsViewsConcern
   include UserConcern

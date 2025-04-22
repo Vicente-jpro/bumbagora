@@ -23,11 +23,12 @@
 
           <%= form.date_field :start_date %>
           <%= form.date_field :end_date %>
-          
+
+          <%= form.text_area :description, label:"Descrição", size: "100x10", 
+          placeholder: "Descreve o detalhe da oportunidade. A tua experiencia." %>
+  
           <%= form.hidden_field :user_id, value: current_user.id if current_user.present? %>
-          
-          <%= form.rich_text_area :description, label:"Descrição", size: "100x100", placeholder: "Descreve o detalhe da oportunidade. Ex: A empresa X está a contratar candidatos com habilidade Y para trabalhar como K..." %>
-          
+        
           <div class="mb-3 d-grid gap-2">
             <%= form.submit "Salvar", class:"btn btn-success" %>
           </div>

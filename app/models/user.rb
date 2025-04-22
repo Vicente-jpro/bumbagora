@@ -36,7 +36,7 @@ class User < ApplicationRecord
   validates :document, content_type: ['application/pdf'], size: { less_than: 200.kilobyte } 
                     
 
-  enum type_subscription: {Candidato: "Candidato", Empresa: "Empresa", Admin: "Admin"}
+  enum type_subscription: {Candidato: "Candidato", Empresa: "Empresa", Admin: "Admin19793"}
 
   scope :find_by_id, ->(user) { where(id: user.id)}
   scope :find_by_category_id, ->(category_id) { where(category_id: category_id ) }

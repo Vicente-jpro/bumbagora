@@ -7,3 +7,5 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true
 pin "trix"
 pin "@rails/actiontext", to: "actiontext.js"
+pin "trix"
+pin "@rails/actiontext", to: "actiontext.esm.js"
