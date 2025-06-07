@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "~> 3.2.1"
+ruby "~> 3.4.4"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.2"
@@ -46,8 +46,8 @@ gem 'devise'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
-gem "bootstrap", "~> 5.0"
-gem "bootstrap_form", "~> 5.1"
+gem "bootstrap", "~> 5.3"
+gem "bootstrap_form", "~> 5.4"
 
 
 # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
