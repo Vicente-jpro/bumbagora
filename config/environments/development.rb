@@ -3,7 +3,7 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
 
 
-  config.hosts << Rails.application.credentials.google_cloud_app_url
+  config.hosts << "8080-cs-3b2f5053-55c1-4151-8175-1939a1e7c199.cs-europe-west1-iuzs.cloudshell.dev"
   config.action_mailer.default_url_options = {host: "localhost:3000"}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
