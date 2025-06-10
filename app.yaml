@@ -6,7 +6,6 @@ service: bumbagora
 
 runtime_config:
   dotenv_config: flex-env-config-1
-  manual_scaling:
-    instance: 1
+#  manual_scaling:
+#    instance: 1
 
-    
