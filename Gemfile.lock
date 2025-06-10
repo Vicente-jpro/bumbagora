@@ -414,7 +414,7 @@ DEPENDENCIES
   kaminari
   mini_magick (>= 4.9.5)
   ostruct
-  pg
+  pg (~> 1.5)
   psych (< 4)
   puma (~> 6.0)
   rails (~> 7.2.2)
@@ -434,7 +434,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.4.4p34
+   ruby 3.3.7p123
 
 BUNDLED WITH
    2.6.8

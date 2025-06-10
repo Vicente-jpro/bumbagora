@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "~> 3.4.0"
+ruby "~> 3.3.7"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.2"
@@ -79,7 +79,7 @@ gem 'psych', '< 4'
 gem 'resque', '~> 2.6'
 
 gem 'execjs', '~> 2.7'
-gem "pg", "~> 1.5"
+
 
 #gem 'psych', '~> 4.0', '>= 4.0.5'
 
@@ -93,6 +93,9 @@ gem 'dartsass-sprockets'
 #gem 'cssbundling-rails'
 gem 'bigdecimal'
 
+group :production do
+  gem "pg", "~> 1.5"
+end
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
