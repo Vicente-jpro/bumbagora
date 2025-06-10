@@ -3,7 +3,7 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
 
   
- config.hosts << "8080-cs-3b2f5053-55c1-4151-8175-1939a1e7c199.cs-europe-west1-iuzs.cloudshell.dev"
+ config.hosts << "whale-app-pbm27.ondigitalocean.app"
 
 config.action_mailer.default_url_options = {host: "www.bumbagora.com"}
 config.action_mailer.delivery_method = :smtp
