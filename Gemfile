@@ -79,7 +79,7 @@ gem 'psych', '< 4'
 gem 'resque', '~> 2.6'
 
 gem 'execjs', '~> 2.7'
-gem "pg", "~> 1.5"
+gem "pg", "~> 1.1"
 
 #gem 'psych', '~> 4.0', '>= 4.0.5'
 
