@@ -125,3 +125,15 @@ group :test do
   gem "webdrivers"
 end
   
+# docker build -t my_app_name .
+# docker build -t bumbagora .
+
+# docker run -p 3000:3000 my_app_name
+# docker run -p 3000:3000 bumbagora
+# docker-compose up
+
+#gcloud run deploy minha-app \
+#  --image=docker.io/vicentesimao/demo \
+#  --platform=managed \
+#  --region=europe-southwest1 \
+#  --allow-unauthenticated
