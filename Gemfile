@@ -94,7 +94,7 @@ gem 'dartsass-sprockets'
 gem 'bigdecimal'
 
 #group :production do
-  gem "pg", "~> 1.1"
+  gem "pg", "~> 1.5"
 #end
 
 group :development, :test do
