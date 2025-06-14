@@ -1,13 +1,28 @@
 class BackListsController < ApplicationController
    rescue_from ActiveRecord::RecordNotFound, with: :invalid_job
 
+
+  def index 
+    
+  end
+  
+  def jobs
+        
+  end 
+
+  def publicities
+    
+  end
+
   def job_complaint   
     job = Job.find(params[:id_job])
     
     if job
-      complaint = JobComplaint.new
-      complaint.find_or_create_by!(job_id: job.id)
-
+      JobComplaint.find_or_create_by!(job_id: job.id)
+      job.claimed = true 
+      job.save
+      # Send an email to addmin this claimed
+       
       redirect_to jobs_url, 
       info: "Obrigado por notificar-nos. Vamos verificar o tipo de conteúdo postado."
     end

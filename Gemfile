@@ -141,4 +141,3 @@ end
 #  --platform=managed \
 #  --region=europe-southwest1 \
 #  --allow-unauthenticated
-
