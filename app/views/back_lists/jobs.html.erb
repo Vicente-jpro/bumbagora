@@ -1,0 +1,13 @@
+<p class="fs-3 text-danger text-center">Vagas de emprego denunciadas </p>
+
+<div class="container col-sm-9" id="jobs">
+  
+    <% @jobs.each do |job| %>
+        <%= render "back_lists/job", job: job  %>
+    <% end %>
+
+    <div class="d-flex justify-content-center">
+        <%= paginate @jobs, windows:2 %>
+    </div>
+    
+</div>

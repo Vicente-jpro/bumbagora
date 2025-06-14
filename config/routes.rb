@@ -48,12 +48,12 @@ Rails.application.routes.draw do
   as: "back_lists_job_complaint"
 
   
-  get "back_lists/:id_publicity/publicities", 
+  get "back_lists/publicities", 
   to: "back_lists#publicities", 
   constraints: { id: /[A-Z][A-Z][0-9]+/ }, 
   as: "back_lists_publicities"
 
-  get "back_lists/:id_job/jobs", 
+  get "back_lists/jobs", 
   to: "back_lists#jobs", 
   constraints: { id: /[A-Z][A-Z][0-9]+/ }, 
   as: "back_lists_jobs"

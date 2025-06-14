@@ -20,6 +20,7 @@
             <%= link_to "Postar Vaga", new_job_path, class: "nav-link" %>
 
             </li>
+
             <% if user_signed_in? %>
 
               <li class="nav-item">
@@ -29,7 +30,15 @@
                   <%= link_to "Candidaturas", users_jobs_path, class: "nav-link", "data-turbo-frame": "_top" %>
                   <% end %>
               </li>
+
+              <% if current_user.Admin? %>
+                <li class="nav-item">
+                  <%= link_to "Dashboard", dashboad_index_path, class: "nav-link" %>
+                </li>
+              <% end %>
+
             <% end %>
+
           </ul>
           <ul class="nav justify-content-end ">
           <% if user_signed_in? %>

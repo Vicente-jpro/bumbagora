@@ -6,8 +6,8 @@ class BackListsController < ApplicationController
     
   end
   
-  def jobs
-        
+  def jobs 
+    @jobs = Job.find_by_claimed(true).page(params[:page]).per(8)
   end 
 
   def publicities

@@ -9,8 +9,13 @@
                 <span class="text-success"> Back list </span>
             </div>
             <div class="card-body">
-                <p class="card-title fs-4 text-danger">Denuncias vagas de emprego (69)</p>
-                <a href="#" class="btn btn-success">Ver denuncias</a>
+                <p class="card-title fs-4 text-danger">
+                    Denuncias vagas de emprego 
+                    (<strong class="text-danger"> <%= @number_of_jobs_claimed %> </strong>)
+                </p>
+                
+                <%= link_to "Ver denuncias", back_lists_jobs_path, class: "btn btn-success" %>
+               
             </div>
         </div>
     </div>
@@ -23,7 +28,8 @@
             </div>
             <div class="card-body">
                 <p class="card-title fs-4 text-danger">Denuncias de publicidades (69)</p>
-                <a href="#" class="btn btn-success">Ver denuncias</a>
+                
+                <%= link_to "Ver denuncias", back_lists_publicities_path, class: "btn btn-success" %>
             </div>
         </div>
     </div>
@@ -60,25 +66,13 @@
     
     <div class="col">
         <div class="card text-center">
-            <div class="card-header">
-                <span class="text-success"> Back list </span>
-            </div>
-            <div class="card-body">
-                <p class="card-title fs-4 text-danger">Denuncias de publicidades (69)</p>
-                <a href="#" class="btn btn-success">Ver denuncias</a>
-            </div>
+
         </div>
     </div>
 
     <div class="col">
         <div class="card text-center">
-            <div class="card-header">
-                <span class="text-success"> Novas Publicidades </span>
-            </div>
-            <div class="card-body">
-                <p class="card-title fs-4 text-warning">Publicidades pendentes (69)</p>
-                <a href="#" class="btn btn-warning">Ver publicidades</a>
-            </div>
+ 
         </div>
     </div>
 

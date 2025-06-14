@@ -42,6 +42,12 @@ class Job < ApplicationRecord
 
   scope :find_job_by_id, ->(job_params) { where(id: job_params) }
   
+  scope :find_by_claimed, ->(claimed) { where(claimed: claimed) }
+  
+  scope :find_by_claimed, ->(claimed) { where(claimed: claimed) }
+  
+  scope :find_by_claimed_and_count, ->(claimed) { where(claimed: claimed).count }
+
   private 
     def clean_empty_space
       self.title = title.strip             

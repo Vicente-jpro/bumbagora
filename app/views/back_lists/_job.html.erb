@@ -1,0 +1,53 @@
+  <div class="card" >
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-4">
+          <h5 class="card-title"> <i class="bi-briefcase-fill"></i> <%= job.title %></h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            <i class="bi-tags-fill"></i> <%= job.category.name %>, 
+            <i class="bi-geo-alt-fill"></i> <%= job.type_job %>
+          </h6>
+        </div>
+      </div>
+
+
+      <div class="row">
+        
+        <div class="col-sm-3">
+          <% user = get_user_by_job(job) %>
+          <div class="d-block">
+            <%= display_user_image(user)%> 
+          </div>
+          <div class="d-block">
+            <span class="badge rounded-pill bg-success col-sm-10"> Candidatos <%= job.applayers %></span>
+
+          </div>
+
+          <% if job.number_days > 10%>
+          <div class="d-block">
+            <span class="badge rounded-pill bg-warning text-black col-sm-10"> <%= job.number_days %> dias para encerrar a vaga</span>
+          </div>
+          <% else %>
+          <div class="d-block">
+            <span class="badge rounded-pill bg-danger col-sm-10"> <%= job.number_days %> dias paraencerrar a vaga</span>
+          </div>
+          <% end %>
+          
+          
+        </div>
+
+
+        <div class="col">
+            <p class="card-text" ><%=  truncated_html(job.content) %></p>
+          
+            
+            <p class="card-text" ><%= job.content %></p>
+             <%= link_to "Colocar este post na lista negra", apply_users_job_path(job), class:"btn btn-success my-1" %>  
+
+        </div> 
+      </div>
+
+    </div>
+  </div>
+
+ <br>
