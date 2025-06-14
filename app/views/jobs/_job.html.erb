@@ -82,9 +82,11 @@
             
             <%= button_to "Eliminar está oportunidade", job, method: :delete, class:"btn btn-outline-link my-1", form:{ data: { turbo_confirm: "Tens a certeza?"} }  %>
           <% end %>
+          
+          <%= link_to "Este conteúdo não devia estar nesta página ou site.", 
+          back_lists_job_complaint_path(job), class:"btn btn-outline-warning my-1" %>
 
         </div> 
-
       </div>
 
     </div>

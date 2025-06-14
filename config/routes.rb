@@ -1,9 +1,19 @@
 require 'resque/server'
 
 Rails.application.routes.draw do
-  resources :experiences
 
+  resources :experiences
   mount Resque::Server.new, :at => "/resque"
+  
+  get "back_lists/:id_publicity/publicity_complaint", 
+    to: "back_lists#publicity_complaint", 
+    constraints: { id: /[A-Z][A-Z][0-9]+/ }, 
+    as: "back_lists_publicity_complaint"
+
+  get "back_lists/:id_job/job_complaint", 
+  to: "back_lists#job_complaint", 
+  constraints: { id: /[A-Z][A-Z][0-9]+/ }, 
+  as: "back_lists_job_complaint"
 
   resources :rooms do 
     resources :messages

@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_04_18_222221) do
+ActiveRecord::Schema[7.2].define(version: 2025_06_14_095040) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -49,6 +52,13 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_18_222221) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "back_lists", force: :cascade do |t|
+    t.string "email"
+    t.integer "penalty"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -67,13 +77,13 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_18_222221) do
     t.date "start_date"
     t.date "end_date"
     t.text "description"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_experiences_on_user_id"
   end
 
   create_table "invites", force: :cascade do |t|
-    t.integer "room_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "room_id", null: false
+    t.bigint "user_id", null: false
     t.boolean "opened", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -81,15 +91,22 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_18_222221) do
     t.index ["user_id"], name: "index_invites_on_user_id"
   end
 
+  create_table "job_complaints", force: :cascade do |t|
+    t.bigint "job_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_job_complaints_on_job_id"
+  end
+
   create_table "jobs", force: :cascade do |t|
     t.string "title"
     t.string "type_job", default: "Presencial", null: false
     t.text "content"
     t.integer "salary"
-    t.integer "category_id", null: false
+    t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id", default: 1, null: false
+    t.bigint "user_id", default: 1, null: false
     t.integer "applayers", default: 0
     t.integer "number_days", default: 40
     t.index ["category_id"], name: "index_jobs_on_category_id"
@@ -97,18 +114,18 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_18_222221) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.integer "room_id", null: false
+    t.bigint "room_id", null: false
     t.boolean "opened", default: false
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id", default: 2, null: false
+    t.bigint "user_id", default: 2, null: false
     t.index ["room_id"], name: "index_messages_on_room_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "rooms", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_rooms_on_user_id"
@@ -129,8 +146,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_18_222221) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "type_subscription", default: "Candidato"
-    t.integer "country_id", default: 1, null: false
-    t.integer "category_id", default: 1, null: false
+    t.bigint "country_id", default: 1, null: false
+    t.bigint "category_id", default: 1, null: false
     t.index ["category_id"], name: "index_users_on_category_id"
     t.index ["country_id"], name: "index_users_on_country_id"
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -139,8 +156,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_18_222221) do
 
   create_table "users_jobs", force: :cascade do |t|
     t.string "type_subscription", default: "Creator", null: false
-    t.integer "user_id", null: false
-    t.integer "job_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "job_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["job_id"], name: "index_users_jobs_on_job_id"
@@ -152,6 +169,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_18_222221) do
   add_foreign_key "experiences", "users"
   add_foreign_key "invites", "rooms"
   add_foreign_key "invites", "users"
+  add_foreign_key "job_complaints", "jobs"
   add_foreign_key "jobs", "categories"
   add_foreign_key "jobs", "users"
   add_foreign_key "messages", "rooms"
