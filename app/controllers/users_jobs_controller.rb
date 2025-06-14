@@ -23,7 +23,7 @@ class UsersJobsController < ApplicationController
       flash[:notice] = "Subscrição feita com sucesso para vaga #{@job.title}" 
   
       @job.applayers += 1
-      debugger
+
       @job.update(@job.attributes)
       
   
