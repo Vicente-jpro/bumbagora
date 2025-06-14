@@ -1,0 +1,3 @@
+class BackList < ApplicationRecord
+
+end

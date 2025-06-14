@@ -1,0 +1,4 @@
+class PublicityComplaint < ApplicationRecord
+
+end
+ 

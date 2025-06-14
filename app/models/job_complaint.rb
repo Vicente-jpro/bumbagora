@@ -1,0 +1,3 @@
+class JobComplaint < ApplicationRecord
+
+end
