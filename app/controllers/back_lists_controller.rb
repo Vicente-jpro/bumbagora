@@ -6,8 +6,7 @@ class BackListsController < ApplicationController
     
     if job
       complaint = JobComplaint.new
-      complaint.job_id = job.id 
-      complaint.save
+      complaint.find_or_create_by!(job_id: job.id)
 
       redirect_to jobs_url, 
       info: "Obrigado por notificar-nos. Vamos verificar o tipo de conteúdo postado."
