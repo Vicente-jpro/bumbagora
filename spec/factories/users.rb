@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :user do
 
     ## Associations 
-    country
+    Province
     category
     
     ## Own attributes

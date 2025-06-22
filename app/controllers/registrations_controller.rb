@@ -51,7 +51,7 @@ class RegistrationsController < Devise::RegistrationsController
           .permit(
             :username, 
             :type_subscription, 
-            :country_id,
+            :province_id,
             :category_id, 
             :localization_description, 
             :image, 
