@@ -1,12 +1,11 @@
-class BackListsController < ApplicationController
-  before_action :set_job, only: %i[ job_complaint job_create update destroy ]
+class PublicityBlackListsController < ApplicationController
+  before_action :set_publicity, only: %i[ publicity_complaint publicity_create update destroy ]
   before_action :authenticate_user!
+  
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_job
 
-  def job_create
+  def publicity_create
     BlackList.save_email_user(@job.user.email) 
-
-    debugger
     black_list.save
     
   end
@@ -15,20 +14,13 @@ class BackListsController < ApplicationController
     black_list = BlackList.new 
     black_list.email = job_params[:email] 
     black_list.save
-    
   end
-
-
-  def jobs 
-    @jobs = Job.find_by_claimed(true).page(params[:page]).per(8)
-  end 
 
   def publicities
-    
+    @jobs = Job.find_by_claimed(true).page(params[:page]).per(8)
   end
 
-  def job_complaint   
-    
+  def publicity_complaint
     if @job
       JobComplaint.find_or_create_by!(job_id: @job.id)
       @job.claimed = true 
@@ -38,22 +30,11 @@ class BackListsController < ApplicationController
       redirect_to jobs_url, 
       info: "Obrigado por notificar-nos. Vamos verificar o tipo de conteúdo postado."
     end
-
-  end 
-
-  def publicity_complaint
-    id_publicity 
-  end
-
-
-
-  def job_params
-    params.require(:back_list).permit(:user)
   end
 
   private
-    def set_job 
-      @job = Job.find(params[:id_job])
+    def set_publicity
+      @publicity ||= PublicityComplaint.find(params[:id_publicity])
     end
     
     def invalid_job

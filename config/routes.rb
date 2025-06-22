@@ -36,33 +36,33 @@ Rails.application.routes.draw do
     get '/users/sign_out', to: 'devise/sessions#destroy'
   end
 
-  
-  get "back_lists/:id_job/job_create", 
-    to: "back_lists#job_create", 
+  # Black list for jobs
+  get "job_black_lists/:id_job/job_create", 
+    to: "job_black_lists#job_create", 
     constraints: { id: /[A-Z][A-Z][0-9]+/ }, 
     as: "job_create"
   
+  get "job_black_lists/:id_job/job_complaint", 
+  to: "job_black_lists#job_complaint", 
+  constraints: { id: /[A-Z][A-Z][0-9]+/ }, 
+  as: "job_black_lists_complaint"
+
+  get "job_black_lists/jobs", 
+  to: "job_black_lists#jobs", 
+  constraints: { id: /[A-Z][A-Z][0-9]+/ }, 
+  as: "job_black_lists"
+
+  # Black list for publicity
   get "back_lists/:id_publicity/publicity_complaint", 
     to: "back_lists#publicity_complaint", 
     constraints: { id: /[A-Z][A-Z][0-9]+/ }, 
     as: "back_lists_publicity_complaint"
-
-    
-  get "back_lists/:id_job/job_complaint", 
-  to: "back_lists#job_complaint", 
-  constraints: { id: /[A-Z][A-Z][0-9]+/ }, 
-  as: "back_lists_job_complaint"
-
   
   get "back_lists/publicities", 
   to: "back_lists#publicities", 
   constraints: { id: /[A-Z][A-Z][0-9]+/ }, 
-  as: "back_lists_publicities"
+  as: "back_list_publicities"
 
-  get "back_lists/jobs", 
-  to: "back_lists#jobs", 
-  constraints: { id: /[A-Z][A-Z][0-9]+/ }, 
-  as: "back_lists_jobs"
 
   get "back_lists", 
   to: "back_lists#index", 
